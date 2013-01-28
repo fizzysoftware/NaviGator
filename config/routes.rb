@@ -6,14 +6,18 @@ Fizzybar::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :users, :only => [:show,:edit,:update] do
-    collection do
-      get 'welcome'
-    end
+  resources :users, only: [:show,:edit,:update] do
+    get 'welcome', on: :collection
+  end
 
+  resources :bars, except: [:show] do
+    get 'embed_code', on: :member
+    get 'get_fizzybar', on: :collection
   end
 
   match 'auth/failure', to: redirect('/')
+
+  get '/fizzybar', to: 'bars#fizzybar'
 
   root :to => 'users#welcome'
 

@@ -14,8 +14,8 @@
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # 
-  # 
+  #
+  #
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable, :confirmable, :timeoutable , :omniauthable
@@ -25,28 +25,29 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :email
   validates :username, :format => { :with => /^(?!_)(?:[a-z0-9]_?)*[a-z](?:_?[a-z0-9])*(?<!_)$/i }, :uniqueness => true
   has_one :image, :as => :imageable, :order => "created_at DESC"
-  
-  
+  has_many :bars
+
+
   after_create :welcome_mail
-  
-  
-  
-  
+
+
+
+
   def welcome_mail
     Notifier.welcome(self).deliver
-  end  
-  
+  end
+
   def self.new_with_session(params,session)
     if session["devise.user_attributes"]
       new(session["devise.user_attributes"],without_protection: true) do |user|
         user.attributes = params
         user.valid?
-      end  
+      end
     else
       super
-    end    
+    end
   end
-  
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider

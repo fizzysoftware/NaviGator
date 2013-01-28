@@ -1,0 +1,15 @@
+<%= simple_form_for(@bar) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :message, :input_html => { maxlength: '70' }, :hint => 'Not more than 70 characters.' %>
+    <%= f.input :link %>
+    <%= f.input :link_url %>
+    <%= f.input :active %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

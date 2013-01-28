@@ -13,26 +13,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<%= link_to "Fizzybar", root_path , :class => "brand" %>
-					<div class="nav-collapse">
-						<ul class="nav">
-							<li><%= link_to "Welcome", welcome_users_path %></li>
-							<% if user_signed_in? %>
-							<li>   <%= link_to current_user.name, current_user %> </li>
-							<li>  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>
-							<% else %>
-							<li><%= link_to "Sign up", new_user_registration_path %> </li>
-							<li><%= link_to "sign in", new_user_session_path %> </li>
-							<li> <%= link_to "sign in with facebook", user_omniauth_authorize_path(:facebook), :id => "facebook_sign_in"  %> </li>
-							<% end %>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+		<%= render partial: 'shared/top_nav_bar' %>
+
 		<div class="container">
 			<% flash.each do |name, message|%>
 			<div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
@@ -40,6 +22,7 @@
 				<%= message %>
 			</div>
 			<% end %>
+
 			<div class="row">
 				<div class="span9"><%= yield %></div>
 				<div class="span3">
@@ -48,6 +31,7 @@
 				</div>
 			</div>
 		</div>
+
 		<%= render 'layouts/javascripts' %>
 	</body>
 	</html>

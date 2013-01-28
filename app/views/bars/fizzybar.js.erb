@@ -1,0 +1,3 @@
+function getFizzybar( _bar, _uid ) {
+  $.get( '<%= get_fizzybar_bars_url %>',{ 'bar': _bar, 'uid': _uid}, {}, "jsonp");
+}

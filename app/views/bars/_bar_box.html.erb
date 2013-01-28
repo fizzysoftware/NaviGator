@@ -1,0 +1,8 @@
+<tr>
+  <td><%= link_to bar_box.name, edit_bar_path( bar_box) %></td>
+  <td><%= link_to 'Embedding Code', embed_code_bar_path( bar_box), class: 'btn btn-small', remote: true %></td>
+  <td><%= link_to 'Destroy', bar_box, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+
+
+

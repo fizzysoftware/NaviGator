@@ -7,12 +7,18 @@
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
     	<div class="red">
-      <div class="span11">
-      	<%= link_to 'Create New Bar', new_bar_path, class: 'btn btn-primary' %><br/>
+      <div class="row">
+      	<div class="span3">
+      		<h4>Fizzy Bar</h4>
+      	</div>
+      	<div class="span9 newbar_btn_alignright">
+      	<%= link_to 'Create New Bar', new_bar_path, class: 'btn btn-primary' %>
+      </div>
+      </div>
 		<%= link_to bar_box.name, edit_bar_path( bar_box) %>
   		<%= link_to 'Embedding Code', embed_code_bar_path( bar_box), class: 'btn btn-small', remote: true %>
   		<%= link_to 'Destroy', bar_box, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
+      
   </div>
     </div>
     <div class="tab-pane" id="tab2">

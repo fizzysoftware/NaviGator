@@ -1,8 +1,23 @@
-<tr>
-  <td><%= link_to bar_box.name, edit_bar_path( bar_box) %></td>
-  <td><%= link_to 'Embedding Code', embed_code_bar_path( bar_box), class: 'btn btn-small', remote: true %></td>
-  <td><%= link_to 'Destroy', bar_box, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Manage</a></li>
+    <li><a href="#tab2" data-toggle="tab">Stats</a></li>
+  </ul>
 
-
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+    	<div class="red">
+      <div class="span11">
+      	<%= link_to 'Create New Bar', new_bar_path, class: 'btn btn-primary' %><br/>
+		<%= link_to bar_box.name, edit_bar_path( bar_box) %>
+  		<%= link_to 'Embedding Code', embed_code_bar_path( bar_box), class: 'btn btn-small', remote: true %>
+  		<%= link_to 'Destroy', bar_box, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+  </div>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p>Howdy, I'm in Section 2.</p>
+    </div>
+  </div>
+</div>
 

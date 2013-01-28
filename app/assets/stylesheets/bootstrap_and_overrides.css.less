@@ -39,12 +39,33 @@ body {
 /* common css */
 
 @text_align_right: right;
+@border_radius: 3px;
 
-
-
+.shadow {
+   -moz-box-shadow:    inset 0 0 5px #9e9e9e;
+   -webkit-box-shadow: inset 0 0 5px #9e9e9e;
+   box-shadow:         inset 0 0 5px #9e9e9e;
+}/* inner shadow in div */
 
 
 
 .newbar_btn_alignright{
 	text-align: @text_align_right;
+	height: 54px;
+	line-height: 51px;
+}
+.padding_btm{
+	padding-bottom: 20px;
+}
+.embeded_padding{
+	padding: 25px;
+	border-radius: @border_radius;
+	background: #f0f0f0 url(/assets/noise-gray.png);
+	margin-left: 0;
+	.shadow;
+}
+.nav_background{
+	background: white;
+	padding: 5px;
+	border-radius: @border_radius;
 }

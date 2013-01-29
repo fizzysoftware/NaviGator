@@ -12,7 +12,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'less-rails'
   gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-colorpicker-rails'
 end
+
 gem 'jquery-rails'
 gem 'json'
 gem 'will_paginate'

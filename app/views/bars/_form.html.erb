@@ -6,6 +6,10 @@
     <%= f.input :message, :input_html => { maxlength: '70' }, :hint => 'Not more than 70 characters.' %>
     <%= f.input :link %>
     <%= f.input :link_url %>
+    <%= f.input :text_color, input_html: { class: 'colorpicker' } %>
+    <%= f.input :bg_color, input_html: { class: 'colorpicker' } %>
+    <%= f.input :link_text_color, input_html: { class: 'colorpicker' } %>
+    <%= f.input :link_bg_color, input_html: { class: 'colorpicker' } %>
     <%= f.input :active %>
   </div>
 
@@ -13,3 +17,5 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+
+ <%= javascript_tag "$('.colorpicker').colorpicker()" %>

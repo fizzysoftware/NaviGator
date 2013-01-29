@@ -1,3 +1,4 @@
-$('#code').remove()
 
-$( 'body').append( '<%=j text_area_tag( "code", ( render partial: "embedding", object: @bar),:disabled => true,  rows: "8") %>');
+$('#myModal').find( '.modal-body').html( '<%=j text_area_tag( "code", ( render partial: "embedding", object: @bar),:disabled => true, rows: "8", class: "input-block-level") %>');
+
+$('#myModal').modal('show');

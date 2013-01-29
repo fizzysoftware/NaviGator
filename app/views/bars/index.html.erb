@@ -1,7 +1,37 @@
 <h1>My bars</h1>
-<div class="table table-hover">
-    <%= render partial: 'bar_box', collection: @bars %>
-</div>
+
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Manage</a></li>
+    <li><a href="#tab2" data-toggle="tab">Stats</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <div class="red">
+        <div class="row padding_btm">
+          <div class="span3">
+            <h4>Fizzy Bar</h4>
+          </div><!-- span3 -->
+          <div class="span9 newbar_btn_alignright">
+            <%= link_to 'Create New Bar', new_bar_path, class: 'btn btn-info' %>
+          </div><!-- span9 newbar_btn_alignright -->
+        </div><!-- row -->
+
+        <div class="row show-grid embeded_padding">
+          <%= render partial: 'bar_box', collection: @bars %>
+        </div> <!-- row  -->
+
+      </div><!-- red -->
+    </div><!-- tab-pane -->
+
+    <div class="tab-pane" id="tab2">
+      <p>Howdy, I'm in Section 2.</p>
+    </div>
+
+  </div><!-- tab-content -->
+</div><!-- tabbable -->
+
+
 <%#= link_to 'Create New Bar', new_bar_path, class: 'btn btn-primary' %>
 
 <!-- Modal -->

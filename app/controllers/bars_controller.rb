@@ -96,6 +96,6 @@ class BarsController < ApplicationController
 
   def get_fizzybar
     _user = User.find( params[:uid] )
-    @bar = _user.bars.find_with_sendable_fields( params[:bar] )
+    @bar  = _user.bars.find( params[:bar] )
   end
 end

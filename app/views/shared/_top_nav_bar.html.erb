@@ -5,14 +5,14 @@
       <div class="nav-collapse">
         <ul class="nav">
           <% if user_signed_in? %>
-            <li> <%= link_to "Manage bars", bars_path %></li>
+            <li> <%= link_to "Manage Bars", bars_path %></li>
 
             <li> <%= link_to current_user.name, current_user %> </li>
-            <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>
+            <li> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %> </li>
           <% else %>
-            <li> <%= link_to "Sign up", new_user_registration_path %> </li>
-            <li> <%= link_to "sign in", new_user_session_path %> </li>
-            <li> <%= link_to "sign in with facebook", user_omniauth_authorize_path(:facebook), :id => "facebook_sign_in"  %> </li>
+            <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
+            <li> <%= link_to "Sign In", new_user_session_path %> </li>
+            <li> <%= link_to "Sign in With Facebook", user_omniauth_authorize_path(:facebook), :id => "facebook_sign_in"  %> </li>
           <% end %>
         </ul>
       </div>

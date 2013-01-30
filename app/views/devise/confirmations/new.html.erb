@@ -1,12 +1,10 @@
 <div class="container">
 	<div class="row">
-		<div class="span4 offset4 well">
+		<div class="span4 offset4 well background_color">
 			<%= simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
 			  <%= f.error_notification %>
 			  <legend>Resend confirmation instructions</legend>
-			  
 			    <%= f.input :email, :required => true, input_html: { class: 'span4' }, :placeholder => "Email" %>
-			 
 			    <%= f.button :submit, "Resend confirmation instructions" %>
 			  
 			<% end %>

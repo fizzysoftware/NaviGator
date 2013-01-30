@@ -37,9 +37,11 @@ body {
 
 
 /* common css */
-
+@text_align_center: center;
 @text_align_right: right;
 @border_radius: 3px;
+@text_color: #000;
+@text_rendering: optimizeSpeed;
 
 .shadow {
    -moz-box-shadow:    inset 0 0 5px #9e9e9e;
@@ -81,4 +83,22 @@ body {
 }
 .mrgn_top{
 	margin-top: 5px;
+}
+
+
+/* home page css */
+
+.wlcm_txt_wrapper{
+	text-align: @text_align_center;
+	h1.heading_padding{
+		padding: 40px 0 25px;
+		color: @text_color;
+		font-size: 30px;
+		}/* heading_padding */
+	p.wlcm_txt_deatils{
+		margin-bottom: 40px;
+		font-size: 14px;
+		line-height: 30px;
+		text-rendering: @text_rendering;
+	}
 }

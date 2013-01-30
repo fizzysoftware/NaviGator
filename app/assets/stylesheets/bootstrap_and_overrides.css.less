@@ -52,7 +52,12 @@ body {
    box-shadow:         inset 0 0 5px #9e9e9e;
 }/* inner shadow in div */
 
-
+.ease (){
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
 
 .newbar_btn_alignright{
 	text-align: @text_align_right;
@@ -120,6 +125,7 @@ body {
 	.features{
 		padding-bottom: 20px;
 		border-bottom: @brdr_btm;
+		margin-bottom: 40px;
 		.features_heading{
 			text-align: left;
 			font-size: @heading_fontsize;
@@ -132,7 +138,13 @@ body {
 			.heading_fontsize{
 				font-size: 22px;
 				font-weight: @heading_font_weight;
-			}
-		}
+				color: @text_color;
+				cursor: pointer;
+				.ease;
+				&:hover{
+					color: #384b52;
+				}
+			}/* heading_fontsize */
+		}/* features_mrgn_btm */
 	}/* features */
 }/* container */

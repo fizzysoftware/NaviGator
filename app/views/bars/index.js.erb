@@ -1,0 +1,9 @@
+<% if params['tab'] == 'stats' %>
+  $('#manage-link').parent().removeClass('active')
+  $('#stats-link').parent().addClass('active')
+  $('#stats-tab').html( "<%=j render( partial: 'stats_content') %>")
+  $('#manage-tab').removeClass('active')
+  $('#stats-tab').addClass('active')
+<% end %>
+
+// $('#bars-tab a[href="#tab2"]').tab('show')

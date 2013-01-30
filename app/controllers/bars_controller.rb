@@ -4,10 +4,16 @@ class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
   def index
-    @bars = current_user.bars
+    if request.xhr?
+      # debugger
+      true
+    else
+      @bars = current_user.bars
+    end
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js # index.js.erb
       format.json { render json: @bars }
     end
   end
@@ -96,6 +102,8 @@ class BarsController < ApplicationController
 
   def get_fizzybar
     _user = User.find( params[:uid] )
+    debugger
+    session[:visited] = true
     @bar  = _user.bars.find( params[:bar] )
   end
 end

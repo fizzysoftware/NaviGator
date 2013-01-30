@@ -42,6 +42,7 @@ body {
 @border_radius: 3px;
 @text_color: #000;
 @text_rendering: optimizeSpeed;
+@brdr_btm: 1px dotted #ccc;
 
 .shadow {
    -moz-box-shadow:    inset 0 0 5px #9e9e9e;
@@ -100,5 +101,7 @@ body {
 		font-size: 14px;
 		line-height: 30px;
 		text-rendering: @text_rendering;
+		border-bottom: @brdr_btm;
+		padding-bottom: 35px;
 	}
 }

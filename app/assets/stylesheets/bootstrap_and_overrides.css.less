@@ -69,13 +69,7 @@ body {
 .padding_btm{
 	padding-bottom: 20px;
 }
-.embeded_padding{
-	padding: 25px;
-	border-radius: @border_radius;
-	background: #f0f0f0 url(/assets/noise-gray.png);
-	margin-left: 0;
-	.shadow;
-}
+
 .nav_background{
 	background: white;
 	padding: 5px;
@@ -85,6 +79,7 @@ body {
 	.ease;
 	&:hover{
 		box-shadow: @box_shadow;
+		.shadow;
 	}
 	.barname_height{
 		height: 30px;
@@ -123,7 +118,28 @@ body {
 		.shadow;
 	}
 }
-
+.embeded_padding{
+	padding: 25px;
+	border-radius: @border_radius;
+	background: #f0f0f0 url(/assets/noise-gray.png);
+	margin-left: 0;
+	.shadow;
+	.stats_heading{
+		font-size: @heading_fontsize;
+		font-weight: @heading_font_weight;
+		margin-top: 0;
+	}
+	.stats_background{
+		padding: 15px;
+		background: #fff;
+		margin-bottom: 20px;
+		.ease;
+		&:hover{
+			box-shadow: @box_shadow;
+			.shadow;
+		}
+	}/* stats_background */
+}/* embeded_padding */
 
 /* home page css */
 .container{

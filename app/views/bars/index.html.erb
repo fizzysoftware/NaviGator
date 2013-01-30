@@ -5,30 +5,45 @@
     <li class="active"><a href="#tab1" data-toggle="tab">Manage</a></li>
     <li><a href="#tab2" data-toggle="tab">Stats</a></li>
   </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="tab1">
-      <div class="red">
-        <div class="row padding_btm">
-          <div class="span3">
-            <h4>Fizzy Bar</h4>
-          </div><!-- span3 -->
-          <div class="span9 newbar_btn_alignright">
-            <%= link_to 'Create New Bar', new_bar_path, class: 'btn btn-info' %>
-          </div><!-- span9 newbar_btn_alignright -->
-        </div><!-- row -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+              <div class="red">
+                    <div class="row padding_btm">
+                          <div class="span3">
+                            <h4>Fizzy Bar</h4>
+                          </div><!-- span3 -->
+                          <div class="span9 newbar_btn_alignright">
+                            <%= link_to 'Create New Bar', new_bar_path, class: 'btn btn-info' %>
+                          </div><!-- span9 newbar_btn_alignright -->
+                    </div><!-- row -->
 
-        <div class="row show-grid embeded_padding">
-          <%= render partial: 'bar_box', collection: @bars %>
-        </div> <!-- row  -->
+                    <div class="row show-grid embeded_padding">
+                      <%= render partial: 'bar_box', collection: @bars %>
+                    </div> <!-- row  -->
 
-      </div><!-- red -->
-    </div><!-- tab-pane -->
+              </div><!-- red -->
+        </div><!-- tab-pane -->
+<!-- stats content start -->
+        <div class="tab-pane" id="tab2">
+            <div class="row show-grid embeded_padding">
 
-    <div class="tab-pane" id="tab2">
-      <p>Howdy, I'm in Section 2.</p>
-    </div>
+            <h1 class="stats_heading">Stats</h1>
+            <div class="stats_background">
+                <div class="row-fluid show-grid">
+                    <div class="span12">
+                        <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</small>
+                    </div><!-- span11 -->
+                </div><!-- row -->
+            </div><!-- stats_background -->
 
-  </div><!-- tab-content -->
+            <div class="stats_background">
+
+            </div>
+
+             </div>
+        </div>
+<!-- stats content end -->
+    </div><!-- tab-content -->
 </div><!-- tabbable -->
 
 

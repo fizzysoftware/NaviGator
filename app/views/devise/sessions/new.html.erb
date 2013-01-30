@@ -8,7 +8,8 @@
 				<%= f.input :password, :required => false, :autofocus => true, input_html: { class: 'span4' }, :placeholder => "Password" %>
 
 			<%#= f.input( :remember_me, :as => :boolean, input_html: { class: 'checkbox' }, label_html: { class: 'checkbox' } ) if devise_mapping.rememberable? %>
-				<%= f.input :remember_me, :as => :boolean, wrapper_html: { class: 'checkbox' } %>
+
+				<%= f.input :remember_me, :as => :boolean, label: false, :inline_label => 'Remember Me' %>
 
 				<%= f.button :submit, "Sign in", :class => "btn btn-info btn-block" %>
 

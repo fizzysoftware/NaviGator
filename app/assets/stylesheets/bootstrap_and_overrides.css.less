@@ -47,6 +47,7 @@ body {
 @heading_fontsize: 30px;
 @heading_font_weight: 500;
 @box_shadow: 0 0 1px #000;
+@background: #fff;
 
 .shadow {
    -moz-box-shadow:    inset 0 0 5px #9e9e9e;
@@ -70,7 +71,7 @@ body {
 }
 
 .nav_background{
-	background: white;
+	background: @background;
 	padding: 5px;
 	border-radius: @border_radius;
 	margin: 5px;
@@ -109,7 +110,7 @@ body {
 	}
 }
 .background_color{
-	background: #fff;
+	background: @background;
 	.ease;
 	&:hover{
 		box-shadow: @box_shadow;
@@ -117,7 +118,7 @@ body {
 	}
 }
 .bars_background{
-	background: #fff;
+	background: @background;
 	padding: 20px;
 }
 .embeded_padding{
@@ -133,7 +134,7 @@ body {
 	}
 	.stats_background{
 		padding: 15px;
-		background: #fff;
+		background: @background;
 		margin-bottom: 20px;
 		.ease;
 		&:hover{
@@ -209,4 +210,27 @@ body {
 			}/* heading_fontsize */
 		}/* features_mrgn_btm */
 	}/* features */
+	.popup_background{
+	padding: 25px;
+	border-radius: @border_radius;
+	background: #f0f0f0 url(/assets/noise-gray.png);
+	.shadow;
+	.popup_heading{
+		background: @background;
+		text-align: center;
+		.shadow;
+		h3{
+			font-size: 20px;
+		}
+		}
+		.poppup_close_background{
+			border-top: none;
+			background: @background;
+			border-radius: @border_radius;
+			.shadow;
+		}
+		.popup_txtarea_background{
+			background: @background;
+		}
+	}/* popup_background */
 }/* container */

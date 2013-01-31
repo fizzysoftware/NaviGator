@@ -1,5 +1,6 @@
 $(document).on('click', '#fizzybar-link', function () {
-  $.get( '<%= hit_bars_url %>',{ 'bar': bar, 'uid': uid }, {}, "jsonp" );
+  if( document.cookie.split('fizzybar_' + bar).length <= 1 )
+    $.get( '<%= hit_bars_url %>',{ 'bar': bar, 'uid': uid }, {}, "jsonp" );
 });
 
 function getFizzybar( _bar, _uid ) {

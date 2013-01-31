@@ -26,13 +26,13 @@ class BarsController < ApplicationController
 
   # GET /bars/1/edit
   def edit
-    @bar = current_user.bars.find(params[:id])
+    @bar = current_user.bars.find( params[:id] )
   end
 
   # POST /bars
   # POST /bars.json
   def create
-    @bar = current_user.bars.new(params[:bar])
+    @bar = current_user.bars.new( params[:bar] )
 
     respond_to do |format|
       if @bar.save
@@ -48,10 +48,10 @@ class BarsController < ApplicationController
   # PUT /bars/1
   # PUT /bars/1.json
   def update
-    @bar = current_user.bars.find(params[:id])
+    @bar = current_user.bars.find( params[:id] )
 
     respond_to do |format|
-      if @bar.update_attributes(params[:bar])
+      if @bar.update_attributes( params[:bar] )
         format.html { redirect_to edit_bar_path( @bar ), notice: 'Bar was successfully updated.' }
         format.json { head :no_content }
       else
@@ -64,7 +64,7 @@ class BarsController < ApplicationController
   # DELETE /bars/1
   # DELETE /bars/1.json
   def destroy
-    @bar = current_user.bars.find(params[:id])
+    @bar = current_user.bars.find( params[:id] )
     @bar.destroy
 
     respond_to do |format|
@@ -75,7 +75,7 @@ class BarsController < ApplicationController
 
   # return Embedding code
   def embed_code
-    @bar = current_user.bars.find( params[:id])
+    @bar = current_user.bars.find( params[:id] )
   end
 
   # return fizzybar.js requested from other applications
@@ -96,7 +96,8 @@ class BarsController < ApplicationController
   def hit
     populate_resources
     @visitor = @bar.visitors.find_by_session_id!( session[:session_id] )
-    @visitor.increment!( :hits )
+    @visitor.increment!(:hits)
+    cookies[ "fizzybar_#{ @bar.id }"] = 1
     render js: ""
   end
 
@@ -109,14 +110,3 @@ class BarsController < ApplicationController
     @bar  = @user.bars.find( params[:bar] )
   end
 end
-
-# GET /bars/1
-# GET /bars/1.json
-# def show
-#   @bar = Bar.find(params[:id])
-
-#   respond_to do |format|
-#     format.html # show.html.erb
-#     format.json { render json: @bar }
-#   end
-# end

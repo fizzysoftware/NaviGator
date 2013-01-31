@@ -48,6 +48,9 @@ body {
 @heading_font_weight: 500;
 @box_shadow: 0 0 1px #000;
 @background: #fff;
+h1{
+	font-size: 30px;
+}
 
 .shadow {
    -moz-box-shadow:    inset 0 0 5px #9e9e9e;
@@ -102,6 +105,13 @@ body {
 .newbar_alignment{
 	padding: 20px;
 	box-shadow: @box_shadow;
+	border-radius: 0;
+	cursor: pointer;
+	.ease;
+	&:hover{
+		background: @background;
+		.shadow;
+	}
 	h1{
 		font-size: 30px;
 	}
@@ -120,6 +130,7 @@ body {
 .bars_background{
 	background: @background;
 	padding: 20px;
+
 }
 .embeded_padding{
 	padding: 25px;
@@ -164,7 +175,9 @@ body {
 	}/* stats_background */
 }/* embeded_padding */
 
-
+.nwbar_txt_bckgrnd{
+	background: @background;
+}
 
 /* home page css */
 .container{
@@ -240,6 +253,7 @@ footer{
 	border-top: 5px solid #6b6b6b;
 	width: 100%;
 	height: 255px;
+	margin-top: 20px;
 	.ftr_mrgntop{
 		margin-top: 30px;
 		.footer_logo{

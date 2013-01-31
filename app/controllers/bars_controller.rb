@@ -1,5 +1,5 @@
 class BarsController < ApplicationController
-  before_filter :authenticate_user!, except: [:fizzybar, :get_fizzybar]
+  before_filter :authenticate_user!, except: [:fizzybar, :get_fizzybar, :hit]
 
   # GET /bars
   # GET /bars.json
@@ -17,17 +17,6 @@ class BarsController < ApplicationController
       format.json { render json: @bars }
     end
   end
-
-  # GET /bars/1
-  # GET /bars/1.json
-  # def show
-  #   @bar = Bar.find(params[:id])
-
-  #   respond_to do |format|
-  #     format.html # show.html.erb
-  #     format.json { render json: @bar }
-  #   end
-  # end
 
   # GET /bars/new
   # GET /bars/new.json
@@ -89,10 +78,12 @@ class BarsController < ApplicationController
     end
   end
 
+  # return Embedding code
   def embed_code
     @bar = current_user.bars.find( params[:id])
   end
 
+  # return fizzybar.js requested from other applications
   def fizzybar
     respond_to do |format|
       format.html { redirect_to bars_url }
@@ -100,10 +91,37 @@ class BarsController < ApplicationController
     end
   end
 
+  # return fizzybar. The HTML code for requesting application
   def get_fizzybar
-    _user = User.find( params[:uid] )
-    debugger
-    session[:visited] = true
-    @bar  = _user.bars.find( params[:bar] )
+    populate_resources
+    session[:visited] = true if session[:visited].blank?
+    @bar.visitors.find_or_create_by_session_id!( session[:session_id] )
+  end
+
+  def hit
+    populate_resources
+    @visitor = @bar.visitors.find_by_session_id!( session[:session_id] )
+    @visitor.increment!( :hits )
+    render js: ""
+  end
+
+  #  ===================
+  #  = Private methods =
+  #  ===================
+  private
+  def populate_resources
+    @user = User.find( params[:uid] )
+    @bar  = @user.bars.find( params[:bar] )
   end
 end
+
+# GET /bars/1
+# GET /bars/1.json
+# def show
+#   @bar = Bar.find(params[:id])
+
+#   respond_to do |format|
+#     format.html # show.html.erb
+#     format.json { render json: @bar }
+#   end
+# end

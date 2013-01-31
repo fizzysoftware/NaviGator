@@ -4,12 +4,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
-
 
   # PUT /users/1
   # PUT /users/1.json
@@ -27,9 +25,7 @@ class UsersController < ApplicationController
     end
   end
 
-
   def welcome
-
   end
 
 end

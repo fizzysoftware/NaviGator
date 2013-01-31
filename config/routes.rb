@@ -13,6 +13,7 @@ Fizzybar::Application.routes.draw do
   resources :bars, except: [:show] do
     get 'embed_code', on: :member
     get 'get_fizzybar', on: :collection
+    get 'hit', on: :collection
   end
 
   match 'auth/failure', to: redirect('/')

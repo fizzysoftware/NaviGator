@@ -4,12 +4,7 @@ class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
   def index
-    if request.xhr?
-      # debugger
-      true
-    else
-      @bars = current_user.bars
-    end
+      @bars = ( params[:stats].present? ? current_user.bars.includes(:visitors) : current_user.bars )
 
     respond_to do |format|
       format.html # index.html.erb

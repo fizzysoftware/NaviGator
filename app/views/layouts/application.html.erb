@@ -32,8 +32,26 @@
 			<section>
 				<footer>
 					<div class="container">
-						<div class="row show-grid">
-							<div class="span12 ftr_mrgntop">9</div>
+						<div class="row-fluid show-grid">
+							<div class="span12 ftr_mrgntop">
+								<div class="span6">
+									<ul class="inline">
+										<li><%= link_to raw("COPYRIGHT &#169; 2013"), "#" %></li>
+										<li><%= link_to "FAQ", "#" %></li>
+										<li><%= link_to "Blog", "#" %></li>
+										<li><%= link_to "Terms of use", "#" %></li>
+									</ul>
+
+								</div>
+								<div class="span6">
+									<blockquote class="pull-right">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								</blockquote>
+								<%= link_to image_tag ("/assets/fizzy.png"), :class => "footer_logo" %>
+
+								</div>
+								
+							</div>
 						</div>
 					</div>
 				</footer>

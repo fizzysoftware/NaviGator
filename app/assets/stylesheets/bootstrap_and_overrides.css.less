@@ -62,9 +62,8 @@ body {
 }
 
 .newbar_btn_alignright{
-	text-align: @text_align_right;
-	height: 54px;
-	line-height: 51px;
+	padding-left: 180px;
+	
 }
 .padding_btm{
 	padding-bottom: 20px;
@@ -82,8 +81,7 @@ body {
 		.shadow;
 	}
 	.barname_height{
-		height: 30px;
-		line-height: 30px;
+		padding: 8px;
 	}
 }
 .delete_btn{
@@ -118,6 +116,10 @@ body {
 		.shadow;
 	}
 }
+.bars_background{
+	background: #fff;
+	padding: 20px;
+}
 .embeded_padding{
 	padding: 25px;
 	border-radius: @border_radius;
@@ -141,16 +143,16 @@ body {
 		.statsnav_background{
 			background: #fff url(/assets/page-bg.png);
 			cursor: pointer;
-			.ease;
-			&:hover{
-				box-shadow: @box_shadow;
-				.shadow;
-			}
+						
 		}/* statsnav_background */
 		.stats_cols_background{
 			background: #fafafa;
 			border: 1px solid #ccc;
 			margin-top: 5px;
+			.ease;
+			&:hover{
+				box-shadow: @box_shadow;
+			}
 			.stats_cols_padding{
 				padding: 5px 5px 0 37px;
 			}
@@ -160,6 +162,8 @@ body {
 		}
 	}/* stats_background */
 }/* embeded_padding */
+
+
 
 /* home page css */
 .container{

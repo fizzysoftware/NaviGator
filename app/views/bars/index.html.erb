@@ -1,54 +1,59 @@
-<h1>My bars</h1>
+<div class="bars_background">
+  <h1>My bars</h1>
 
-<div class="tabbable"> <!-- Only required for left/right tabs -->
-  <ul id="bars-tab" class="nav nav-tabs">
+  <div class="tabbable"> <!-- Only required for left/right tabs -->
+    <ul id="bars-tab" class="nav nav-tabs">
     <li class="active">
-      <a href="#manage-tab" data-toggle="tab" id="manage-link">Manage</a>
-      <%#= link_to 'Manage', bars_url( tab: 'manage' ), remote: true, id: 'manage-link' %>
+        <a href="#manage-tab" data-toggle="tab" id="manage-link">Manage</a>
+        <%#= link_to 'Manage', bars_url( tab: 'manage' ), remote: true, id: 'manage-link' %>
     </li>
     <li>
-      <!-- <a href="#tab2" data-toggle="tab">Stats</a> -->
-      <%= link_to 'Stats', bars_url( tab: 'stats' ), remote: true, id: 'stats-link' %>
+        <!-- <a href="#tab2" data-toggle="tab">Stats</a> -->
+        <%= link_to 'Stats', bars_url( tab: 'stats' ), remote: true, id: 'stats-link' %>
     </li>
-  </ul>
-  <div class="tab-content">
+</ul>
+<div class="tab-content">
 
-    <%# TAG-1 %>
-    <div class="tab-pane active" id="manage-tab">
-      <div class="red">
-        <div class="row padding_btm">
-          <div class="span3">
-            <h4>Fizzy Bar</h4>
-          </div><!-- span3 -->
-          <div class="span9 newbar_btn_alignright">
+  <%# TAG-1 %>
+  <div class="tab-pane active" id="manage-tab">
+    <div class="red">
+
+      <div class="row-fluid show-grid">
+          <div class="span4"><h4>Fizzy Bar</h4></div>
+          <div class="span4"></div>
+          <div class="span4 newbar_btn_alignright">
             <%= link_to 'Create New Bar', new_bar_path, class: 'btn btn-info' %>
-          </div><!-- span9 newbar_btn_alignright -->
-        </div><!-- row -->
-        <div class="row show-grid embeded_padding">
-          <%= render partial: 'bar_box', collection: @bars %>
-        </div> <!-- row  -->
-      </div><!-- red -->
-    </div><!-- tab-pane -->
+          </div>
+      </div>
 
-    <%# TAG-2 %>
-    <div class="tab-pane" id="stats-tab">
-      <p></p>
-    </div>
 
-  </div><!-- tab-content -->
+      
+    <div class="row show-grid embeded_padding">
+        <%= render partial: 'bar_box', collection: @bars %>
+    </div> <!-- row  -->
+    </div><!-- red -->
+</div><!-- tab-pane -->
+
+<%# TAG-2 %>
+<div class="tab-pane" id="stats-tab">
+    <p></p>
+</div>
+
+</div><!-- tab-content -->
 </div><!-- tabbable -->
 
 
 
 <%# Light-box for Embedding Code %>
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Copy the below code</h3>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Copy the below code</h3>
   </div>
   <div class="modal-body">
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
   </div>
+</div>
 </div>

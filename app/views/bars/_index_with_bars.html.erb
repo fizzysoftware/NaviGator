@@ -1,0 +1,66 @@
+  <h1>My bars</h1>
+
+  <div class="tabbable"> <!-- Only required for left/right tabs -->
+    <ul id="bars-tab" class="nav nav-tabs">
+      <li class="active">
+        <a href="#manage-tab" data-toggle="tab" id="manage-link" onclick="tabClicked(this)">Manage</a>
+        <%#= link_to 'Manage', bars_url( tab: 'manage' ), remote: true, id: 'manage-link' %>
+      </li>
+      <li>
+        <!-- <a href="#tab2" data-toggle="tab">Stats</a> -->
+        <%= link_to 'Stats', bars_url( tab: 'stats' ), remote: true, id: 'stats-link', onclick: 'tabClicked(this)' %>
+      </li>
+    </ul>
+    <div class="tab-content">
+
+      <%# TAG-1 %>
+      <div class="tab-pane active" id="manage-tab">
+        <div class="red">
+
+          <div class="row-fluid show-grid">
+            <div class="span4"><h4>Fizzy Bar</h4></div>
+            <div class="span4"></div>
+            <div class="span4 textalign_right">
+              <%= link_to 'Create New Bar', new_bar_path, class: 'btn btn-info' %>
+            </div>
+          </div>
+
+
+          <div class="row show-grid embeded_padding">
+            <%= render partial: 'bar_box', collection: @bars %>
+          </div> <!-- row  -->
+        </div><!-- red -->
+      </div><!-- tab-pane -->
+
+      <%# TAG-2 %>
+      <div class="tab-pane" id="stats-tab">
+        <p></p>
+      </div>
+
+    </div><!-- tab-content -->
+  </div><!-- tabbable -->
+
+
+
+  <%# Light-box for Embedding Code %>
+  <div id="myModal" class="modal hide fade popup_background" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header popup_heading">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">EMBED YOUR CODE</h3>
+      <p>Place this code anywhere in your <body> tag. You only need to do this once!</p>
+      <%=link_to "Deploy Your Fizzy Bar toolbar Anywhere!", "#" %>
+    </div>
+    <div class="modal-body">
+    </div>
+    <div class="modal-footer poppup_close_background">
+      <button class="btn btn-info">Copy</button>
+      <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
+
+
+<%= javascript_tag do %>
+  <% if params[:view] == "stats" %>
+    $('#stats-link').click();
+  <% end %>
+<% end %>

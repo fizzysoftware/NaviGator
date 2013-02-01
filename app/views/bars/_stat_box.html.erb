@@ -2,7 +2,7 @@
     <div class="span6 stats_cols_padding">
         <%= link_to stat_box.name, "#" %>
     </div>
-    <div class="span6">
+    <div class="span5">
         <div class="span6 offset6 stats_visit_cols_padding">
             <div class="span2 offset2"><%= stat_box.visitors.count_since( @days ) %></div>
             <div class="span2 offset2"><%= stat_box.hits_since( @days ) %></div>

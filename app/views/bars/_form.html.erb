@@ -1,6 +1,6 @@
 <%= simple_form_for(@bar) do |f| %>
   <%= f.error_notification %>
-  
+
  <div class="row">
         <div class="hero-unit newbar_alignment">
               <h1>New Bar</h1>
@@ -10,37 +10,37 @@
             <div class="control-group">
 
               <div class="controls">
-                <%= f.input :name, input_html: { class: 'input-xxlarge' }, :placeholder => "Cool Person" %>
+                <%= f.input :name, input_html: { class: 'input-xxlarge' }, :placeholder => "Bar name" %>
               </div>
             </div>
 
             <div class="control-group">
               <div class="controls">
-                 <%= f.input :message, :input_html => { maxlength: '70',  class: 'input-xxlarge' }, :placeholder => "Hello. Type your message below."  %>
+                 <%= f.input :message, :input_html => { maxlength: '70',  class: 'input-xxlarge' }, :placeholder => "Message should not be more than 70 characters."  %>
               </div>
             </div>
 
             <div class="control-group">
               <div class="controls">
-                <%= f.input :link, input_html: { class: 'input-xxlarge' }, :placeholder => "Type text here" %>
+                <%= f.input :link, input_html: { class: 'input-xxlarge' }, :placeholder => "Text of your link" %>
               </div>
             </div>
 
             <div class="control-group">
               <div class="controls">
-                <%= f.input :link_url, input_html: { class: 'input-xxlarge' }, :placeholder => "google.com" %>
+                <%= f.input :link_url, input_html: { class: 'input-xxlarge' }, :placeholder => "ex. www.google.com" %>
               </div>
             </div>
 
             <div class="control-group">
               <div class="controls">
-                <%= f.input :text_color, input_html: { class: 'colorpicker input-xxlarge' }, :placeholder => "Select Text color" %>
+                <%= f.input :text_color, input_html: { class: 'colorpicker input-xxlarge' }, label: 'Bar text color', :placeholder => "Select Text color" %>
               </div>
             </div>
 
             <div class="control-group">
               <div class="controls">
-                <%= f.input :bg_color, input_html: { class: 'colorpicker input-xxlarge' }, :placeholder => "Select Background Color" %>
+                <%= f.input :bg_color, input_html: { class: 'colorpicker input-xxlarge' }, label: 'Bar background color',:placeholder => "Select Background Color" %>
               </div>
             </div>
 
@@ -52,7 +52,7 @@
 
              <div class="control-group">
               <div class="controls">
-                 <%= f.input :link_bg_color, input_html: { class: 'colorpicker input-xxlarge' }, :placeholder => "Select Link Background Color" %>
+                 <%= f.input :link_bg_color, input_html: { class: 'colorpicker input-xxlarge' }, label: 'Link background color', :placeholder => "Select Link Background Color" %>
               </div>
             </div>
 

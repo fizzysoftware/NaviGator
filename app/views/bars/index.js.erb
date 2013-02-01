@@ -4,6 +4,6 @@
   $('#stats-tab').html( "<%=j render( partial: 'stats_content') %>")
   $('#manage-tab').removeClass('active')
   $('#stats-tab').addClass('active')
+<% else %>
+  $('#stat-boxes').html( "<%=j render partial: 'stat_box', collection: @bars %>")
 <% end %>
-
-// $('#bars-tab a[href="#tab2"]').tab('show')

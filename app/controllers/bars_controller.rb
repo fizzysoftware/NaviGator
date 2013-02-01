@@ -4,7 +4,8 @@ class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
   def index
-      @bars = ( params[:stats].present? ? current_user.bars.includes(:visitors) : current_user.bars )
+      @bars = current_user.bars
+      @days = (params[:days] || 30).to_i
 
     respond_to do |format|
       format.html # index.html.erb
@@ -93,6 +94,7 @@ class BarsController < ApplicationController
     @bar.visitors.find_or_create_by_session_id!( session[:session_id] )
   end
 
+  #increments a hit for the given bar
   def hit
     populate_resources
     @visitor = @bar.visitors.find_by_session_id!( session[:session_id] )

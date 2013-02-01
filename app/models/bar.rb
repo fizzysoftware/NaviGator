@@ -6,11 +6,11 @@ class Bar < ActiveRecord::Base
 
   validates :link, :link_url, :message, :name, presence: true
 
-  def hits
-    visitors.sum(:hits)
+  def hits_since( _days)
+    visitors.since( _days).sum(:hits)
   end
 
-  def hit_through_rate
-    ( ( hits * 100 ) / visitors.count ).to_i rescue 0
+  def hit_through_rate_since( _days)
+    ( ( hits_since( _days ) * 100 ) / visitors.count_since( _days ) ).to_i rescue 0
   end
 end

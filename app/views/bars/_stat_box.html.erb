@@ -4,11 +4,9 @@
     </div>
     <div class="span6">
         <div class="span6 offset6 stats_visit_cols_padding">
-            <%# TODO: create counter cache for visitors count %>
-            <div class="span2 offset2"><%= stat_box.visitors.count %></div>
-            <%# TODO: do something for bar hits %>
-            <div class="span2 offset2"><%= stat_box.hits %></div>
-            <div class="span1 offset1"><%= stat_box.hit_through_rate %>%</div>
+            <div class="span2 offset2"><%= stat_box.visitors.count_since( @days ) %></div>
+            <div class="span2 offset2"><%= stat_box.hits_since( @days ) %></div>
+            <div class="span1 offset1"><%= stat_box.hit_through_rate_since( @days ) %>%</div>
         </div>
     </div>
 </div>

@@ -23,9 +23,6 @@ function timeRangesClick( obj ) {
 function tabClicked( _link ) {
   if( _link.id == "stats-link" )
     history.pushState("","","?view=stats")
-    // location.hash = "?view=stats"
   else
     history.pushState("","","?")
-    // location.hash = ""
-
 }

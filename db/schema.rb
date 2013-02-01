@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130125929) do
+ActiveRecord::Schema.define(:version => 20130201114831) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -73,7 +73,6 @@ ActiveRecord::Schema.define(:version => 20130130125929) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "uid"
@@ -95,7 +94,6 @@ ActiveRecord::Schema.define(:version => 20130130125929) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "authentication_token"
-    t.string   "username"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true

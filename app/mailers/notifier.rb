@@ -6,10 +6,11 @@ class Notifier < ActionMailer::Base
   #
   #   en.notifier.welcome.subject
   #
-  def welcome(user)
+  def welcome(user, _password = nil)
     @greeting = "Hi"
-
-    mail to: user.email, subject: "Bollywood Scores"
+    @user = user
+    @password = _password
+    mail to: user.email, subject: "Welcome mail from fizzybar"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

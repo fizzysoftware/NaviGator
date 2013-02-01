@@ -18,12 +18,12 @@ class User < ActiveRecord::Base
   #
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :token_authenticatable, :confirmable, :timeoutable , :omniauthable
+         :token_authenticatable, :timeoutable , :omniauthable #, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me,:name, :username
-  validates_presence_of :name, :email
-  validates :username, :format => { :with => /^(?!_)(?:[a-z0-9]_?)*[a-z](?:_?[a-z0-9])*(?<!_)$/i }, :uniqueness => true
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  validates_presence_of :email
+  # validates :username, :format => { :with => /^(?!_)(?:[a-z0-9]_?)*[a-z](?:_?[a-z0-9])*(?<!_)$/i }, :uniqueness => true
   has_one :image, :as => :imageable, :order => "created_at DESC"
   has_many :bars, dependent: :destroy
 
@@ -33,8 +33,12 @@ class User < ActiveRecord::Base
 
 
 
-  def welcome_mail
-    Notifier.welcome(self).deliver
+  def welcome_mail( _password = nil )
+    if ( self.provider.blank? and _password.blank? )
+      Notifier.welcome(self).deliver
+    elsif ( self.provider.present? and _password.present? )
+      Notifier.welcome(self, _password).deliver
+    end
   end
 
   def self.new_with_session( params, session )
@@ -52,7 +56,7 @@ class User < ActiveRecord::Base
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      user.name = auth.info.name
+      # user.name = auth.info.name
       user.email = auth.info.email
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)

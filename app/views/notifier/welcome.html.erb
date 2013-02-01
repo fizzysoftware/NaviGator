@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
-		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />	
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 		<title>Welcome Email</title>
 		<!--general stylesheet-->
 		<style type="text/css">
@@ -15,7 +15,7 @@
 			.title, .date {
 				text-shadow: #8aa3c6 0px 1px 0px;
 			}
-			.title span { 
+			.title span {
 				font-weight: bold;
 			}
 			.textshadow {
@@ -52,7 +52,7 @@
 													</td>
 													<td valign="middle" style="vertical-align: middle; text-align: left;">
 														<h1 class="title" style="margin:0; padding:0; font-size:30px; font-weight: normal; color: #192c45 !important;">
-															<singleline label="Title"><span>abc</span></singleline>
+															<singleline label="Title"><span>Fizzybar</span></singleline>
 														</h1>
 													</td>
 													<td width="55" valign="middle" style="vertical-align:middle; text-align: center;">
@@ -63,7 +63,7 @@
 															 <currentyear />
 														</h2>
 													</td>
-													
+
 												</tr>
 											</tbody>
 										</table>
@@ -77,7 +77,7 @@
 													<td width="100%" valign="top" bgcolor="#eef0f3" style="border-bottom-width: 3px; border-bottom-color: #ffffff; border-bottom-style: solid;"><!--content-->
 										<!--article--><table cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
 															<tbody>
-																
+
 																<repeater>
 																<tr>
 																	<td valign="top">
@@ -86,14 +86,20 @@
 																				<tr>
 																					<td height="49" width="100%" valign="middle" bgcolor="#c8cfd8" background="images/article-title-bg.jpg" style="vertical-align:middle; border-left-width: 1px; border-left-color: #BAC2CC; border-left-style: solid; border-right-width: 1px; border-right-color: #BAC2CC; border-right-style: solid; border-bottom-width: 1px; border-bottom-color: #98a3b4; border-bottom-style: solid; border-top-width: 1px; border-top-color: #BAC2CC; border-top-style: solid;">
 																						<h3 class="textshadow">
-																							<singleline label="Title">Enter Article Title Here</singleline>
+																							<singleline label="Title">You have successfully registered</singleline>
 																						</h3>
 																					</td>
 																				</tr>
 																				<tr>
 																					<td valign="top" bgcolor="#edeff2" style="padding-top: 20px; padding-bottom: 15px; padding-left: 18px; padding-right: 21px; border-left-width: 1px; border-left-color: #bac2cc; border-left-style: solid; border-right-width: 1px; border-right-color: #bac2cc; border-right-style: solid; border-top-width: 1px; border-top-color: #ffffff; border-top-style: solid; border-bottom-width: 1px; border-bottom-color: #bac2cc; border-bottom-style: solid;">
 																									<img width="164" height="164" alt="istockphoto" align="left" style="margin: 0 15px 15px 0; border-width: 3px; border-style: solid; border-color: #ffffff;" editable="true" label="Image" />
-																						<multiline label="Description"><p>Enter article content here</p></multiline>
+																						<multiline label="Description">
+																							<p>Your account details: </p>
+																							<p>Your Email: <%= @user.email %></p>
+																							<% if @password %>
+																								<p>Your Password: <%= @password %></p>
+																							<% end %>
+																						</multiline>
 																					</td>
 																				</tr>
 																				<tr>

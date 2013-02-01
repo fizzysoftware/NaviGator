@@ -693,7 +693,7 @@
   transition-duration: 1s;
 }
 #sequence-theme .animate-in .iphone3-shadow {
-  left: 500px;
+  left: 400px;
   opacity: 1;
   top: 507px;
   -webkit-transition-duration: 1s;
@@ -775,7 +775,7 @@
   transform: scale(0.9);
 }
 #sequence-theme .animate-in .iphone3 {
-  left: 500px;
+  left: 400px;
   top: 60px;
   -webkit-transition-duration: 2s;
   -moz-transition-duration: 2s;

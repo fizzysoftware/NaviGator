@@ -5,7 +5,7 @@ class BarsController < ApplicationController
   # GET /bars.json
   def index
       @bars = current_user.bars
-      @days = (params[:days] || 30).to_i
+      @days = ( params[:days] || 30 ).to_i
 
     respond_to do |format|
       format.html # index.html.erb

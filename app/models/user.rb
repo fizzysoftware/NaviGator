@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :email
   validates :username, :format => { :with => /^(?!_)(?:[a-z0-9]_?)*[a-z](?:_?[a-z0-9])*(?<!_)$/i }, :uniqueness => true
   has_one :image, :as => :imageable, :order => "created_at DESC"
-  has_many :bars
+  has_many :bars, dependent: :destroy
 
 
   after_create :welcome_mail
@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
     Notifier.welcome(self).deliver
   end
 
-  def self.new_with_session(params,session)
+  def self.new_with_session( params, session )
     if session["devise.user_attributes"]
       new(session["devise.user_attributes"],without_protection: true) do |user|
         user.attributes = params
@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.from_omniauth(auth)
+  def self.from_omniauth( auth )
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid

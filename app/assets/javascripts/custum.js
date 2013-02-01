@@ -19,3 +19,13 @@ function timeRangesClick( obj ) {
   $( _disabled ).removeAttr( 'disabled' );
   $( obj ).attr( 'disabled', 'disabled' );
 }
+
+function tabClicked( _link ) {
+  if( _link.id == "stats-link" )
+    history.pushState("","","?view=stats")
+    // location.hash = "?view=stats"
+  else
+    history.pushState("","","?")
+    // location.hash = ""
+
+}

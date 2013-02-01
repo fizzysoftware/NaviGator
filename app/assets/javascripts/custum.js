@@ -12,3 +12,10 @@
 	        buttonLink: 'http://www.toddmotto.com/jbar-plugin-the-jquery-call-to-action-bar' // Hyperlink from button
 	    });
 	});*/
+
+function timeRangesClick( obj ) {
+  var _parent = $( obj ).parent();
+  var _disabled = $( _parent ).find('a[disabled="disabled"]');
+  $( _disabled ).removeAttr( 'disabled' );
+  $( obj ).attr( 'disabled', 'disabled' );
+}

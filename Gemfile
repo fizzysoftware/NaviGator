@@ -54,4 +54,5 @@ group :development, :test do
   gem 'bullet'
   gem 'railroady'
   gem 'rails-footnotes', '>= 3.7.5.rc4'
+  gem 'timecop'
 end

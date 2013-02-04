@@ -132,9 +132,10 @@ h1{
 	margin: 0 auto;
 	.login_heading{
 		padding: 15px;
-		background: #e7e7e7;
 		border: 1px solid #bbb;
 		font-size: 25px;
+		text-indent: 45px;
+		background: #e7e7e7 url("/assets/signin-heading.png") no-repeat 10px 10px;
 	}
 	.form_container{
 		width: 355px;
@@ -144,6 +145,11 @@ h1{
 			width: 332px;
 			border-radius: 0;
 			height: 30px;
+			text-indent: 30px;
+			background: #fff url("/assets/username.png") no-repeat 6px 10px;
+		}
+		.password_background{
+			background: #fff url("/assets/password.png") no-repeat 6px 10px;	
 		}
 		.signin_btn{
 			background: #384b52;
@@ -151,7 +157,7 @@ h1{
 			width: 344px;
 			line-height: 18px;
 			height: 45px;
-			font-size: 20px;
+			font-size: 18px;
 		}
 		.remember_me{
 			width: 150px;
@@ -161,6 +167,7 @@ h1{
 			margin-top: 10px;
 			a{
 				color: #fff;
+				font-size: 17px;
 			}
 		}
 		.forgotpswrd{
@@ -168,6 +175,7 @@ h1{
 			display: inline-block;
 			width: 200px;
 			text-indent: 30px;
+			background: #444 url(/assets/forgotpassword.png) no-repeat 9px 4px;
 
 		}
 	}
@@ -178,7 +186,7 @@ h1{
 	a{
 		color: #fff!important;
 		&:hover{
-			color: #ccc!important;
+			background: #E69067!important;
 		}
 	}
 }
@@ -315,10 +323,10 @@ footer{
 		}
 	}
 	a{
-		color: #8A6741;
+		color: #444;
 		font-size: 12px;
 		&:hover{
-			color: #929292;
+			color: #fff;
 			text-decoration: none;
 		}
 	}

@@ -1,20 +1,13 @@
-<div class="container">
-	<div class="row">
-		<div class="span4 offset4 well background_color">
-			<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+<div class="signin_container">
+<h1 class="login_heading">Forgot Password</h1>
+<div class="form_container">
+	<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
 			  <%= f.error_notification %>
-			<legend>Forgot your password?</legend>
-
-			  
-			    <%= f.input :email, :required => true, input_html: { class: 'span4' }, :placeholder => "Email"  %>
-			  
-
-			  
-			    <%= f.button :submit, "Send me reset password instructions" %>
+			    <%= f.input :email, :required => true, label: false, input_html: { class: 'input_styling' }, :placeholder => "Email" %>
+			    <%= f.button :submit, "Send me reset password instructions", :class => "btn btn-info signin_btn" %>
 			  
 			<% end %>
 
-<%= render "devise/shared/links" %>
-		</div>
-	</div>
+</div>
+</div>
 </div>

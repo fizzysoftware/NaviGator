@@ -1,7 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
 body {
 	padding-top: 60px;
-	background: #263849;
+	background: #deedec;
 }
 
 @import "twitter/bootstrap/responsive";
@@ -51,6 +51,7 @@ body {
 h1{
 	font-size: 30px;
 }
+
 
 .shadow {
    -moz-box-shadow:    inset 0 0 5px #9e9e9e;
@@ -123,14 +124,56 @@ h1{
 }
 .background_color{
 	background: #444;
-	.ease;
-	&:hover{
-		box-shadow: @box_shadow;
-		.shadow;
+	
+}
+.signin_container{
+	background: #444;
+	width: 380px;
+	margin: 0 auto;
+	.login_heading{
+		padding: 15px;
+		background: #e7e7e7;
+		border: 1px solid #bbb;
+		font-size: 25px;
+	}
+	.form_container{
+		width: 355px;
+		padding: 15px;
+		color: #fff;
+		.input_styling{
+			width: 332px;
+			border-radius: 0;
+			height: 30px;
+		}
+		.signin_btn{
+			background: #384b52;
+			border-radius: 0;
+			width: 344px;
+			line-height: 18px;
+			height: 45px;
+			font-size: 20px;
+		}
+		.remember_me{
+			width: 150px;
+			display: inline-block;
+		}
+		.dont_have{
+			margin-top: 10px;
+			a{
+				color: #fff;
+			}
+		}
+		.forgotpswrd{
+			color: #fff;
+			display: inline-block;
+			width: 200px;
+			text-indent: 30px;
+
+		}
 	}
 }
 .header_background_color{
-	background: #444444;
+	background: #262930 url(/assets/bg-main.jpg);
 	border-bottom: 5px solid #fff;
 	a{
 		color: #fff!important;
@@ -259,7 +302,7 @@ h1{
 	}/* popup_background */
 }/* container */
 footer{
-	background: #173142 url("/assets/dark_noisy_bg.jpg");
+	background: #173142 url("/assets/header_bot_repeat.png");
 	color: #837E76;
 	border-top: 5px solid #fff;
 	width: 100%;

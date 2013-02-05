@@ -26,3 +26,7 @@ function tabClicked( _link ) {
   else
     history.pushState("","","?")
 }
+
+$(function () {
+  $('.colorpicker').blur(function(){ $('.colorpicker').colorpicker('hide') } );
+});

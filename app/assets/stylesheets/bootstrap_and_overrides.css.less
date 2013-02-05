@@ -67,17 +67,38 @@ h1{
 }
 .textalign_right{
 	text-align: right;
+	a{
+		background: #384b52;
+		border-radius: 0;
+		width: 165px;
+		line-height: 26px;
+		height: 26px;
+		font-size: 16px;
+		text-align: center;
+		&:hover{
+			background: #46575E;
+		}
+	}
 }
 .newbar_btn_alignright{
 	padding-left: 180px;
-	
+	.barname_height{
+		padding: 8px;
+		background: #384B52;
+		border-radius: 0;
+		width: 112px;
+		line-height: 14px;
+		height: 14px;
+		font-size: 12px;
+		text-align: center;
+	}
 }
 .padding_btm{
 	padding-bottom: 20px;
 }
 
 .nav_background{
-	background: @background;
+	background: #e7e7e7;
 	padding: 5px;
 	/*border-radius: @border_radius;*/
 	margin: 5px;
@@ -87,8 +108,9 @@ h1{
 		box-shadow: @box_shadow;
 		.shadow;
 	}
-	.barname_height{
-		padding: 8px;
+	.user_edit{
+		line-height: 30px;
+		padding-left: 10px;
 	}
 }
 .delete_btn{

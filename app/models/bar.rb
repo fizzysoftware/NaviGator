@@ -4,7 +4,8 @@ class Bar < ActiveRecord::Base
   belongs_to :user
   has_many :visitors, dependent: :destroy
 
-  validates :link, :link_url, :message, :name, presence: true
+  validates :message, :name, presence: true
+  validates :link, :link_url, :presence => true, :if => :link_details_present?
 
   before_create :activate_bar
 
@@ -14,6 +15,10 @@ class Bar < ActiveRecord::Base
 
   def hit_through_rate_since( _days )
     ( ( hits_since( _days ) * 100 ) / visitors.count_since( _days ) ).to_i rescue 0
+  end
+
+  def link_details_present?
+    link.present? || link_url.present?
   end
 
   protected

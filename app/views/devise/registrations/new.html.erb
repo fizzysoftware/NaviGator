@@ -1,10 +1,10 @@
 <div class="signin_container">
-<h1 class="login_heading">Sign Up</h1>
+<h1 class="login_heading signup_heading">Sign Up</h1>
 <div class="form_container">
   <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
        
-            
+              <%= link_to "login facebook", "#", :class => "register_facebook" %>
               <%= f.input :email, :required => true, :autofocus => true, label: false, input_html: { class: 'input_styling' }, :placeholder => "Email" %>
               <%= f.input :password, :required => true, label: false, input_html: { class: 'input_styling password_background' }, :placeholder => "Password" %>
               <%= f.input :password_confirmation, :required => true, label: false, input_html: { class: 'input_styling password_background' }, :placeholder => "Password Confirmation" %>

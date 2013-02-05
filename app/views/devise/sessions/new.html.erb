@@ -4,6 +4,9 @@
 <div class="form_container">
 
 	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	
+				<%= link_to "login facebook", "#", :class => "login_facebook" %>
+	
 
 				<%= f.input :email, :required => false, :autofocus => true, input_html: { class: 'input_styling' }, :placeholder => "Email", label: false %>
 				<%= f.input :password, :required => false, :autofocus => true, input_html: { class: 'input_styling password_background' }, :placeholder => "Password", label: false %>

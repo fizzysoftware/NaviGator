@@ -160,6 +160,12 @@ h1{
 		text-indent: 45px;
 		background: #e7e7e7 url("/assets/signin-heading.png") no-repeat 10px 10px;
 	}
+	.signup_heading{
+		background: #e7e7e7 url("/assets/sign_up.png") no-repeat 8px 16px;
+	}
+	.forgot_heading{
+		background: #e7e7e7 url("/assets/forgot_heading.png") no-repeat 8px 16px;
+	}
 	.form_container{
 		width: 355px;
 		padding: 15px;
@@ -202,7 +208,29 @@ h1{
 
 		}
 	}
-}
+	a.login_facebook{
+		background: url("/assets/login_register_facebook.png") no-repeat 0 -25px;
+		width: 332px;
+		display: block;
+		height: 70px;
+		text-indent: -9999px;
+		margin-bottom: 5px;
+		&:hover{
+			background: url("/assets/login_register_facebook.png") no-repeat 0 -145px;
+		}
+	}
+	a.register_facebook{
+		background: url("/assets/login_register_facebook.png") no-repeat 0 -327px;
+		width: 332px;
+		display: block;
+		height: 70px;
+		text-indent: -9999px;
+		margin-bottom: 5px;
+		&:hover{
+			background: url("/assets/login_register_facebook.png") no-repeat 0 -447px;
+		}
+	}
+}/* signin_container */
 .header_background_color{
 	background: #262930 url(/assets/bg-main.jpg);
 	border-bottom: 5px solid #fff;

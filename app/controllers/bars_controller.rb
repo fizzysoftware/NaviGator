@@ -89,15 +89,15 @@ class BarsController < ApplicationController
   end
 
   # return fizzybar.js requested from other applications
-  def fizzybar
-    respond_to do |format|
-      format.html { redirect_to bars_url }
-      format.js
-    end
-  end
+  # def fizzybar
+  #   respond_to do |format|
+  #     format.html { redirect_to bars_url }
+  #     format.js
+  #   end
+  # end
 
   # return fizzybar. The HTML code for requesting application
-  def get_fizzybar
+  def fizzybar
     populate_resources
     session[:visited] = true if session[:visited].blank?
     @bar.visitors.find_or_create_by_session_id!( session[:session_id] )

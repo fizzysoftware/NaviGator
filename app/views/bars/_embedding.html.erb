@@ -1,4 +1,1 @@
-<script type="text/javascript" src="<%= fizzybar_url %>.js"></script>
-<script type="text/javascript">
-  getFizzybar( <%= embedding.id %>, <%= current_user.id %> );
-</script>
+<script type="text/javascript" src="<%= fizzybar_url %>.js?bar=<%= embedding.id %>&uid=<%= current_user.id %>"></script>

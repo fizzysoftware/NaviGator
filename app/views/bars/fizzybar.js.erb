@@ -1,11 +1,6 @@
 $(document).on('click', '#fizzybar-link', function () {
-  if( document.cookie.split('fizzybar_' + bar + '=1').length <= 1 )
-    $.get( '<%= hit_bars_url %>',{ 'bar': bar, 'uid': uid }, {}, "jsonp" );
+  if( document.cookie.split('fizzybar_<%= @bar.id %>=1').length <= 1 )
+    $.get( '<%= hit_bars_url %>',{ 'bar': '<%= @bar.id %>', 'uid': '<%= @user.id %>' }, {}, "jsonp" );
 });
 
-function getFizzybar( _bar, _uid ) {
-  bar = _bar
-  uid = _uid
-  $.get( '<%= get_fizzybar_bars_url %>',{ 'bar': _bar, 'uid': _uid}, {}, "jsonp");
-}
-
+$( 'body' ).prepend( '<%=j render partial: "bar", object: @bar %>' );

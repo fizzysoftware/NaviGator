@@ -58,7 +58,7 @@
 
             <div class="control-group">
               <div class="controls">
-                 <%= f.input :active, label: false, :inline_label => 'Active' %>
+                 <%= f.input :active, label: false, :inline_label => 'Active' if( f.object.persisted? ) %>
                  <%= f.button :submit, :class => "btn btn-info" %>
                  <%= link_to 'Back', bars_path, :class => "btn btn btn-info" %>
               </div>

@@ -1,50 +1,63 @@
+<div class="bars_background">
+
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="showdetails_leftcontainer">
+
+  <div class="showdetailedit_background">
   <b>Name:</b>
-  <%= @bar.name %>
-</p>
+    <%= @bar.name %>
+  </div>
 
-<p>
-  <b>Message:</b>
-  <%= @bar.message %>
-</p>
+  <div class="showdetailedit_background">
+    <b>Message:</b>
+    <%= @bar.message %>
+  </div>
 
-<p>
-  <b>Link:</b>
-  <%= @bar.link %>
-</p>
+  <div class="showdetailedit_background">
+    <b>Link:</b>
+    <%= @bar.link %>
+  </div>
 
-<p>
-  <b>Link url:</b>
-  <%= @bar.link_url %>
-</p>
+  <div class="showdetailedit_background">
+    <b>Link url:</b>
+    <%= @bar.link_url %>
+  </div>
 
-<p>
-  <b>Message text color:</b>
-  <%= @bar.text_color %>
-</p>
+  <div class="showdetailedit_background">
+    <b>Message text color:</b>
+    <%= @bar.text_color %>
+  </div>
 
-<p>
-  <b>Background color:</b>
-  <%= @bar.bg_color %>
-</p>
+  <div class="showdetailedit_background">
+    <b>Background color:</b>
+    <%= @bar.bg_color %>
+  </div>
 
-<p>
-  <b>Link text color:</b>
-  <%= @bar.link_text_color %>
-</p>
+  <div class="showdetailedit_background">
+    <b>Link text color:</b>
+    <%= @bar.link_text_color %>
+  </div>
 
-<p>
-  <b>Link background color:</b>
-  <%= @bar.link_bg_color %>
-</p>
+  <div class="showdetailedit_background">
+    <b>Link background color:</b>
+    <%= @bar.link_bg_color %>
+  </div>
 
-<p>
-  <b>Active:</b>
-  <%= @bar.active %>
-</p>
+  <div class="showdetailedit_background">
+    <b>Active:</b>
+    <%= @bar.active %>
+  </div>
 
+  <div class="showdetailedit_background">
+  <%= link_to 'Edit', edit_bar_path(@bar), :class => "btn btn-info" %>
+  <%= link_to 'Back', bars_path, :class => "btn btn-info" %>
+  </div>
+</div><!-- showdetails_leftcontainer -->
 
-<%= link_to 'Edit', edit_bar_path(@bar) %> |
-<%= link_to 'Back', bars_path %>
+<div class="showdetails_rightcontainer">
+right
+
+</div><!-- showdetails_rightcontainer -->
+<br style="clear:both;" >
+</div><!-- bars_background -->

@@ -245,6 +245,40 @@ h1{
 	background: @background;
 	padding: 20px;
 	border: 1px solid #bbb;
+	.showdetails_leftcontainer{
+		float: left;
+		padding: 15px;
+		background: #444;
+		color: #fff;
+		width: 525px;
+		.showdetailedit_background{
+				background: #e7e7e7;
+				padding: 5px;
+				/*border-radius: @border_radius;*/
+				margin: 10px;
+				color: #000;
+				.ease;
+				&:hover{
+					box-shadow: @box_shadow;
+					.shadow;
+				}
+				a{
+					background: #444;
+					border-radius: 0;
+					&:hover{
+						background: #585858;
+					}
+				}
+				
+			}/* showdetailedit_background */
+	}
+	.showdetails_rightcontainer{
+		padding: 15px;
+		background: #444;
+		color: #fff;
+		width: 525px;
+		float: right;
+	}
 }
 .embeded_padding{
 	padding: 25px;

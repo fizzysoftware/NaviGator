@@ -10,7 +10,7 @@ Fizzybar::Application.routes.draw do
     get 'welcome', on: :collection
   end
 
-  resources :bars, except: [:show] do
+  resources :bars do
     get 'embed_code', on: :member
     get 'get_fizzybar', on: :collection
     get 'hit', on: :collection

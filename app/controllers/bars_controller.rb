@@ -25,6 +25,15 @@ class BarsController < ApplicationController
     end
   end
 
+  def show
+    @bar = current_user.bars.find( params[:id] )
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @bar }
+    end
+  end
+
   # GET /bars/1/edit
   def edit
     @bar = current_user.bars.find( params[:id] )
@@ -37,7 +46,7 @@ class BarsController < ApplicationController
 
     respond_to do |format|
       if @bar.save
-        format.html { redirect_to edit_bar_path( @bar ), notice: 'Bar was successfully created.' }
+        format.html { redirect_to  @bar, notice: 'Bar was successfully created.' }
         format.json { render json: @bar, status: :created, location: @bar }
       else
         format.html { render action: "new" }
@@ -53,7 +62,7 @@ class BarsController < ApplicationController
 
     respond_to do |format|
       if @bar.update_attributes( params[:bar] )
-        format.html { redirect_to edit_bar_path( @bar ), notice: 'Bar was successfully updated.' }
+        format.html { redirect_to @bar, notice: 'Bar was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

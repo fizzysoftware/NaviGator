@@ -16,18 +16,24 @@ Fizzybar::Application.routes.draw do
 
   resources :users, only: [:show,:edit,:update] do
     get 'welcome', on: :collection
+
+    resources :bars #do
+      # get 'embed_code', on: :member
+      # get 'get_fizzybar', on: :collection
+      # get 'hit', on: :collection
+    # end
   end
 
-  resources :bars do
-    get 'embed_code', on: :member
-    get 'get_fizzybar', on: :collection
-    get 'hit', on: :collection
-  end
+  # resources :bars do
+  #   get 'embed_code', on: :member
+  #   get 'get_fizzybar', on: :collection
+  #   get 'hit', on: :collection
+  # end
 
   match 'auth/failure', to: redirect('/')
 
   get '/fizzybar', to: 'bars#fizzybar'
-
+  get '/bar/hit', to: 'bars#hit', as: :hit_bars
   root to: 'users#welcome'
 
 

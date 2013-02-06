@@ -1,5 +1,5 @@
 class BarsController < ApplicationController
-  before_filter :authenticate_user!, except: [:fizzybar, :get_fizzybar, :hit]
+  before_filter :authenticate_user!, except: [:fizzybar, :hit] # , :get_fizzybar
 
   # GET /bars
   # GET /bars.json
@@ -46,7 +46,7 @@ class BarsController < ApplicationController
 
     respond_to do |format|
       if @bar.save
-        format.html { redirect_to  @bar, notice: 'Bar was successfully created.' }
+        format.html { redirect_to  user_bar_path( current_user, @bar ), notice: 'Bar was successfully created.' }
         format.json { render json: @bar, status: :created, location: @bar }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class BarsController < ApplicationController
 
     respond_to do |format|
       if @bar.update_attributes( params[:bar] )
-        format.html { redirect_to @bar, notice: 'Bar was successfully updated.' }
+        format.html { redirect_to user_bar_path( current_user, @bar), notice: 'Bar was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -78,15 +78,15 @@ class BarsController < ApplicationController
     @bar.destroy
 
     respond_to do |format|
-      format.html { redirect_to bars_url }
+      format.html { redirect_to user_bars_url( current_user ) }
       format.json { head :no_content }
     end
   end
 
   # return Embedding code
-  def embed_code
-    @bar = current_user.bars.find( params[:id] )
-  end
+  # def embed_code
+  #   @bar = current_user.bars.find( params[:id] )
+  # end
 
   # return fizzybar.js requested from other applications
   # def fizzybar

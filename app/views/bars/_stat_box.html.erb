@@ -1,6 +1,6 @@
 <div class="row-fluid show-grid stats_cols_background">
     <div class="span6 stats_cols_padding">
-        <%= link_to stat_box.name, stat_box %>
+        <%= link_to stat_box.name, user_bar_path( current_user, stat_box ) %>
     </div>
     <div class="span5">
         <div class="span6 offset6 stats_visit_cols_padding">

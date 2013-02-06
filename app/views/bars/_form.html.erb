@@ -1,4 +1,4 @@
-<%= simple_form_for(@bar) do |f| %>
+<%= simple_form_for( [ current_user, @bar ] ) do |f| %>
   <%= f.error_notification %>
 
  <div class="row">
@@ -60,7 +60,7 @@
               <div class="controls">
                  <%= f.input :active, label: false, :inline_label => 'Active' if( f.object.persisted? ) %>
                  <%= f.button :submit, :class => "btn btn-info" %>
-                 <%= link_to 'Back', bars_path, :class => "btn btn btn-info" %>
+                 <%= link_to 'Back', user_bars_path( current_user), :class => "btn btn btn-info" %>
               </div>
             </div>
 

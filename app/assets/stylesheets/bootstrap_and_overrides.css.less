@@ -1,15 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
 body {
 	padding-top: 60px;
-	/*background: #FAFAFA;*/
-	background: #e8fff7; /* Old browsers */
-background: -moz-linear-gradient(top,  #e8fff7 0%, #fafafa 46%, #e8fff7 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8fff7), color-stop(46%,#fafafa), color-stop(100%,#e8fff7)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #e8fff7 0%,#fafafa 46%,#e8fff7 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #e8fff7 0%,#fafafa 46%,#e8fff7 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #e8fff7 0%,#fafafa 46%,#e8fff7 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #e8fff7 0%,#fafafa 46%,#e8fff7 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8fff7', endColorstr='#e8fff7',GradientType=0 ); /* IE6-9 */
+	background: #fff; 
 
 }
 
@@ -252,10 +244,14 @@ h1{
 			background: url("/assets/login_register_facebook.png") no-repeat 0 -447px;
 		}
 	}
+	.form_margin{
+		margin: 0;
+	}
 }/* signin_container */
 .header_background_color{
 	background: #444;
-	border-bottom: 5px solid #fff;
+	border-bottom: 5px solid #309eeb;
+	border-width: 0 0 3px 0!important;
 	a{
 		color: #fff!important;
 		&:hover{
@@ -268,6 +264,7 @@ h1{
 	background: @background;
 	padding: 20px;
 	border: 1px solid #bbb;
+	height: 535px;
 	.showdetails_leftcontainer{
 		float: left;
 		padding: 15px;
@@ -345,7 +342,7 @@ h1{
 				box-shadow: @box_shadow;
 			}
 			.stats_cols_padding{
-				padding: 5px 5px 0 37px;
+				padding: 10px 5px 0 37px;
 			}
 			.stats_visit_cols_padding{
 				padding-top: 5px;

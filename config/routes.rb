@@ -1,12 +1,11 @@
 Fizzybar::Application.routes.draw do
 
-  devise_for :users, controllers: { omniauth_callbacks: "sessions" }, skip: [:sessions]
+  devise_for :users, controllers: { omniauth_callbacks: "sessions" }
 
   # custom login logout url setup
   as :user do
     get 'login' => 'devise/sessions#new', as: :new_user_session
     post 'login' => 'devise/sessions#create', as: :user_session
-    get 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
     delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
     get 'signup' => 'devise/registrations#new', as: :new_user_registration
   end

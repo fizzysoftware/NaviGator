@@ -1,7 +1,16 @@
 @import "twitter/bootstrap/bootstrap";
 body {
 	padding-top: 60px;
-	background: #FAFAFA;
+	/*background: #FAFAFA;*/
+	background: #e8fff7; /* Old browsers */
+background: -moz-linear-gradient(top,  #e8fff7 0%, #fafafa 46%, #e8fff7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8fff7), color-stop(46%,#fafafa), color-stop(100%,#e8fff7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #e8fff7 0%,#fafafa 46%,#e8fff7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #e8fff7 0%,#fafafa 46%,#e8fff7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #e8fff7 0%,#fafafa 46%,#e8fff7 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #e8fff7 0%,#fafafa 46%,#e8fff7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8fff7', endColorstr='#e8fff7',GradientType=0 ); /* IE6-9 */
+
 }
 
 @import "twitter/bootstrap/responsive";
@@ -48,6 +57,7 @@ body {
 @heading_font_weight: 500;
 @box_shadow: 0 0 1px #000;
 @background: #fff;
+@fnt_weight: 700;
 h1{
 	font-size: 30px;
 }
@@ -75,7 +85,7 @@ h1{
 		height: 26px;
 		font-size: 16px;
 		text-align: center;
-		font-weight: 700;
+		font-weight: @fnt_weight;
 		&:hover{
 			background: #277A99;
 		}
@@ -188,7 +198,7 @@ h1{
 			line-height: 18px;
 			height: 45px;
 			font-size: 18px;
-			font-weight: 700;
+			font-weight: @fnt_weight;
 			&:hover{
 				background: #277A99;
 			}
@@ -213,7 +223,7 @@ h1{
 			a{
 				color: #fff;
 				font-size: 19px;
-				font-weight: 700;
+				font-weight: @fnt_weight;
 			}
 		}
 		
@@ -369,18 +379,19 @@ h1{
 	.wlcm_txt_wrapper{
 		text-align: @text_align_center;
 		h1.heading_padding{
-			padding: 25px 0 25px;
-			color: @text_color;
+			padding: 25px 0 14px;
+			color: #111;
 			font-size: @heading_fontsize;
-			font-weight: @heading_font_weight;
+			font-weight: @fnt_weight;
 			}/* heading_padding */
 		p.wlcm_txt_deatils{
 			margin-bottom: 40px;
-			font-size: 14px;
+			font-size: 17px;
 			line-height: 30px;
 			text-rendering: @text_rendering;
 			border-bottom: @brdr_btm;
 			padding-bottom: 35px;
+			font-weight: @fnt_weight;
 		}/* p.wlcm_txt_deatils */
 	}/* wlcm_txt_wrapper */
 	.features{
@@ -391,8 +402,8 @@ h1{
 			text-align: left;
 			font-size: 35px;
 			color: #111;
-			padding: 0 0 35px;
-			font-weight: 700;
+			padding: 0 0 23px;
+			font-weight: @fnt_weight;
 		}
 		.features_mrgn_btm{
 			margin-bottom: 40px;

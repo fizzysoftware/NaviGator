@@ -1,16 +1,18 @@
   <h1>My bars</h1>
 
   <div class="tabbable"> <!-- Only required for left/right tabs -->
-    <ul id="bars-tab" class="nav nav-tabs">
+
+<!--     <ul id="bars-tab" class="nav nav-tabs">
       <li class="active">
         <a href="#manage-tab" data-toggle="tab" id="manage-link" onclick="tabClicked(this)">Manage</a>
         <%#= link_to 'Manage', bars_url( tab: 'manage' ), remote: true, id: 'manage-link' %>
       </li>
-      <li>
+      <li> -->
         <!-- <a href="#tab2" data-toggle="tab">Stats</a> -->
-        <%= link_to 'Stats', bars_url( tab: 'stats' ), remote: true, id: 'stats-link', onclick: 'tabClicked(this)' %>
-      </li>
+        <%#= link_to 'Stats', bars_url( tab: 'stats' ), remote: true, id: 'stats-link', onclick: 'tabClicked(this)' %>
+<!--       </li>
     </ul>
+ -->
     <div class="tab-content">
 
       <%# TAG-1 %>
@@ -26,17 +28,20 @@
           </div>
 
 
-          <div class="row show-grid embeded_padding">
-            <%= render partial: 'bar_box', collection: @bars %>
-          </div> <!-- row  -->
+ <!--          <div class="row show-grid embeded_padding">
+            <%#= render partial: 'bar_box', collection: @bars %>
+          </div> --> <!-- row  -->
+          <%= render partial: 'stats_content' %>
+
+
         </div><!-- red -->
       </div><!-- tab-pane -->
 
       <%# TAG-2 %>
-      <div class="tab-pane" id="stats-tab">
+<!--       <div class="tab-pane" id="stats-tab">
         <p></p>
       </div>
-
+ -->
     </div><!-- tab-content -->
   </div><!-- tabbable -->
 

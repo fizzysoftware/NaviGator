@@ -100,13 +100,14 @@ class BarsController < ApplicationController
   def fizzybar
     populate_resources
     session[:visited] = true if session[:visited].blank?
-    @bar.visitors.find_or_create_by_session_id!( session[:session_id] )
+    _visitor = @bar.visitors.within_week.find_or_create_by_session_id( session[:session_id] )
+    _visitor.touch
   end
 
   #increments a hit for the given bar
   def hit
     populate_resources
-    @visitor = @bar.visitors.find_by_session_id!( session[:session_id] )
+    @visitor = @bar.visitors.within_week.find_by_session_id!( session[:session_id] )
     @visitor.increment!(:hits)
     cookies[ "fizzybar_#{ @bar.id }"] = 1
     render js: ""
@@ -120,4 +121,5 @@ class BarsController < ApplicationController
     @user = User.find( params[:uid] )
     @bar  = @user.bars.find( params[:bar] )
   end
+
 end

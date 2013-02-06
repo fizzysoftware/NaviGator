@@ -3,7 +3,7 @@
 <h1 class="login_heading">Log In</h1>
 <div class="form_container">
 
-	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), class: 'abc') do |f| %>
+	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: 'abc'}) do |f| %>
 
 				<%= link_to "login facebook", user_omniauth_authorize_path(:facebook), :class => "login_facebook" %>
 

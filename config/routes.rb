@@ -1,6 +1,15 @@
 Fizzybar::Application.routes.draw do
 
-  devise_for :users, controllers: { omniauth_callbacks: "sessions" }
+  devise_for :users, controllers: { omniauth_callbacks: "sessions" }, skip: [:sessions]
+
+  # custom login logout url setup
+  as :user do
+    get 'login' => 'devise/sessions#new', as: :new_user_session
+    post 'login' => 'devise/sessions#create', as: :user_session
+    get 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
+    delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
+    get 'signup' => 'devise/registrations#new', as: :new_user_registration
+  end
 
   ActiveAdmin.routes(self)
 
@@ -20,7 +29,7 @@ Fizzybar::Application.routes.draw do
 
   get '/fizzybar', to: 'bars#fizzybar'
 
-  root :to => 'users#welcome'
+  root to: 'users#welcome'
 
 
   # The priority is based upon order of creation:

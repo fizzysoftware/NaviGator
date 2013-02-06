@@ -1,7 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
 body {
 	padding-top: 60px;
-	background: #deedec;
+	background: #FAFAFA;
 }
 
 @import "twitter/bootstrap/responsive";
@@ -68,15 +68,16 @@ h1{
 .textalign_right{
 	text-align: right;
 	a{
-		background: #384b52;
+		background: #216C88;
 		border-radius: 0;
 		width: 165px;
 		line-height: 26px;
 		height: 26px;
 		font-size: 16px;
 		text-align: center;
+		font-weight: 700;
 		&:hover{
-			background: #46575E;
+			background: #277A99;
 		}
 	}
 }
@@ -181,12 +182,16 @@ h1{
 			background: #fff url("/assets/password.png") no-repeat 6px 10px;	
 		}
 		.signin_btn{
-			background: #384b52;
+			background: #216C88;
 			border-radius: 0;
 			width: 344px;
 			line-height: 18px;
 			height: 45px;
 			font-size: 18px;
+			font-weight: 700;
+			&:hover{
+				background: #277A99;
+			}
 		}
 		.remember_me{
 			width: 150px;
@@ -196,7 +201,8 @@ h1{
 			margin-top: 10px;
 			a{
 				color: #fff;
-				font-size: 17px;
+				font-size: 19px;
+				font-weight: 700;
 			}
 		}
 		.forgotpswrd{
@@ -210,22 +216,24 @@ h1{
 	}
 	a.login_facebook{
 		background: url("/assets/login_register_facebook.png") no-repeat 0 -25px;
-		width: 332px;
+		width: 345px;
 		display: block;
-		height: 70px;
+		height: 77px;
 		text-indent: -9999px;
-		margin-bottom: 5px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #ccc;
 		&:hover{
 			background: url("/assets/login_register_facebook.png") no-repeat 0 -145px;
 		}
 	}
 	a.register_facebook{
 		background: url("/assets/login_register_facebook.png") no-repeat 0 -327px;
-		width: 332px;
+		width: 345px;
 		display: block;
-		height: 70px;
+		height: 77px;
 		text-indent: -9999px;
-		margin-bottom: 5px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #ccc;
 		&:hover{
 			background: url("/assets/login_register_facebook.png") no-repeat 0 -447px;
 		}
@@ -237,7 +245,7 @@ h1{
 	a{
 		color: #fff!important;
 		&:hover{
-			background: #DEEDEC!important;
+			background: #FAFAFA!important;
 			color: #000!important;
 		}
 	}
@@ -331,13 +339,16 @@ h1{
 			}
 		}
 		.days_btn{
-				background: #384B52;
+				background: #216C88;
 				border-radius: 0;
 				width: 80px;
 				line-height: 19px;
 				height: 19px;
 				font-size: 12px;
 				text-align: center;
+				&:hover{
+					background: #277A99;
+				}
 			}
 			.mrgn_bottom{
 				margin-bottom: 6px;
@@ -422,10 +433,10 @@ footer{
 	color: #837E76;
 	border-top: 5px solid #fff;
 	width: 100%;
-	height: 170px;
+	height: 150px;
 	margin-top: 20px;
 	.ftr_mrgntop{
-		margin-top: 30px;
+		margin-top: 20px;
 		.footer_logo{
 			float: right;
 		}

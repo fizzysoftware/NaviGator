@@ -15,7 +15,7 @@
 	<body>
 		<%= render partial: 'shared/top_nav_bar' %>
 
-		<div class="container">
+		<div class="container container_width">
 			<% flash.each do |name, message|%>
 			<div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
 				<button type="button" class="close" data-dismiss="alert">×</button>
@@ -24,7 +24,7 @@
 			<% end %>
 
 			<div class="row">
-				<div class="span12"><%= yield %></div>
+				<div class="span10"><%= yield %></div>
 
 			</div>
 		</div>

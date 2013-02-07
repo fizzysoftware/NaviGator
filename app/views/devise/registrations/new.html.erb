@@ -5,8 +5,9 @@
           <%= f.error_notification %>
 
               <%= link_to "login facebook", user_omniauth_authorize_path(:facebook), :class => "register_facebook" %>
+              <%= image_tag ("/assets/or.png"), :class => "or_image" %>
               <%= f.input :name, :autofocus => true, label: false, input_html: { class: 'input_styling' }, :placeholder => "Name" %>
-              <%= f.input :email, :required => true, :autofocus => true, label: false, input_html: { class: 'input_styling' }, :placeholder => "Email" %>
+              <%= f.input :email, :required => true, :autofocus => true, label: false, input_html: { class: 'input_styling email_background' }, :placeholder => "Email" %>
 
               <%= f.input :password, :required => true, label: false, input_html: { class: 'input_styling password_background' }, :placeholder => "Password" %>
               <%#= f.input :password_confirmation, :required => true, label: false, input_html: { class: 'input_styling password_background' }, :placeholder => "Password Confirmation" %>

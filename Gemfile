@@ -8,13 +8,13 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'jquery-ui-rails'
-  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
-  gem 'less-rails'
-  gem 'twitter-bootstrap-rails'
-  gem 'bootstrap-colorpicker-rails'
 end
 
+gem 'therubyracer', :platforms => :ruby
+gem 'less-rails'
+gem 'bootstrap-colorpicker-rails'
+gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 gem 'json'
 gem 'will_paginate'

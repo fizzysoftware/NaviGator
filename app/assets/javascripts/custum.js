@@ -1,4 +1,4 @@
-$(function () {
+function showJBar() {
 	    $.jBar({
 	        type: 'fixed', // fixed/static
 	        delay: '1000', // Entrance delay (milliseconds)
@@ -11,7 +11,7 @@ $(function () {
 	        buttonText: 'Try It Out!', // Button Text
 	        buttonLink: '#' // Hyperlink from button
 	    });
-	});
+	}
 
 function timeRangesClick( obj ) {
   var _parent = $( obj ).parent();

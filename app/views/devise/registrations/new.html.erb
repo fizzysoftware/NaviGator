@@ -5,14 +5,14 @@
           <%= f.error_notification %>
 
               <%= link_to "login facebook", user_omniauth_authorize_path(:facebook), :class => "register_facebook" %>
-              <%= f.input :email, :required => true, :autofocus => true, label: false, input_html: { class: 'input_styling' }, :placeholder => "Name" %>
+              <%= f.input :name, :autofocus => true, label: false, input_html: { class: 'input_styling' }, :placeholder => "Name" %>
               <%= f.input :email, :required => true, :autofocus => true, label: false, input_html: { class: 'input_styling' }, :placeholder => "Email" %>
 
               <%= f.input :password, :required => true, label: false, input_html: { class: 'input_styling password_background' }, :placeholder => "Password" %>
               <%#= f.input :password_confirmation, :required => true, label: false, input_html: { class: 'input_styling password_background' }, :placeholder => "Password Confirmation" %>
             <%= f.button :submit, "Sign up", :class => "btn btn-info signin_btn" %>
             <div class="dont_have">
-            You have an account 
+            You have an account
         <%= link_to "Log In", new_session_path(resource_name) %>
       </div>
         <% end %>

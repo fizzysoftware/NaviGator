@@ -39,6 +39,8 @@ gem 'chronic'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'pg'
+gem 'thin'
+
 
 
 group :development, :test do
@@ -50,7 +52,6 @@ group :development, :test do
   gem 'localtunnel'
   gem 'debugger'
   gem 'lol_dba'
-  gem 'thin'
   gem 'quiet_assets'
   gem 'bullet'
   gem 'railroady'

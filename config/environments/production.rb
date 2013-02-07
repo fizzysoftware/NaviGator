@@ -66,4 +66,6 @@ Fizzybar::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.static_cache_control = "public, max-age=31536000"
+
+  config.assets.initialize_on_precompile = false
 end

@@ -38,6 +38,7 @@ gem 'devise-encryptable'
 gem 'chronic'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'pg'
 
 
 group :development, :test do

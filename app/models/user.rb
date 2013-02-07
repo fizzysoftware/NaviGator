@@ -24,7 +24,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :name  , :remember_me
   validates_presence_of :email
   # validates :username, :format => { :with => /^(?!_)(?:[a-z0-9]_?)*[a-z](?:_?[a-z0-9])*(?<!_)$/i }, :uniqueness => true
-  has_one :image, :as => :imageable, :order => "created_at DESC"
   has_many :bars, dependent: :destroy
 
 

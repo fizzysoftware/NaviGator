@@ -71,18 +71,6 @@ class BarsController < ApplicationController
     end
   end
 
-  # DELETE /bars/1
-  # DELETE /bars/1.json
-  def destroy
-    @bar = current_user.bars.find( params[:id] )
-    @bar.destroy
-
-    respond_to do |format|
-      format.html { redirect_to user_bars_url( current_user ) }
-      format.json { head :no_content }
-    end
-  end
-
   # return Embedding code
   # def embed_code
   #   @bar = current_user.bars.find( params[:id] )

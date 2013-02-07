@@ -2,36 +2,18 @@ class BarsController < ApplicationController
   before_filter :authenticate_user!, except: [:fizzybar, :hit] # , :get_fizzybar
 
   # GET /bars
-  # GET /bars.json
   def index
-      @bars = current_user.bars
-      @days = ( params[:days] || 30 ).to_i
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.js # index.js.erb
-      format.json { render json: @bars }
-    end
+    @bars = current_user.bars
+    @days = ( params[:days] || 30 ).to_i
   end
 
   # GET /bars/new
-  # GET /bars/new.json
   def new
     @bar = Bar.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @bar }
-    end
   end
 
   def show
     @bar = current_user.bars.find( params[:id] )
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @bar }
-    end
   end
 
   # GET /bars/1/edit
@@ -40,61 +22,26 @@ class BarsController < ApplicationController
   end
 
   # POST /bars
-  # POST /bars.json
   def create
     @bar = current_user.bars.new( params[:bar] )
 
-    respond_to do |format|
-      if @bar.save
-        format.html { redirect_to  user_bar_path( current_user, @bar ), notice: 'Bar was successfully created.' }
-        format.json { render json: @bar, status: :created, location: @bar }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @bar.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    if @bar.save
+     redirect_to  user_bar_path( current_user, @bar ), notice: 'Bar was successfully created.'
+   else
+     render action: "new"
+   end
+ end
 
   # PUT /bars/1
-  # PUT /bars/1.json
   def update
     @bar = current_user.bars.find( params[:id] )
 
-    respond_to do |format|
-      if @bar.update_attributes( params[:bar] )
-        format.html { redirect_to user_bar_path( current_user, @bar), notice: 'Bar was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @bar.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /bars/1
-  # DELETE /bars/1.json
-  def destroy
-    @bar = current_user.bars.find( params[:id] )
-    @bar.destroy
-
-    respond_to do |format|
-      format.html { redirect_to user_bars_url( current_user ) }
-      format.json { head :no_content }
-    end
-  end
-
-  # return Embedding code
-  # def embed_code
-  #   @bar = current_user.bars.find( params[:id] )
-  # end
-
-  # return fizzybar.js requested from other applications
-  # def fizzybar
-  #   respond_to do |format|
-  #     format.html { redirect_to bars_url }
-  #     format.js
-  #   end
-  # end
+    if @bar.update_attributes( params[:bar] )
+     redirect_to user_bar_path( current_user, @bar), notice: 'Bar was successfully updated.'
+   else
+     render action: "edit"
+   end
+ end
 
   # return fizzybar. The HTML code for requesting application
   def fizzybar
@@ -117,6 +64,7 @@ class BarsController < ApplicationController
   #  = Private methods =
   #  ===================
   private
+
   def populate_resources
     @user = User.find( params[:uid] )
     @bar  = @user.bars.find( params[:bar] )

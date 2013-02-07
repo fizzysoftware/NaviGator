@@ -153,6 +153,15 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailcatcher (0.5.10)
+      activesupport (~> 3.0)
+      eventmachine (~> 1.0.0)
+      haml (~> 3.1)
+      mail (~> 2.3)
+      sinatra (~> 1.2)
+      skinny (~> 0.2.3)
+      sqlite3 (~> 1.3)
+      thin (~> 1.5.0)
     meta_search (1.1.3)
       actionpack (~> 3.1)
       activerecord (~> 3.1)
@@ -255,12 +264,16 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.3)
       tilt (~> 1.3, >= 1.3.3)
+    skinny (0.2.3)
+      eventmachine (~> 1.0.0)
+      thin (~> 1.5.0)
     slop (3.4.3)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.7)
     therubyracer (0.11.3)
       libv8 (~> 3.11.8.12)
       ref
@@ -316,6 +329,7 @@ DEPENDENCIES
   libv8 (~> 3.11.8)
   localtunnel
   lol_dba
+  mailcatcher
   mysql2
   newrelic_rpm
   omniauth

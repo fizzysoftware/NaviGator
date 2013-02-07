@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :load_user
 
   def show
     @user = User.find(params[:id])
@@ -26,6 +28,18 @@ class UsersController < ApplicationController
   end
 
   def welcome
+  end
+
+  #  ===================
+  #  = Private Methods =
+  #  ===================
+  private
+
+  def load_user
+    if action_name != "welcome"
+      @user = User.find( params[:id] )
+      ensure_current_user( @user )
+    end
   end
 
 end

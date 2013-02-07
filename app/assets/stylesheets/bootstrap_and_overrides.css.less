@@ -5,7 +5,7 @@ body {
 
 }
 
-@import "twitter/bootstrap/responsive";
+/*@import "twitter/bootstrap/responsive";*/
 
 // Set the correct sprite paths
 @iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
@@ -55,6 +55,10 @@ h1{
 }
 .login_min_height{
 	min-height: 600px;
+	.login_widht{
+		width: 980px;
+		margin: 0 auto;
+	}
 }
 .container_width{
 	width: 980px;
@@ -288,6 +292,7 @@ h1{
 	padding: 20px;
 	border: 1px solid #bbb;
 	height: 535px;
+	margin-top: 20px;
 	.showdetails_leftcontainer{
 		float: left;
 		padding: 15px;
@@ -428,7 +433,7 @@ h1{
 			text-align: left;
 			font-size: 35px;
 			color: #111;
-			padding: 25px 0 23px;
+			padding: 25px 0 5px;
 			font-weight: @fnt_weight;
 		}
 		.features_mrgn_btm{
@@ -482,9 +487,15 @@ h1{
 			height: 30px;
 			line-height: 30px;
 			color: white;
-			font-size: 16px;
+			font-size: 23px;
 			 border-radius: 0;
 			 margin-bottom: 20px;
+			 background: #216C88 url("/assets/bg_pattern.png");
+			 border-bottom: 2px solid #163844;
+			 border-radius: 3px;
+			 font-weight: 700;
+			font-family: 'Oswald', sans-serif;
+			text-shadow: 0 0 1px black;
 			 .ease;
 			&:hover{
 				background: #277A99;
@@ -565,7 +576,8 @@ footer{
 					height: 40px;
 					line-height: 40px;
 					color: white;
-					font-size: 16px;
+					font-size: 23px;
+					text-shadow: 0 0 1px black;
 					margin: 338px 0 0 332px;
 					border-radius: 3px;
 					border-bottom: 2px solid #163844;
@@ -576,6 +588,7 @@ footer{
 					&:hover{
 						background: #277A99;
 						box-shadow: @box_shadow;
+						text-decoration: none;
 					}
 				}
 				}

@@ -6,6 +6,7 @@
 	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: 'form_margin'}) do |f| %>
 
 				<%= link_to "login facebook", user_omniauth_authorize_path(:facebook), :class => "login_facebook" %>
+				<%= image_tag ("/assets/or.png"), :class => "or_image" %>
 
 
 				<%= f.input :email, :required => false, :autofocus => true, input_html: { class: 'input_styling' }, :placeholder => "Email", label: false %>

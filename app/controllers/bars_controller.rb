@@ -1,9 +1,10 @@
 class BarsController < ApplicationController
   before_filter :authenticate_user!, except: [:fizzybar, :hit] # , :get_fizzybar
+  before_filter :populate_resources
 
   # GET /bars
   def index
-    @bars = current_user.bars
+    @bars = @user.bars
     @days = ( params[:days] || 30 ).to_i
   end
 
@@ -13,20 +14,18 @@ class BarsController < ApplicationController
   end
 
   def show
-    @bar = current_user.bars.find( params[:id] )
   end
 
   # GET /bars/1/edit
   def edit
-    @bar = current_user.bars.find( params[:id] )
   end
 
   # POST /bars
   def create
-    @bar = current_user.bars.new( params[:bar] )
+    @bar = @user.bars.new( params[:bar] )
 
     if @bar.save
-     redirect_to  user_bar_path( current_user, @bar ), notice: 'Bar was successfully created.'
+     redirect_to  user_bar_path( @user, @bar ), notice: 'Bar was successfully created.'
    else
      render action: "new"
    end
@@ -34,10 +33,9 @@ class BarsController < ApplicationController
 
   # PUT /bars/1
   def update
-    @bar = current_user.bars.find( params[:id] )
 
     if @bar.update_attributes( params[:bar] )
-     redirect_to user_bar_path( current_user, @bar), notice: 'Bar was successfully updated.'
+     redirect_to user_bar_path( @user, @bar), notice: 'Bar was successfully updated.'
    else
      render action: "edit"
    end
@@ -45,7 +43,6 @@ class BarsController < ApplicationController
 
   # return fizzybar. The HTML code for requesting application
   def fizzybar
-    populate_resources
     session[:visited] = true if session[:visited].blank?
     _visitor = @bar.visitors.within_week.find_or_create_by_session_id( session[:session_id] )
     _visitor.touch
@@ -53,7 +50,6 @@ class BarsController < ApplicationController
 
   #increments a hit for the given bar
   def hit
-    populate_resources
     @visitor = @bar.visitors.within_week.find_by_session_id!( session[:session_id] )
     @visitor.increment!(:hits)
     cookies[ "fizzybar_#{ @bar.id }"] = 1
@@ -66,8 +62,13 @@ class BarsController < ApplicationController
   private
 
   def populate_resources
-    @user = User.find( params[:uid] )
-    @bar  = @user.bars.find( params[:bar] )
+    if params[:uid].present?
+      @user = User.find( params[:uid] )
+    else
+      @user = User.find( params[:user_id] )
+      ensure_current_user( @user )
+    end
+    @bar  = @user.bars.find( params[:id]) if params[:id].present?
   end
 
 end

@@ -1,14 +1,13 @@
 	<div class="nav_background">
 		<div class="row-fluid show-grid">
           <div class="span4 user_edit">
-          	<%= link_to bar_box.name, user_bar_path( current_user, bar_box) %>
+          	<%= link_to bar_box.name, user_bar_path( @user, bar_box) %>
 
           </div>
           <div class="span4"></div>
           <div class="span4 newbar_btn_alignright">
             <%#= link_to 'Embedding Code', embed_code_bar_path( bar_box), class: 'btn btn-info  barname_height', remote: true %>
 
-    <%#= link_to 'Destroy', bar_box, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete_btn' %>
           </div>
       </div>
      </div>

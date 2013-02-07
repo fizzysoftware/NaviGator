@@ -11,9 +11,14 @@
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
 	</head>
 	<body>
 		<%= render partial: 'shared/top_nav_bar' %>
+		<%= backgroung_image_for_home %>
+
+
 
 		<div class="container container_width">
 			<% flash.each do |name, message|%>

@@ -1,6 +1,6 @@
 @import "twitter/bootstrap/bootstrap";
 body {
-	padding-top: 60px;
+	padding-top: 43px;
 	background: #fff; 
 
 }
@@ -427,7 +427,7 @@ h1{
 			text-align: left;
 			font-size: 35px;
 			color: #111;
-			padding: 0 0 23px;
+			padding: 25px 0 23px;
 			font-weight: @fnt_weight;
 		}
 		.features_mrgn_btm{
@@ -537,3 +537,41 @@ footer{
 		}
 	}
 }/* footer */
+
+.image_outer{
+	background: url("/assets/bg_pattern.png") repeat-x ;
+	width: 100%;
+	height: 415px;
+	.image_cotainer{
+		width: 100%;
+		height: 415px;
+		background: url("/assets/bg_pic.jpg") no-repeat top center;
+		.cloud_image{
+			width: 980px;
+			margin: 0 auto;
+			height: 415px;
+			background: url("/assets/slider_background.png")no-repeat 0 -60px;
+			.image_right{
+				width: 465px;
+				height: 415px;
+				float: left;
+				background: url("/assets/pointer-image.png") no-repeat 0 65px;
+			}
+			.image_content_left{
+				width: 475px;
+				float: right;
+				height: 415px;
+				h1{
+					font-family: 'Oswald', sans-serif;
+					font-size: 28px;
+					margin-top: 70px;
+					color: #444;
+					font-weight: 400;
+					border-bottom: 5px solid #309EEB;
+					width: 420px;
+					padding-bottom: 8px;
+				}
+			}
+		}
+	}/* image_cotainer */
+}/* image_outer */

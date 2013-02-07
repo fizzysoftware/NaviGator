@@ -260,22 +260,26 @@ h1{
 	a{
 		color: #fff!important;
 		&:hover{
-			background: #FAFAFA!important;
+			background: #fff!important;
 			color: #000!important;
 		}
 	}
-}
+	.header_container_width{
+		width: 980px;
+	}
+}/* header_background_color */
 .bars_background{
-	background: @background;
+	background: #f6f6f6;
 	padding: 20px;
 	border: 1px solid #bbb;
 	height: 535px;
 	.showdetails_leftcontainer{
 		float: left;
 		padding: 15px;
-		background: #444;
+		background: @background;
 		color: #fff;
-		width: 525px;
+		width: 335px;
+		border: 1px solid #ccc;
 		.showdetailedit_background{
 				background: #e7e7e7;
 				padding: 5px;
@@ -306,8 +310,6 @@ h1{
 	}
 }
 .embeded_padding{
-	padding: 25px;
-	background: #444;
 	margin-left: 0;
 	h1{
 		color: #fff;
@@ -321,6 +323,7 @@ h1{
 		padding: 15px;
 		background: @background;
 		margin-bottom: 20px;
+		border: 1px solid #ccc;
 		.ease;
 		&:hover{
 			
@@ -368,6 +371,9 @@ h1{
 			}
 			.mrgn_bottom{
 				margin-bottom: 6px;
+			}
+			.textalign_right{
+				text-align: right;
 			}
 	}/* stats_background */
 }/* embeded_padding */

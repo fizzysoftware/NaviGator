@@ -7,8 +7,8 @@ $(function () {
 	        buttonTextColor: '#FFF', // Button Text
 	        buttonColor: '#333', // Button Color
 	        buttonColorHover: '#222', // Button Color Hover
-	        calltoAction: 'jBar Plugin! A simple and lightweight notification banner.', // Call to action text
-	        buttonText: 'Download it!', // Button Text
+	        calltoAction: ' A simple and lightweight notification banner.', // Call to action text
+	        buttonText: 'Try It Out!', // Button Text
 	        buttonLink: '#' // Hyperlink from button
 	    });
 	});

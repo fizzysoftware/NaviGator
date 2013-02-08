@@ -50,6 +50,7 @@ body {
 @box_shadow: 0 0 1px #000;
 @background: #fff;
 @fnt_weight: 700;
+@font_family: 'Oswald', sans-serif;
 h1{
 	font-size: 30px;
 }
@@ -431,10 +432,11 @@ h1{
 		margin-bottom: 40px;
 		.features_heading{
 			text-align: left;
-			font-size: 35px;
+			font-size: 30px;
+			font-family: @font_family;
 			color: #111;
-			padding: 25px 0 5px;
-			font-weight: @fnt_weight;
+			padding: 25px 0 21px;
+			font-weight: 400;
 		}
 		.features_mrgn_btm{
 			margin-bottom: 40px;
@@ -477,6 +479,8 @@ h1{
 		h1.text_center{
 			text-align: @text_align_center;
 			margin-bottom: 20px;
+			font-weight: 700;
+			font-family: @font_family;
 		}
 		a.btm_signup{
 			margin: 0 auto;
@@ -494,7 +498,7 @@ h1{
 			 border-bottom: 2px solid #163844;
 			 border-radius: 3px;
 			 font-weight: 700;
-			font-family: 'Oswald', sans-serif;
+			font-family: @font_family;
 			text-shadow: 0 0 1px black;
 			 .ease;
 			&:hover{
@@ -582,7 +586,7 @@ footer{
 					border-radius: 3px;
 					border-bottom: 2px solid #163844;
 					font-weight: 700;
-					font-family: 'Oswald', sans-serif;
+					font-family: @font_family;
 					background: #216C88 url("/assets/bg_pattern.png");
 					.ease;
 					&:hover{
@@ -598,7 +602,7 @@ footer{
 				float: right;
 				height: 415px;
 				h1{
-					font-family: 'Oswald', sans-serif;
+					font-family: @font_family;
 					font-size: 28px;
 					margin-top: 62px;
 					color: #444;
@@ -612,13 +616,13 @@ footer{
 					.useit{
 						width: 100px;
 						float: left;
-						font-family: 'Oswald', sans-serif;
+						font-family: @font_family;
 						font-size: 24px;
 						font-weight: 300;
 						padding: 53px 0 0 0;
 					}
 					.mark{
-						font-family: 'Oswald', sans-serif;
+						font-family: @font_family;
 						font-size: 95px;
 						padding: 60px 51px 0 27px;
 						float: left;
@@ -631,7 +635,7 @@ footer{
 							li{
 								list-style-type: none;
 								a{
-									font-family: 'Oswald', sans-serif;
+									font-family: @font_family;
 									font-size: 20px;
 									color: #444;
 									line-height: 32px;
@@ -643,7 +647,29 @@ footer{
 							}
 						}
 					}
-				}
+					.top_signup a{
+						display: block;
+						width: 111px;
+						text-align: center;
+						height: 40px;
+						line-height: 6px;
+						color: white;
+						font-size: 23px;
+						text-shadow: 0 0 1px black;
+						margin: 13px 0 0 0;
+						border-radius: 3px;
+						border-bottom: 2px solid #163844;
+						font-weight: 700;
+						font-family: @font_family;
+						background: #216C88 url("/assets/bg_pattern.png");
+						.ease;
+						&:hover{
+							background: #277A99;
+							box-shadow: @box_shadow;
+							text-decoration: none;
+							}
+					}
+				}/* useit_container */
 			}/*image_content_left*/
 		}
 	}/* image_cotainer */

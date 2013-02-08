@@ -1,6 +1,14 @@
-$(document).on('click', '#fizzybar-link', function () {
-  if( document.cookie.split('fizzybar_<%= @bar.id %>=1').length <= 1 )
-    $.get( '<%= hit_bars_url %>',{ 'id': '<%= @bar.id %>', 'uid': '<%= @user.id %>' }, {}, "jsonp" );
-});
+function barClicked( ) {
+  if( document.cookie.split('fizzybar_<%= @bar.id %>=1').length <= 1 ) {
+    var xmlhttp;
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open( "GET" , "<%= hit_bars_url %>?id=<%= @bar.id %>&uid=<%= @user.id %>", true );
+    xmlhttp.withCredentials = true;
+    xmlhttp.send();
+  }
+}
 
-$( 'body' ).prepend( '<%=j render partial: "bar", object: @bar %>' );
+_bar_div = document.createElement( 'div' )
+_bar_div.style.cssText = "width:100%;height:45px;position:absolute;top:0;left:0;right:0;bottom:0;background-color:<%= @bar.bg_color || '#384b52' %>;z-index:9999;border-bottom:2px solid #ccc;"
+document.body.insertBefore( _bar_div, document.body.firstElement )
+_bar_div.innerHTML = '<%=j render partial: "bar", object: @bar %>'

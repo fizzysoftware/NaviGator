@@ -50,8 +50,8 @@
   </div>
 
   <div class="showdetailedit_background">
-  <%= link_to 'Edit', edit_user_bar_path(current_user, @bar), :class => "btn btn-info" %>
-  <%= link_to 'Back', user_bars_path( current_user ), :class => "btn btn-info" %>
+  <%= link_to 'Edit', edit_user_bar_path(@user, @bar), :class => "btn btn-info" %>
+  <%= link_to 'Back', user_bars_path( @user ), :class => "btn btn-info" %>
   </div>
 </div><!-- showdetails_leftcontainer -->
 

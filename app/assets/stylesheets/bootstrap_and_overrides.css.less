@@ -541,8 +541,27 @@ footer{
 	margin-top: 20px;
 	.ftr_mrgntop{
 		width: 980px;
+		position: relative;
 		.footer_logo{
 			float: right;
+			width: 235px;
+			height: 126px;
+		}
+		.copyright{
+			position: absolute;
+			top: 100px;
+			right: 6px;
+			color: #888;
+			a{
+				text-decoration: none;
+				color: #aaa;
+				font-size: 16px;
+				.ease;
+				&:hover{
+					color: #ccc;
+					border-bottom: 1px dashed #777;
+				}
+			}
 		}
 		.ftr_links_container{
 			float: left;

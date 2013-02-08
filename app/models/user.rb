@@ -13,6 +13,7 @@
 #
 
 class User < ActiveRecord::Base
+  # act_as_countable
   # Include default devise modules. Others available are:
   #
   #

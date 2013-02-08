@@ -1,1 +1,7 @@
-<script type="text/javascript" src="<%= fizzybar_url %>.js?id=<%= embedding.id %>&uid=<%= @user.id %>"></script>
+<script type="text/javascript">
+  (function() {
+    var fb = document.createElement('script'); fb.type = 'text/javascript'; fb.async = true;
+    fb.src = "<%= fizzybar_url %>.js?id=<%= embedding.id %>&uid=<%= @user.id %>"
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fb, s);
+  })()
+</script>

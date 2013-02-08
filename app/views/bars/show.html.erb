@@ -50,14 +50,14 @@
   </div>
 
   <div class="showdetailedit_background">
-  <%= link_to 'Edit', edit_user_bar_path(current_user, @bar), :class => "btn btn-info" %>
-  <%= link_to 'Back', user_bars_path( current_user ), :class => "btn btn-info" %>
+  <%= link_to 'Edit', edit_user_bar_path(@user, @bar), :class => "btn btn-info" %>
+  <%= link_to 'Back', user_bars_path( @user ), :class => "btn btn-info" %>
   </div>
 </div><!-- showdetails_leftcontainer -->
 
 <div class="showdetails_rightcontainer">
   <h3>Embed Code</h3>
-  <%=text_area_tag( "code", ( render partial: "embedding", object: @bar),:disabled => true, rows: "4", class: "input-block-level popup_txtarea_background") %>
+  <%=text_area_tag( "code", ( render partial: "embedding", object: @bar),:disabled => true, rows: "12", class: "input-block-level popup_txtarea_background") %>
 </div><!-- showdetails_rightcontainer -->
 <br style="clear:both;" >
 </div><!-- bars_background -->

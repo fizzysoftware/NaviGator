@@ -540,14 +540,42 @@ footer{
 	overflow: hidden;
 	margin-top: 20px;
 	.ftr_mrgntop{
-		margin-top: 20px;
 		width: 980px;
 		.footer_logo{
 			float: right;
 		}
-		.ftr_links{
-			width: 600px;
+		.ftr_links_container{
 			float: left;
+			display: inline-block;
+			vertical-align: top;
+			margin: 10px 15px;
+			min-width: 110px;
+			h1{
+				font-size: 14px;
+				color: #888;
+				font-weight: 700;
+				text-indent: 10px;
+				border-bottom: 1px solid #222;
+				font-family: "Oswald",sans-serif;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				a{
+					text-decoration: none;
+					font-size: 13px;
+					font-weight: 400;
+					color: #777;
+					line-height: 30px;
+					border-bottom: 1px solid #222;
+					text-indent: 10px;display: block;
+					.ease;
+					&:hover{
+						color: #999;
+						background: rgba(0,0,0,0.1);
+					}
+				}
+			}
 		}
 	}
 	a{

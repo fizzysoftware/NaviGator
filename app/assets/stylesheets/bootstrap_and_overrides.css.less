@@ -162,6 +162,7 @@ h1{
 	background: #444;
 	width: 380px;
 	margin: 0 auto;
+	margin-top: 60px;
 	.login_heading{
 		padding: 15px;
 		border: 1px solid #bbb;
@@ -556,6 +557,28 @@ footer{
 				height: 415px;
 				float: left;
 				background: url("/assets/pointer-image.png") no-repeat 0 65px;
+				.top_signin{
+					a{
+					display: block;
+					width: 111px;
+					text-align: center;
+					height: 40px;
+					line-height: 40px;
+					color: white;
+					font-size: 16px;
+					margin: 338px 0 0 332px;
+					border-radius: 3px;
+					border-bottom: 2px solid #163844;
+					font-weight: 700;
+					font-family: 'Oswald', sans-serif;
+					background: #216C88 url("/assets/bg_pattern.png");
+					.ease;
+					&:hover{
+						background: #277A99;
+						box-shadow: @box_shadow;
+					}
+				}
+				}
 			}
 			.image_content_left{
 				width: 475px;
@@ -599,6 +622,7 @@ footer{
 									font-size: 20px;
 									color: #444;
 									line-height: 32px;
+									cursor: default;
 									&:hover{
 										text-decoration: none;
 									}

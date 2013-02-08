@@ -58,4 +58,5 @@ group :development, :test do
   gem 'rails-footnotes', '>= 3.7.5.rc4'
   gem 'timecop'
   gem 'mailcatcher'
+  gem 'smusher'
 end

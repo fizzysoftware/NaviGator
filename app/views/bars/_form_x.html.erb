@@ -1,0 +1,81 @@
+<%= simple_form_for( [ @user, @bar ] ) do |f| %>
+  <%= f.error_notification %>
+
+ <div class="row">
+        <div class="hero-unit newbar_alignment">
+              <label>Title</label>
+              <%= f.input :name, input_html: { class: 'span5' }, :placeholder => "My first Navigator Bar", label: false %>
+        </div><!--end hero unit -->
+        <h1>Preview</h1>
+        <div class="preview_container">
+
+        </div>
+
+    <section class="span5 mrgn_lft">
+
+
+              <div class="controls">
+                <%= f.input :name, input_html: { class: 'span5' }, :placeholder => "Bar name" %>
+              </div>
+
+
+
+              <div class="controls">
+                 <%= f.input :message, :input_html => { maxlength: '70',  class: 'span5' }, :placeholder => "Message should not be more than 70 characters."  %>
+              </div>
+
+
+
+              <div class="controls">
+                <%= f.input :link, input_html: { class: 'span5' }, :placeholder => "Text of your link" %>
+              </div>
+
+
+
+              <div class="controls">
+                <%= f.input :link_url, input_html: { class: 'span5' }, :placeholder => "ex. www.google.com" %>
+              </div>
+
+
+
+              <div class="controls">
+                <%= f.input :text_color, input_html: { class: 'colorpicker span5' }, label: 'Bar text color', :placeholder => "Select Text color" %>
+              </div>
+
+
+
+              <div class="controls">
+                <%= f.input :bg_color, input_html: { class: 'colorpicker span5' }, label: 'Bar background color',:placeholder => "Select Background Color" %>
+              </div>
+
+
+
+              <div class="controls">
+                 <%= f.input :link_text_color, input_html: { class: 'colorpicker span5' }, :placeholder => "Select Link Text Color" %>
+              </div>
+
+
+
+              <div class="controls">
+                 <%= f.input :link_bg_color, input_html: { class: 'colorpicker span5' }, label: 'Link background color', :placeholder => "Select Link Background Color" %>
+              </div>
+
+
+            <div class="control-group">
+              <div class="controls">
+                 <%= f.input :active, label: false, :inline_label => 'Active' if( f.object.persisted? ) %>
+                 <%= f.button :submit, :class => "btn btn-info" %>
+                 <%= link_to 'Back', user_bars_path( @user), :class => "btn btn btn-info" %>
+              </div>
+            </div>
+
+
+    </section><!-- end left -->
+
+        
+      </div>
+<% end %>
+
+ <%= javascript_tag "$('.colorpicker').colorpicker()" %>
+
+

@@ -1,7 +1,15 @@
 <%= simple_form_for( [ @user, @bar ] ) do |f| %>
   <%= f.error_notification %>
+  
 <div class="title">
-<h1>Title</h1>
- <%= f.input :name, input_html: { class: 'title_input_width' }, :placeholder => "My first Navigator Bar", label: false %>
-</div>
+	<h1>Title</h1>
+	 <%= f.input :name, input_html: { class: 'title_input_width' }, :placeholder => "My first Navigator Bar", label: false %>
+	 <p>Preview</p>
+	 <div class="preview_container">
+	 	<div class="nav_preview">
+	 		<p class="message">Hello type your message below</p>
+	 		<%= link_to "Try it out", "#", :class => 	"message_link" %>
+	 	</div>
+	</div>
+</div><!-- title -->
 <% end %>

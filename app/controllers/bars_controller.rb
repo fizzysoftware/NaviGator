@@ -56,6 +56,11 @@ class BarsController < ApplicationController
     render js: ""
   end
 
+  # return Embedding code
+  def embed_code
+    @bar = current_user.bars.find( params[:id] )
+  end
+
   #  ===================
   #  = Private methods =
   #  ===================

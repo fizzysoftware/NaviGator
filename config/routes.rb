@@ -17,11 +17,11 @@ Fizzybar::Application.routes.draw do
   resources :users, only: [:show,:edit,:update] do
     get 'welcome', on: :collection
 
-    resources :bars, except: :destroy #do
-      # get 'embed_code', on: :member
+    resources :bars, except: :destroy do
+      get 'embed_code', on: :member
       # get 'get_fizzybar', on: :collection
       # get 'hit', on: :collection
-    # end
+    end
   end
 
   # resources :bars do

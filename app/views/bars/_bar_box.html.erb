@@ -3,9 +3,9 @@
 </div>
 <div class="btn-group" data-toggle="buttons-radio">
                 <button type="button" class="btn btn-primary">On</button>
-                <button type="button" class="btn btn-primary">Of</button>
+                <button type="button" class="btn btn-primary">Off</button>
               </div>
 
-<%= link_to "Embed", "#", :class => "embed" %>
+<%= link_to "Embed", embed_code_user_bar_path( @user, bar_box ), :class => "embed", remote: true %>
 
 <%= link_to "Delete", "#", :class => "embed delete" %>

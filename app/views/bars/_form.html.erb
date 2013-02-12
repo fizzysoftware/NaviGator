@@ -15,12 +15,14 @@
 
 <div class="message_container">
 	<div class="nav_changes">
+		<div class="message_padding">
 		<%= f.input :message, :input_html => { maxlength: '70',  class: 'message_textbox' }, :placeholder => "Hello type your message below. ", label: 'Message Under 85 characters recommended'  %>
+		</div>
 		<div class="link_text">
 		<%= f.input :link, input_html: { class: 'nav_linktext' }, :placeholder => "Link", label: 'Link Text' %>
 		</div>
 		<div class="link_url">
-		 <%= f.input :link_url, input_html: { class: 'nav_linkurl' }, :placeholder => "ex. www.google.com" %>
+		 <%= f.input :link_url, input_html: { class: 'nav_linkurl' }, :placeholder => "www.google.com" %>
 		</div>
 
 	</div><!-- nav_changes -->
@@ -63,13 +65,31 @@
 				        </select>
 		      	</p>
 		      </div><!-- fontstyle_container -->
+
 		      <div class="custom_coloroption">
-		      	custom
+		      	<div class="inline_block">
+		      	<%= f.input :bg_color, input_html: { class: 'bar_color' }, label: 'Bar background color', label: 'Bar Color', disabled: true %>
+		      	</div>
+
+		      	<div class="inline_block">
+		      	<%= f.input :link_text_color, input_html: { class: 'bar_color text_color' }, label: 'Text Color', disabled: true %>
 		      </div>
+
+		      <div class="inline_block">
+		      	<%= f.input :link_bg_color, input_html: { class: 'bar_color link_color' }, label: 'Link background color', label: 'Link Color', disabled: true %>
+		      </div>
+		      </div><!-- custom_coloroption -->
 
 		    </div>
 		  </div>
 		</div>
 	</div>
+		
+		<%= f.input :active, label: false, :inline_label => 'Active' if( f.object.persisted? ) %>
+
+        <%= f.button :submit, :class => "save_btn" %>
+
+         <%#= link_to 'Back', user_bars_path( @user), :class => "" %>
+
 </div><!-- message_container -->
 <% end %>

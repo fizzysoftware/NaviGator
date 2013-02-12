@@ -173,9 +173,11 @@ h1{
 		padding-right: 30px;
 	}
 	.title_input_width{
-		margin-top: 17px;
+		margin-top: 12px;
 		width: 300px;
 		border-radius: 0;
+		height: 30px;
+		border: 2px solid #737373;
 	}
 	.preview_container{
 			width: 100%;
@@ -228,11 +230,15 @@ h1{
 		border: 3px solid #ccc;
 		height: 210px;
 		padding: 15px;
+		.message_padding{
+			padding-top: 20px;
 		.message_textbox{
 			width: 585px;
 			border-radius: 0;
 			border: 2px solid #737373;
 			font-size: 12px;
+			height: 30px;
+		}
 		}
 		.link_text{
 			width: 295px;
@@ -242,6 +248,7 @@ h1{
 				border-radius: 0;
 				border: 2px solid #737373;
 				font-size: 12px;
+				height: 30px;
 			}
 		}/* link_text */
 		.link_url{
@@ -252,9 +259,12 @@ h1{
 				border-radius: 0;
 				border: 2px solid #737373;
 				font-size: 12px;
+				height: 30px;
 			}
 		}
+
 	}/* nav_changes */
+
 	.custom_theme{
 		width: 300px;
 		float: right;
@@ -311,10 +321,51 @@ h1{
 		.custom_coloroption{
 			border-bottom: @brdrsolid;
 			width: 100%;
-			padding-bottom: 10px;
+			.bar_color{
+				background: #063b4b url("/assets/icon_colorpicker.png") no-repeat 0 0;
+				width: 59px;
+				border-radius: 0;
+				border: none;
+				cursor: pointer;
+				height: 15px;
+				}
+				.text_color{
+					background: #e1ffff url("/assets/icon_colorpicker.png") no-repeat 0 0;
+				}
+				.link_color{
+					background: #bbb url("/assets/icon_colorpicker.png") no-repeat 0 0;
+				}
+				.inline_block{
+					display: inline-block;
+					margin: 0 15px 0 11px;
+					label{
+						font-size: 12px;
+						font-weight: 700;
+					}
+				}
 			}
 	}/* custom_theme */
-}
+	.save_btn{
+		width: 150px;
+		text-align: center;
+		height: 50px;
+		line-height: 40px;
+		color: white;
+		font-size: 23px;
+		text-shadow: 0 0 1px #000;
+		border-radius: @border_radius;
+		border-bottom: 2px solid #163844;
+		font-weight: 700;
+		font-family: 'Oswald',sans-serif;
+		background: #216c88 url("/assets/bg_pattern.png");
+		margin-top: 10px;
+		.ease;
+		&:hover{
+			background: #277A99;
+			text-decoration: none;
+		}
+	}
+}/* message container */
 
 .signin_container{
 	background: #444;

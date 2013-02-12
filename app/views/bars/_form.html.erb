@@ -1,6 +1,6 @@
 <%= simple_form_for( [ @user, @bar ] ) do |f| %>
   <%= f.error_notification %>
-  
+<div>	
 <div class="title">
 	<h1>Title</h1>
 	 <%= f.input :name, input_html: { class: 'title_input_width' }, :placeholder => "My first Navigator Bar", label: false %>
@@ -93,3 +93,4 @@
 
 </div><!-- message_container -->
 <% end %>
+</div>

@@ -170,10 +170,11 @@ h1{
 	border: 1px solid #ccc;
 	h1{
 		float: left;
-		padding-right: 30px;
+		padding-right: 15px;
+		font-size: 27px;
 	}
 	.title_input_width{
-		margin-top: 12px;
+		margin-top: 15px;
 		width: 300px;
 		border-radius: 0;
 		height: 30px;
@@ -227,17 +228,20 @@ h1{
 	.nav_changes{
 		width: 600px;
 		float: left;
-		border: 3px solid #ccc;
+		border: 1px solid #ccc;
 		height: 210px;
 		padding: 15px;
+		background: #fafafa;
 		.message_padding{
 			padding-top: 20px;
 		.message_textbox{
 			width: 585px;
 			border-radius: 0;
-			border: 2px solid #737373;
-			font-size: 12px;
+			font-size: 15px;
 			height: 30px;
+			&:focus{
+				border: 1px solid #737373;
+			}
 		}
 		}
 		.link_text{
@@ -246,9 +250,11 @@ h1{
 			.nav_linktext{
 				width: 270px;
 				border-radius: 0;
-				border: 2px solid #737373;
-				font-size: 12px;
+				font-size: 15px;
 				height: 30px;
+				&:focus{
+				border: 1px solid #737373;
+				}
 			}
 		}/* link_text */
 		.link_url{
@@ -257,9 +263,11 @@ h1{
 			.nav_linkurl{
 				width: 285px;
 				border-radius: 0;
-				border: 2px solid #737373;
-				font-size: 12px;
+				font-size: 15px;
 				height: 30px;
+				&:focus{
+				border: 1px solid #737373;
+				}
 			}
 		}
 
@@ -270,7 +278,7 @@ h1{
 		float: right;
 		height: 210px;
 		padding: 15px;
-		border: 3px solid #ccc;
+		border: 1px solid #ccc;
 		.fontstyle_container{
 			width: 300px;
 			p{
@@ -830,6 +838,9 @@ footer{
 			ul{
 				margin: 0;
 				padding: 0;
+				li{
+					list-style-type: none;
+				}
 				a{
 					text-decoration: none;
 					font-size: 13px;

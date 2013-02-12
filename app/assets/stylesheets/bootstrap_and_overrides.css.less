@@ -659,7 +659,7 @@ h1{
 			font-size: 20px;
 			width: 500px;
 			display: inline-block;
-			margin-bottom: 25px;
+			margin-bottom: 9px;
 		}
 		.days_btn{
 			width: 383px;
@@ -689,7 +689,32 @@ h1{
 
 			}
 		}
-	}
+		.stats_rating_container{
+			width: 878px;
+			padding: 5px;
+			margin-top: 10px;
+			background: #fafafa;
+			height: 40px;
+			line-height: 40px;
+			border: @brdrsolid;
+			a{
+				width: 640px;
+				padding-left: 29px;
+				display: inline-block;
+				color: #000;
+				.ease;
+				&:hover{
+					color: #08c;
+					text-decoration: none;
+				}
+			}
+			.count{
+				width: 57px;
+				display: inline-block;
+				text-align: center;
+			}
+		}
+	}/* managebarcontainer */
 }/* bars_background */
 .embeded_padding{
 	margin-left: 0;
@@ -710,19 +735,6 @@ h1{
 		&:hover{
 			
 		}
-		.statsnav_background{
-			background: #444;
-			cursor: pointer;
-			border-radius: 0;
-			a{
-				color: #fff;
-				&:hover{
-					color: #fff;
-					background: #666;
-				}
-			}
-
-		}/* statsnav_background */
 		.stats_cols_background{
 			background: #E7E7E7;
 			border: @brdrsolid;
@@ -752,6 +764,7 @@ h1{
 					background: #277A99;
 				}
 			}
+
 			.mrgn_bottom{
 				margin-bottom: 6px;
 			}
@@ -1089,3 +1102,16 @@ footer{
 		}
 	}/* image_cotainer */
 }/* image_outer */
+
+.statsnav_background{
+		background: #ececec;
+		cursor: pointer;
+		border-radius: 0;
+		a{
+			color: #fff;
+			&:hover{
+				color: #fff;
+				background: #666;
+			}
+		}
+	}/* statsnav_background */

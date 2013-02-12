@@ -15,7 +15,14 @@
 
 <div class="message_container">
 	<div class="nav_changes">
-		nav changes
+		<%= f.input :message, :input_html => { maxlength: '70',  class: 'message_textbox' }, :placeholder => "Hello type your message below. ", label: 'Message Under 85 characters recommended'  %>
+		<div class="link_text">
+		<%= f.input :link, input_html: { class: 'nav_linktext' }, :placeholder => "Link", label: 'Link Text' %>
+		</div>
+		<div class="link_url">
+		 <%= f.input :link_url, input_html: { class: 'nav_linkurl' }, :placeholder => "ex. www.google.com" %>
+		</div>
+
 	</div><!-- nav_changes -->
 
 	<div class="custom_theme">
@@ -31,6 +38,9 @@
 		      	<p>Font Style  
 		      			<select>
 				          <option>Serif</option>
+				          <option>Arial</option>
+				          <option>Calibri</option>
+				          <option>Helvetica</option>
 				        </select>
 
 		      	</p>
@@ -38,12 +48,25 @@
 		      		<%= link_to "Red", "#", :class => "defaultred" %>
 		      		<%= link_to "Blue", "#", :class => "defaultred defaultblue" %>
 		      		<%= link_to "Cheers", "#", :class => "defaultred defaultcheers" %>
-		      		<%= link_to "London Frog	", "#", :class => "defaultred defaultfrog" %>
+		      		<%= link_to "London Frog", "#", :class => "defaultred defaultfrog" %>
 
 		      </div>
 		    </div>
 		    <div class="tab-pane" id="tab2">
-		      <p>Howdy, I'm in Section 2.</p>
+		      <div class="fontstyle_container">
+		      	<p>Font Style  
+		      			<select>
+				          <option>Serif</option>
+				          <option>Arial</option>
+				          <option>Calibri</option>
+				          <option>Helvetica</option>
+				        </select>
+		      	</p>
+		      </div><!-- fontstyle_container -->
+		      <div class="custom_coloroption">
+		      	custom
+		      </div>
+
 		    </div>
 		  </div>
 		</div>

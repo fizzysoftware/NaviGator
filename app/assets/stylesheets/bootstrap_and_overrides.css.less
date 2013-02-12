@@ -51,6 +51,7 @@ body {
 @background: #fff;
 @fnt_weight: 700;
 @font_family: 'Oswald', sans-serif;
+@brdrsolid: 1px solid #ccc;
 
 h1{
 	font-size: 30px;
@@ -225,21 +226,47 @@ h1{
 		width: 600px;
 		float: left;
 		border: 3px solid #ccc;
-		height: 300px;
+		height: 210px;
 		padding: 15px;
-	}
+		.message_textbox{
+			width: 585px;
+			border-radius: 0;
+			border: 2px solid #737373;
+			font-size: 12px;
+		}
+		.link_text{
+			width: 295px;
+			display: inline-block;
+			.nav_linktext{
+				width: 270px;
+				border-radius: 0;
+				border: 2px solid #737373;
+				font-size: 12px;
+			}
+		}/* link_text */
+		.link_url{
+			width: 300px;
+			display: inline-block;
+			.nav_linkurl{
+				width: 285px;
+				border-radius: 0;
+				border: 2px solid #737373;
+				font-size: 12px;
+			}
+		}
+	}/* nav_changes */
 	.custom_theme{
 		width: 300px;
 		float: right;
-		height: 300px;
+		height: 210px;
 		padding: 15px;
-		border: 1px solid #ccc;
+		border: 3px solid #ccc;
 		.fontstyle_container{
 			width: 300px;
 			p{
 				font-size: 12px;
 				font-weight: 700;
-				border-bottom: 1px solid #ccc;
+				border-bottom: @brdrsolid;
 				padding-bottom: 5px;
 				select{
 					width: 180px;
@@ -266,7 +293,7 @@ h1{
 			color: #444;
 			.ease;
 			&:hover{
-				border: 1px solid #ccc;
+				border: @brdrsolid;
 				color: #888;
 				text-decoration: none;
 				}
@@ -280,6 +307,11 @@ h1{
 			}
 		.defaultfrog{
 			background: #ededed url("/assets/theme.png") no-repeat 0 0;
+			}
+		.custom_coloroption{
+			border-bottom: @brdrsolid;
+			width: 100%;
+			padding-bottom: 10px;
 			}
 	}/* custom_theme */
 }
@@ -421,7 +453,7 @@ h1{
 		background: @background;
 		color: #fff;
 		width: 335px;
-		border: 1px solid #ccc;
+		border: @brdrsolid;
 		.showdetailedit_background{
 				background: #f6f6f6;
 				padding: 8px;
@@ -513,7 +545,7 @@ h1{
 		padding: 15px;
 		background: @background;
 		margin-bottom: 20px;
-		border: 1px solid #ccc;
+		border: @brdrsolid;
 		.ease;
 		&:hover{
 			
@@ -533,7 +565,7 @@ h1{
 		}/* statsnav_background */
 		.stats_cols_background{
 			background: #E7E7E7;
-			border: 1px solid #ccc;
+			border: @brdrsolid;
 			margin-top: 5px;
 			.ease;
 			&:hover{
@@ -624,7 +656,7 @@ h1{
 			float: left;
 			margin: 0 23px 10px 0;
 			height: 215px;
-			border: 1px solid #ccc;
+			border: @brdrsolid;
 			padding: 5px;
 			border-radius: 3px;
 			.ease;

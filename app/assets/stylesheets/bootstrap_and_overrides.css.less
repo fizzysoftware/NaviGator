@@ -174,6 +174,7 @@ h1{
 	.title_input_width{
 		margin-top: 17px;
 		width: 300px;
+		border-radius: 0;
 	}
 	.preview_container{
 			width: 100%;
@@ -187,10 +188,10 @@ h1{
 			}
 			.nav_preview{
 				width: 100%;
-				background: red;
+				background: #eb583c;
 				height: 35px;
 				border-bottom: 2px solid #fff;				
-					line-height: 35px;
+				line-height: 35px;
 				.message{
 					width: 490px;
 					display: inline-block;
@@ -233,7 +234,54 @@ h1{
 		height: 300px;
 		padding: 15px;
 		border: 1px solid #ccc;
-	}
+		.fontstyle_container{
+			width: 300px;
+			p{
+				font-size: 12px;
+				font-weight: 700;
+				border-bottom: 1px solid #ccc;
+				padding-bottom: 5px;
+				select{
+					width: 180px;
+					margin-left: 27px;
+					border-radius: 0;
+				}/* select */
+			}/* p */
+		}/* fontstyle_container */
+		p.default_theme{
+				font-size: 12px;
+				font-weight: 700;
+				padding-bottom: 5px;
+				border-bottom: none;
+		}
+		.defaultred{
+			width: 105px;
+			height: 23px;
+			display: block;
+			float: left;
+			padding-left: 27px;
+			background: red url("/assets/theme.png") no-repeat 0 0;
+			border: 1px solid #fff;
+			margin: 0 10px 10px 0;
+			color: #444;
+			.ease;
+			&:hover{
+				border: 1px solid #ccc;
+				color: #888;
+				text-decoration: none;
+				}
+			}
+		
+		.defaultblue{
+				background: blue url("/assets/theme.png") no-repeat 0 0;
+			}
+		.defaultcheers{
+				background: #f0e1d1 url("/assets/theme.png") no-repeat 0 0;
+			}
+		.defaultfrog{
+			background: #ededed url("/assets/theme.png") no-repeat 0 0;
+			}
+	}/* custom_theme */
 }
 
 .signin_container{

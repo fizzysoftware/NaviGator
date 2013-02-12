@@ -27,7 +27,20 @@
 		  
 		  <div class="tab-content">
 		    <div class="tab-pane active" id="tab1">
-		      <p>I'm in Section 1.</p>
+		      <div class="fontstyle_container">
+		      	<p>Font Style  
+		      			<select>
+				          <option>Serif</option>
+				        </select>
+
+		      	</p>
+		      		<p class="default_theme">Default Theme</p>
+		      		<%= link_to "Red", "#", :class => "defaultred" %>
+		      		<%= link_to "Blue", "#", :class => "defaultred defaultblue" %>
+		      		<%= link_to "Cheers", "#", :class => "defaultred defaultcheers" %>
+		      		<%= link_to "London Frog	", "#", :class => "defaultred defaultfrog" %>
+
+		      </div>
 		    </div>
 		    <div class="tab-pane" id="tab2">
 		      <p>Howdy, I'm in Section 2.</p>

@@ -52,6 +52,7 @@ body {
 @fnt_weight: 700;
 @font_family: 'Oswald', sans-serif;
 @brdrsolid: 1px solid #ccc;
+@pad: 15px;
 
 h1{
 	font-size: 30px;
@@ -86,7 +87,7 @@ h1{
 	transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
 }
-.textalign_right{
+/*.textalign_right{
 	text-align: right;
 	a{
 		background: #216C88;
@@ -102,7 +103,7 @@ h1{
 			background: #277A99;
 		}
 	}
-}
+}*/
 .newbar_btn_alignright{
 	padding-left: 180px;
 	.barname_height{
@@ -137,13 +138,7 @@ h1{
 		padding-left: 10px;
 	}
 }
-.delete_btn{
-	background: url(/assets/btn_delete.png) no-repeat 0 0;
-	display: inline-block;
-	text-indent: -99999px;
-	width: 20px;
-	height: 30px;
-}
+
 .mrgn_lft{
 	margin-left: 13px;
 }
@@ -166,15 +161,15 @@ h1{
 }
 .title{
 	margin-top: 20px;
-	padding: 15px;
+	padding: @pad;
 	border: 1px solid #ccc;
 	h1{
 		float: left;
-		padding-right: 15px;
+		padding-right: @pad;
 		font-size: 27px;
 	}
 	.title_input_width{
-		margin-top: 15px;
+		margin-top: @pad;
 		width: 300px;
 		border-radius: 0;
 		height: 30px;
@@ -230,7 +225,7 @@ h1{
 		float: left;
 		border: 1px solid #ccc;
 		height: 210px;
-		padding: 15px;
+		padding: @pad;
 		background: #fafafa;
 		.message_padding{
 			padding-top: 20px;
@@ -277,7 +272,7 @@ h1{
 		width: 300px;
 		float: right;
 		height: 210px;
-		padding: 15px;
+		padding: @pad;
 		border: 1px solid #ccc;
 		.fontstyle_container{
 			width: 300px;
@@ -381,7 +376,7 @@ h1{
 	margin: 0 auto;
 	margin-top: 60px;
 	.login_heading{
-		padding: 15px;
+		padding: @pad;
 		border: 1px solid #bbb;
 		font-size: 25px;
 		text-indent: 45px;
@@ -395,7 +390,7 @@ h1{
 	}
 	.form_container{
 		width: 355px;
-		padding: 15px;
+		padding: @pad;
 		color: #fff;
 		.input_styling{
 			width: 332px;
@@ -508,7 +503,7 @@ h1{
 	margin-top: 20px;
 	.showdetails_leftcontainer{
 		float: left;
-		padding: 15px;
+		padding: @pad;
 		background: @background;
 		color: #fff;
 		width: 335px;
@@ -536,7 +531,7 @@ h1{
 			}/* showdetailedit_background */
 	}
 	.showdetails_rightcontainer{
-		padding: 15px;
+		padding: @pad;
 		background: #444;
 		color: #fff;
 		width: 525px;
@@ -589,7 +584,113 @@ h1{
 
 		}
 	}
-}
+	.managebarcontainer{
+		width: 890px;
+		padding: @pad;
+		border: @brdrsolid;
+		.create_new_bar{
+			display: block;
+			width: 200px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			margin-top: -50px;	
+			float: right;
+			color: white;
+			font-size: 23px;
+			text-shadow: 0 0 1px black;
+			border-radius: 3px;
+			border-bottom: 2px solid #163844;
+			font-weight: 700;
+			font-family: @font_family;
+			background: #216C88 url("/assets/bg_pattern.png");
+			.ease;
+				&:hover{
+					background: #277A99;
+					box-shadow: @box_shadow;
+					text-decoration: none;
+					}
+		}/* create new bar */
+		.managebar_list{
+			width: 877px;
+			height: 40px;
+			background: #fafafa;
+			margin-top: 54px;
+			padding: 5px;
+			border: @brdrsolid;
+			line-height: 40px;
+			.link_edit a{
+				width: 628px;
+				color: #000;
+				padding-left: 10px;
+				display: block;
+				float: left;
+				.ease;	
+				&:hover{
+					color: #08c;
+					text-decoration: none;
+				}
+			}
+		}
+		a.embed{
+			width: 51px;
+			display: inline-block;
+			margin-left: 19px;
+			color: #000;
+			.ease;
+			&:hover{
+					color: #08c;
+					text-decoration: none;
+				}
+		}
+		a.delete{
+			background: url("/assets/btn_delete.png") no-repeat 0 7px;
+			text-indent: -999999px;
+		}
+		.stats_notification{
+			width: 855px;
+			border: @brdrsolid;
+			padding: @pad;
+			background: #fafafa;
+			margin-bottom: 25px;
+			font-size: 13px;
+		}/* stats_notification */
+		h3.show_date{
+			font-size: 20px;
+			width: 500px;
+			display: inline-block;
+			margin-bottom: 25px;
+		}
+		.days_btn{
+			width: 383px;
+			text-align: right;
+			display: inline-block;
+			a{
+				display: inline-block;
+				width: 100px;
+				height: 40px;
+				background: red;
+				text-align: center;
+				line-height: 40px;
+				color: white;
+				font-size: 19px;
+				text-shadow: 0 0 1px black;
+				border-radius: 3px;
+				border-bottom: 2px solid #163844;
+				font-weight: 700;
+				font-family: @font_family;
+				background: #216C88 url("/assets/bg_pattern.png");
+				.ease;
+					&:hover{
+						background: #277A99;
+						box-shadow: @box_shadow;
+						text-decoration: none;
+						}
+
+			}
+		}
+	}
+}/* bars_background */
 .embeded_padding{
 	margin-left: 0;
 	h1{
@@ -601,7 +702,7 @@ h1{
 		margin-top: 0;
 	}
 	.stats_background{
-		padding: 15px;
+		padding: @pad;
 		background: @background;
 		margin-bottom: 20px;
 		border: @brdrsolid;

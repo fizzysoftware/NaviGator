@@ -35,12 +35,12 @@ $(function () {
 
 $(function () {
 $('.defaultred').click(function(){
-	$(".nav_preview").css({"background" : "#EB583C" })
+	$(".nav_preview").css({"background" : "#C71F1F" })
 	$(".message").css({"color" : "#fff" })
 	});
 
 	$('.defaultblue').click(function(){
-	$(".nav_preview").css({"background" : "blue" })
+	$(".nav_preview").css({"background" : "#309EEB" })
 	$(".message").css({"color" : "#fff" })
 	});
 
@@ -56,3 +56,15 @@ $('.defaultred').click(function(){
 });
 
 /* default theme in manage bar end */
+
+/* input text append start */
+$(function () {
+	$(".message_textbox").keyup(function(){
+		$(".message").html($('.message_textbox').val());	
+	})
+
+	$(".nav_linktext").keyup(function(){
+		$(".message_link").html($('.nav_linktext').val());	
+	})
+
+});

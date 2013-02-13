@@ -1,6 +1,6 @@
 <div class="stats_rating_container">
 
-<%= link_to stat_box.name, user_bar_path( @user, stat_box ) %>
+<%= link_to stat_box.name, edit_user_bar_path( @user, stat_box ) %>
 
 <div class="count"><%= stat_box.visitors.count_since( @days ) %></div>
 <div class="count"><%= stat_box.hits_since( @days ) %></div>

@@ -30,3 +30,29 @@ function tabClicked( _link ) {
 $(function () {
   $('.colorpicker').blur(function(){ $('.colorpicker').colorpicker('hide') } );
 });
+
+/* default theme in manage bar start */
+
+$(function () {
+$('.defaultred').click(function(){
+	$(".nav_preview").css({"background" : "#EB583C" })
+	$(".message").css({"color" : "#fff" })
+	});
+
+	$('.defaultblue').click(function(){
+	$(".nav_preview").css({"background" : "blue" })
+	$(".message").css({"color" : "#fff" })
+	});
+
+	$('.defaultcheers').click(function(){
+	$(".nav_preview").css({"background" : "#F0E1D1" })
+	$(".message").css({"color" : "#000" })
+	});
+
+	$('.defaultfrog').click(function(){
+	$(".nav_preview").css({"background" : "#EDEDED" })
+	$(".message").css({"color" : "#000" })
+	});
+});
+
+/* default theme in manage bar end */

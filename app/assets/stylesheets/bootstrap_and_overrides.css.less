@@ -918,7 +918,6 @@ h1{
 			margin: 0 auto;
 			width: 100px;
 			display: block;
-			background: #216C88;
 			text-align: center;
 			height: 30px;
 			line-height: 30px;
@@ -941,9 +940,8 @@ h1{
 	}/* features */
 	.popup_background{
 	padding: 25px;
-	border-radius: @border_radius;
+	border-radius: 0;
 	background: #fafafa;
-	.shadow;
 	.popup_heading{
 		background: @background;
 		text-align: center;
@@ -954,12 +952,32 @@ h1{
 		}
 		.poppup_close_background{
 			border-top: none;
-			background: @background;
-			border-radius: @border_radius;
-			.shadow;
+			background: #fff;
+			border-radius: 0;
+			border: 1px solid #737373;
+			text-align: center;
+			button{
+				width: 100px;
+				height: 40px;
+				line-height: 30px;
+				color: white;
+				font-size: 23px;
+				border: 0;
+				 background: #216C88 url("/assets/bg_pattern.png");
+				 border-bottom: 2px solid #163844;
+				 border-radius: 3px;
+				 font-weight: 700;
+				font-family: @font_family;
+				text-shadow: 0 0 1px black;
+				 .ease;
+				&:hover{
+					background: #277A99;
+					box-shadow: @box_shadow;
+				}
+			}
 		}
 		.popup_txtarea_background{
-			background: #e7e7e7;
+			background: #fff;
 		}
 	}/* popup_background */
 }/* container */

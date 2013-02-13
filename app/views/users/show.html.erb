@@ -1,18 +1,18 @@
 <div class="bars_background">
   <div class="managebarcontainer">
-    <%- model_class = User -%>
+    <%#- model_class = User -%>
   
-  <h1 class="userpage_title"><%=t '.title', :default => model_class.model_name.human %></h1>
+  <!-- <h1 class="userpage_title"><%#=t '.title', :default => model_class.model_name.human %></h1>
 
   <div class="user_profile_name">
-      <strong><%= model_class.human_attribute_name(:name) %>:</strong>
+      <strong><%#= model_class.human_attribute_name(:name) %>:</strong>
       <%= @user.name %>
   </div>
   <div class="user_profile_name">
-      <%= model_class.human_attribute_name(:email) %>:
+      <%#= model_class.human_attribute_name(:email) %>:
       <%= @user.email %>
   </div>
-  <hr>
+  <hr> -->
   <%- model_class = User -%>
   <h1 class="userpage_title"><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human, :default => "Edit #{model_class.model_name.human}") %></h1>
 

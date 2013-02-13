@@ -173,7 +173,9 @@ h1{
 		width: 300px;
 		border-radius: 0;
 		height: 30px;
-		border: 2px solid #737373;
+		&:focus{
+			border: 1px solid #737373;
+		}
 	}
 	.preview_container{
 			width: 100%;
@@ -494,7 +496,10 @@ h1{
 	.header_container_width{
 		width: 980px;
 		.profile_textcolor{
-			color: #000;
+			color: #000!important;
+			&:hover{
+				color: #309EEB!important;
+			}
 		}
 	}
 }/* header_background_color */

@@ -724,17 +724,54 @@ h1{
 		}
 		.userpage_title{
 			font-size: 27px;
-			border-bottom: 1px solid #ccc;
+			border-bottom: @brdrsolid;
 			margin-bottom: 18px;
 		}
 		.user_profile_name{
 			width: 878px;
 			height: 40px;
 			background: #fafafa;
-			border: 1px solid #ccc;
+			border: @brdrsolid;
 			line-height: 40px;
 			padding-left: 10px;
 			margin-bottom: 10px;
+		}
+		.edit_profilecontainer{
+			width: 420px;
+			padding: 10px;
+			background: #fafafa;
+			border: @brdrsolid;
+			input{
+				width: 400px;
+				border: 1px solid #ccc;
+				border-radius: 0;
+				height: 30px;
+				font-size: 15px;
+				line-height: 30px;
+				&:focus{
+					border: 1px solid #737373;
+				}
+			}
+		}
+		.editprofile_submitbtn{
+			margin-top: 10px;
+			width: 200px;
+			height: 50px;
+			color: #fff;
+			display: block;
+			font-size: 23px;
+			text-shadow: 0 0 1px #000;
+			border-radius: @border_radius;
+			border: none;
+			border-bottom: 2px solid #163844;
+			font-weight: 700;
+			font-family: 'Oswald',sans-serif;
+			background: #216c88 url("/assets/bg_pattern.png");
+			.ease;
+			&:hover{
+				background: #277A99;
+				text-decoration: none;
+			}
 		}
 	}/* managebarcontainer */
 }/* bars_background */

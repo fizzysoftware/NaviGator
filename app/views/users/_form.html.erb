@@ -1,11 +1,10 @@
-
-
 <%= simple_form_for @user, :html => { :class => '' } do |f| %>
+<div class="edit_profilecontainer">
 <%= f.input :name %>
 <%= f.input :email %>
+</div>
 
-  
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= f.submit nil, :class => 'editprofile_submitbtn save_btn' %>
     <%#= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 users_path, :class => 'btn' %>
 

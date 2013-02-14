@@ -35,7 +35,7 @@ $(function () {
 
 $(function () {
 $('.defaultred').click(function(){
-	$(".nav_preview").css({"background" : "#C71F1F" })
+	$(".nav_preview").css({"background" : "#EB583C" })
 	$(".message").css({"color" : "#fff" })
 	});
 

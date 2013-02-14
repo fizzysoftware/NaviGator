@@ -6,8 +6,8 @@
 	 <%= f.input :name, input_html: { class: 'title_input_width' }, :placeholder => "My first Navigator Bar", label: false %>
 	 <p>Preview</p>
 	 <div class="preview_container">
-	 	<div class="nav_preview">
-	 		<p class="message">Hello type your message below</p>
+	 	<div class="nav_preview" style="background: #eb583c;">
+	 		<p class="message" style="color: #fff;">Hello type your message below</p>
 	 		<%= link_to "Try it out", "#", :class => 	"message_link" %>
 	 	</div>
 	</div>
@@ -49,6 +49,7 @@
 
 		      	</p>
 		      		<p class="default_theme">Default Theme</p>
+
 		      		<%= link_to "Red", "#", :class => "defaultred" %>
 		      		<%= link_to "Blue", "#", :class => "defaultred defaultblue" %>
 		      		<%= link_to "Cheers", "#", :class => "defaultred defaultcheers" %>

@@ -1,13 +1,13 @@
 <div class="managebar_list">
-<div class= "link_edit">
-<%= link_to bar_box.name, edit_user_bar_path( @user, bar_box) %>
-</div>
-<div class="btn-group" data-toggle="buttons-radio">
-                <button type="button" class="btn btn-primary on">On</button>
-                <button type="button" class="btn btn-primary off">Off</button>
- </div>
+  <div class= "link_edit">
+    <%= link_to bar_box.name, edit_user_bar_path( @user, bar_box) %>
+  </div>
+  <div class="btn-group" data-toggle="buttons-radio">
+    <button type="button" class="btn btn-primary on">On</button>
+    <button type="button" class="btn btn-primary off">Off</button>
+  </div>
 
-<%= link_to "Embed", embed_code_user_bar_path( @user, bar_box ), :class => "embed", remote: true %>
+  <%= link_to "Embed", embed_code_user_bar_path( @user, bar_box ), :class => "embed", remote: true %>
 
-<%= link_to "Delete", "#", :class => "embed delete" %>
+  <%= link_to "Delete", "#", :class => "embed delete" %>
 </div>

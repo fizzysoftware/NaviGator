@@ -1,14 +1,14 @@
 <%= simple_form_for( [ @user, @bar ] ) do |f| %>
   <%= f.error_notification %>
-<div>	
+<div>
 <div class="title">
 	<h1>Title</h1>
 	 <%= f.input :name, input_html: { class: 'title_input_width' }, :placeholder => "My first Navigator Bar", label: false %>
 	 <p>Preview</p>
 	 <div class="preview_container">
 	 	<div class="nav_preview">
-	 		<p class="message">Hello type your message below</p>
-	 		<%= link_to "Try it out", "#", :class => 	"message_link" %>
+	 		<p class="message"> <%= message_for_bar( @bar ) %> </p>
+	 		<%= link_to_for_bar( @bar ) %>
 	 	</div>
 	</div>
 </div><!-- title -->
@@ -35,11 +35,11 @@
 		    <li class="active"><a href="#tab1" data-toggle="tab">Themes</a></li>
 		    <li><a href="#tab2" data-toggle="tab">Custom</a></li>
 		  </ul>
-		  
+
 		  <div class="tab-content">
 		    <div class="tab-pane active" id="tab1">
 		      <div class="fontstyle_container">
-		      	<p>Font Style  
+		      	<p>Font Style
 		      			<select>
 				          <option>Serif</option>
 				          <option>Arial</option>
@@ -58,7 +58,7 @@
 		    </div>
 		    <div class="tab-pane" id="tab2">
 		      <div class="fontstyle_container">
-		      	<p>Font Style  
+		      	<p>Font Style
 		      			<select>
 				          <option>Serif</option>
 				          <option>Arial</option>

@@ -10,6 +10,7 @@ class Bar < ActiveRecord::Base
   validates :link, :link_url, :presence => true, :if => :link_details_present?
 
   before_create :activate_bar
+  after_initialize
 
   def hits_since( _days )
     visitors.since( _days ).sum(:hits)

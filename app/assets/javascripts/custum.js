@@ -30,3 +30,56 @@ function tabClicked( _link ) {
 $(function () {
   $('.colorpicker').blur(function(){ $('.colorpicker').colorpicker('hide') } );
 });
+
+/* default theme in manage bar start */
+
+$(function () {
+$('.defaultred').click(function(){
+	  $(".nav_preview").css({"background" : "#EB583C" })
+	  $(".message").css({"color" : "#fff" })
+    $('#bar_bg_color').val( "#EB583C" )
+    $('#bar_text_color').val( "#fff" )
+	});
+
+$('.defaultblue').click(function(){
+	  $(".nav_preview").css({"background" : "#309EEB" })
+	  $(".message").css({"color" : "#fff" })
+    $('#bar_bg_color').val( "#309EEB" )
+    $('#bar_text_color').val( "#fff" )
+  });
+
+$('.defaultcheers').click(function(){
+	  $(".nav_preview").css({"background" : "#F0E1D1" })
+	  $(".message").css({"color" : "#000" })
+    $('#bar_bg_color').val( "#F0E1D1" )
+    $('#bar_text_color').val( "#000" )
+	});
+
+$('.defaultfrog').click(function(){
+	  $(".nav_preview").css({"background" : "#EDEDED" })
+	  $(".message").css({"color" : "#000" })
+    $('#bar_bg_color').val( "#EDEDED" )
+    $('#bar_text_color').val( "#000" )
+	});
+});
+
+/* default theme in manage bar end */
+
+/* input text append start */
+$(function () {
+	$(".message_textbox").keyup(function(){
+		$(".message").html($('.message_textbox').val());
+	})
+
+	$(".nav_linktext").keyup(function(){
+		$(".message_link").html($('.nav_linktext').val());
+	})
+
+});
+
+$(function () {
+    $(".on, .off").click(function () {
+        $(".enable").removeClass("enable");
+        $(this).addClass("enable");
+    });
+});

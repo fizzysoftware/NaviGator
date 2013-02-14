@@ -1,21 +1,34 @@
 <%= simple_form_for( [ @user, @bar ] ) do |f| %>
   <%= f.error_notification %>
-  
+<div>
 <div class="title">
 	<h1>Title</h1>
 	 <%= f.input :name, input_html: { class: 'title_input_width' }, :placeholder => "My first Navigator Bar", label: false %>
 	 <p>Preview</p>
 	 <div class="preview_container">
-	 	<div class="nav_preview">
-	 		<p class="message">Hello type your message below</p>
-	 		<%= link_to "Try it out", "#", :class => 	"message_link" %>
+	 	<div class="nav_preview" style="background: <%= bar_bg_color( @bar ) %>;">
+	 		<p class="message"  style="color: <%= bar_text_color( @bar ) %>;"> <%= message_for_bar( @bar ) %> </p>
+	 		<%= link_to_for_bar( @bar ) %>
 	 	</div>
 	</div>
 </div><!-- title -->
 
 <div class="message_container">
 	<div class="nav_changes">
-		nav changes
+		<div class="message_padding">
+		<%= f.input :message, :input_html => { maxlength: '70',  class: 'message_textbox' }, :placeholder => "Hello type your message below. ", label: 'Message Under 85 characters recommended'  %>
+		</div>
+		<div class="link_text">
+		<%= f.input :link, input_html: { class: 'nav_linktext' }, :placeholder => "Link", label: 'Link Text' %>
+		</div>
+		<div class="link_url">
+		 <%= f.input :link_url, input_html: { class: 'nav_linkurl' }, :placeholder => "www.google.com" %>
+		</div>
+		<%= f.hidden_field :text_color, value: bar_text_color( @bar ) %>
+		<%= f.hidden_field :bg_color, value:  bar_bg_color( @bar ) %>
+		<%= f.hidden_field :link_text_color, value: bar_link_text_color( @bar )  %>
+		<%= f.hidden_field :link_bg_color, value:  bar_link_bg_color( @bar ) %>
+
 	</div><!-- nav_changes -->
 
 	<div class="custom_theme">
@@ -24,16 +37,62 @@
 		    <li class="active"><a href="#tab1" data-toggle="tab">Themes</a></li>
 		    <li><a href="#tab2" data-toggle="tab">Custom</a></li>
 		  </ul>
-		  
+
 		  <div class="tab-content">
 		    <div class="tab-pane active" id="tab1">
-		      <p>I'm in Section 1.</p>
+		      <div class="fontstyle_container">
+		      	<p>Font Style
+		      			<select>
+				          <option>Serif</option>
+				          <option>Arial</option>
+				          <option>Calibri</option>
+				          <option>Helvetica</option>
+				        </select>
+
+		      	</p>
+		      		<p class="default_theme">Default Theme</p>
+
+		      		<%= link_to "Red", "#", :class => "defaultred" %>
+		      		<%= link_to "Blue", "#", :class => "defaultred defaultblue" %>
+		      		<%= link_to "Cheers", "#", :class => "defaultred defaultcheers" %>
+		      		<%= link_to "London Frog", "#", :class => "defaultred defaultfrog" %>
+
+		      </div>
 		    </div>
 		    <div class="tab-pane" id="tab2">
-		      <p>Howdy, I'm in Section 2.</p>
+		      <div class="fontstyle_container">
+		      	<p>Font Style
+		      			<select>
+				          <option>Serif</option>
+				          <option>Arial</option>
+				          <option>Calibri</option>
+				          <option>Helvetica</option>
+				        </select>
+		      	</p>
+		      </div><!-- fontstyle_container -->
+
+		      <div class="custom_coloroption">
+		      	<div class="inline_block">
+		      	<%= f.input :bg_color, input_html: { class: 'bar_color' , value: '' }, label: 'Bar background color', label: 'Bar Color', disabled: true %>
+		      	</div>
+
+		      	<div class="inline_block">
+		      	<%= f.input :link_text_color, input_html: { class: 'bar_color text_color' , value: '' }, label: 'Text Color', disabled: true %>
+		      	</div>
+
+		      <div class="inline_block">
+		      	<%= f.input :link_bg_color, input_html: { class: 'bar_color link_color', value: '' }, label: 'Link background color', label: 'Link Color', disabled: true %>
+		      </div>
+		      </div><!-- custom_coloroption -->
+
 		    </div>
 		  </div>
 		</div>
 	</div>
+		<%#= f.input :active, label: false, :inline_label => 'Active' if( f.object.persisted? ) %>
+        <%= f.button :submit, :class => "save_btn" %>
+         <%#= link_to 'Back', user_bars_path( @user), :class => "" %>
 </div><!-- message_container -->
 <% end %>
+</div>
+

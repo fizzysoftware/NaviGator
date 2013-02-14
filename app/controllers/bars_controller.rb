@@ -25,7 +25,7 @@ class BarsController < ApplicationController
     @bar = @user.bars.new( params[:bar] )
 
     if @bar.save
-     redirect_to  user_bar_path( @user, @bar ), notice: 'Bar was successfully created.'
+     redirect_to  edit_user_bar_path( @user, @bar ), notice: 'Bar was successfully created.'
    else
      render action: "new"
    end
@@ -35,7 +35,7 @@ class BarsController < ApplicationController
   def update
 
     if @bar.update_attributes( params[:bar] )
-     redirect_to user_bar_path( @user, @bar), notice: 'Bar was successfully updated.'
+     redirect_to edit_user_bar_path( @user, @bar), notice: 'Bar was successfully updated.'
    else
      render action: "edit"
    end
@@ -54,6 +54,11 @@ class BarsController < ApplicationController
     @visitor.increment!(:hits)
     cookies[ "fizzybar_#{ @bar.id }"] = 1
     render js: ""
+  end
+
+  # return Embedding code
+  def embed_code
+    @bar = current_user.bars.find( params[:id] )
   end
 
   #  ===================

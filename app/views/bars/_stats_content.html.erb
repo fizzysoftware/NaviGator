@@ -1,35 +1,19 @@
-<!-- stats content start -->
-<div class="tab-pane" id="tab2">
-    <div class="row show-grid embeded_padding">
-
-<!--         <h1 class="stats_heading">Stats</h1>
-        <div class="stats_background">
-            <div class="row-fluid show-grid">
-                <div class="span12">
-                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</small>
-                </div> --><!-- span11 -->
-            <!-- </div> --><!-- row -->
-        <!-- </div> --><!-- stats_background -->
-
-
-
-        <div class="stats_background">
-
-            <div class="row-fluid show-grid">
-
-                <div class="span6 offset6 textalign_right">
-
-                    <div id="time-ranges">
-                        <%= link_to '1 Day', user_bars_path( @user, days: 1), class: 'btn btn-info days_btn', remote: true, onclick: 'timeRangesClick(this)' %>
-                        <%= link_to '7 Days', user_bars_path( @user, days: 7), class: 'btn btn-info days_btn', remote: true, onclick: 'timeRangesClick(this)' %>
-                        <%= link_to '30 Days', user_bars_path( @user, days: 30), class: 'btn btn-info days_btn', remote: true, onclick: 'timeRangesClick(this)', disabled: 'true' %>
-                    </div>
-                </div>
+ <div class="stats_notification">
+ We've implemented a new enhancement in the way that Navigarot Bar Impressions are calculated. Impressions are now Visits and are unique per session. This means that impressions are tracked more like users than page loads. If you'd like to know more, check out our blog post detailing the change to see how it affects these stats.
+</div>
+<h3 class="show_date">
+Stats for: <small> Jan 12th 2013 – Feb 12th 2013</small>
+</h3>
+<div class="days_btn">
+            <div id="time-ranges">
+                <%= link_to '1 Day', user_bars_path( @user, days: 1), remote: true, onclick: 'timeRangesClick(this)' %>
+                <%= link_to '7 Days', user_bars_path( @user, days: 7), remote: true, onclick: 'timeRangesClick(this)' %>
+                <%= link_to '30 Days', user_bars_path( @user, days: 30), remote: true, onclick: 'timeRangesClick(this)', disabled: 'true' %>
             </div>
-        </div>
+</div>
 
-        <div class="stats_background">
-            <div class="navbar mrgn_bottom">
+
+            <div class="navbar">
               <div class="navbar-inner statsnav_background">
                 <ul class="nav">
                     <li>
@@ -49,8 +33,3 @@
             </div>
 
         </div>
-    </div>
-
-</div>
-</div>
-<!-- stats content end -->

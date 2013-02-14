@@ -1,9 +1,11 @@
 <%= simple_form_for @user, :html => { :class => '' } do |f| %>
+<div class="edit_profilecontainer">
 <%= f.input :name %>
 <%= f.input :email %>
-  <div class="form-actions embeded_padding">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+</div>
+
+  <%= f.submit nil, :class => 'editprofile_submitbtn save_btn' %>
     <%#= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 users_path, :class => 'btn' %>
-  </div>
+
 <% end %>

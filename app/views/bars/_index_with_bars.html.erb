@@ -14,10 +14,10 @@
     
     <div class="tab-pane active" id="tab1">
       <%= link_to 'Create New Bar', new_user_bar_path( @user ) , class: 'create_new_bar' %>
-      <div class="managebar_list">
+      
          <%= render partial: 'bar_box', collection: @bars %>
        
-      </div>
+     
       
     </div>
     <!-- status -->

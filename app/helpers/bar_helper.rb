@@ -20,4 +20,20 @@ module BarHelper
     link_to link_text_for_bar( @bar ), link_url_for_bar( _bar ), :class => "message_link", target: target_value_for_bar( _bar)
   end
 
+  def bar_bg_color( _bar )
+    _bar.bg_color.present? ? _bar.bg_color : '#eb583c'
+  end
+
+  def bar_text_color( _bar )
+    _bar.link_text_color.present? ? _bar.text_color : '#fff'
+  end
+
+  def bar_link_bg_color( _bar )
+    _bar.bg_color.present? ? _bar.link_bg_color : '#3d3d3d'
+  end
+
+  def bar_link_text_color( _bar )
+    _bar.link_text_color.present? ? _bar.link_text_color : '#fff'
+  end
+
 end

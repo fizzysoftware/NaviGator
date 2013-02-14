@@ -6,8 +6,8 @@
 	 <%= f.input :name, input_html: { class: 'title_input_width' }, :placeholder => "My first Navigator Bar", label: false %>
 	 <p>Preview</p>
 	 <div class="preview_container">
-	 	<div class="nav_preview" style="background: #eb583c;">
-	 		<p class="message"  style="color: #fff;"> <%= message_for_bar( @bar ) %> </p>
+	 	<div class="nav_preview" style="background: <%= bar_bg_color( @bar ) %>;">
+	 		<p class="message"  style="color: <%= bar_text_color( @bar ) %>;"> <%= message_for_bar( @bar ) %> </p>
 	 		<%= link_to_for_bar( @bar ) %>
 	 	</div>
 	</div>
@@ -24,8 +24,10 @@
 		<div class="link_url">
 		 <%= f.input :link_url, input_html: { class: 'nav_linkurl' }, :placeholder => "www.google.com" %>
 		</div>
-		<%= f.hidden_field :bg_color %>
-		<%= f.hidden_field :text_color %>
+		<%= f.hidden_field :text_color, value: bar_text_color( @bar ) %>
+		<%= f.hidden_field :bg_color, value:  bar_bg_color( @bar ) %>
+		<%= f.hidden_field :link_text_color, value: bar_link_text_color( @bar )  %>
+		<%= f.hidden_field :link_bg_color, value:  bar_link_bg_color( @bar ) %>
 
 	</div><!-- nav_changes -->
 

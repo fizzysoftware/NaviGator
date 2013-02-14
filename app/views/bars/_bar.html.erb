@@ -1,4 +1,4 @@
-<div style='margin:0 auto;width:100%;background:#EB583C;height:45px;'>
+<div style='margin:0 auto;width:100%;background:<%=  bar.bg_color || "#EB583C" %>;height:45px;'>
   <h1 style='width:625px;height:46px;text-align:right;color:<%=  bar.text_color || "#fff" %>;line-height:28px;font-size:13px;float:left;'> <%= bar.message %> </h1>
   <div style='float:right;width:640px;'>
     <%= link_to bar.link, "http://#{bar.link_url}", id: 'fizzybar-link',onclick: "barClicked()", target: "_blank",

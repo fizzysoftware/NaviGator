@@ -76,3 +76,10 @@ $(function () {
 	})
 
 });
+
+$(function () {
+    $(".on, .off").click(function () {
+        $(".enable").removeClass("enable");
+        $(this).addClass("enable");
+    });
+});

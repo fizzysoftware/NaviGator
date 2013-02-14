@@ -1,6 +1,6 @@
 <div style='margin:0 auto;width:100%;background:<%=  bar.bg_color || "#EB583C" %>;height:45px;'>
-  <h1 style='width:625px;height:46px;text-align:right;color:<%=  bar.text_color || "#fff" %>;line-height:28px;font-size:13px;float:left;'> <%= bar.message %> </h1>
-  <div style='float:right;width:640px;'>
+  <h1 style='width:48%;height:46px;text-align:right;color:<%=  bar.text_color || "#fff" %>;line-height:28px;font-size:13px;float:left;'> <%= bar.message %> </h1>
+  <div style='float:right;width:50%;'>
     <%= link_to bar.link, "http://#{bar.link_url}", id: 'fizzybar-link',onclick: "barClicked()", target: "_blank",
     style: "color:#{ bar.link_text_color || '#fff'};width:100px;height:22px;display:block;margin-top:11px; background:#{ bar.link_bg_color || '#444' };text-align:center;border-radius:3px;line-height:22px;" %>
   </div>

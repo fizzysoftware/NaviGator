@@ -1,7 +1,6 @@
 <div class="bars_background">
   <div class="managebarcontainer">
     <%#- model_class = User -%>
-  
   <!-- <h1 class="userpage_title"><%#=t '.title', :default => model_class.model_name.human %></h1>
 
   <div class="user_profile_name">
@@ -13,11 +12,13 @@
       <%= @user.email %>
   </div>
   <hr> -->
+
   <%- model_class = User -%>
-  <h1 class="userpage_title"><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human, :default => "Edit #{model_class.model_name.human}") %></h1>
-
+  <h1 class="userpage_title">
+    <%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human, :default => "Edit #{model_class.model_name.human}") %>
+  </h1>
   <%= render :partial => 'form' %>
-
+  
   <!-- <div class="form-actions embeded_padding">
     <%#= link_to t('.back', :default => t("helpers.links.back")),
     users_path, :class => 'btn'  %>
@@ -29,8 +30,6 @@
     :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
     :class => 'btn btn-danger' %>
   </div> --><!-- form-actions embeded_padding -->
-
-
 </div>
 </div>
 

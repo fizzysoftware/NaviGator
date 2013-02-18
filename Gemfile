@@ -13,7 +13,7 @@ end
 
 gem 'therubyracer', :platforms => :ruby
 gem 'less-rails'
-gem 'bootstrap-colorpicker-rails'
+# gem 'bootstrap-colorpicker-rails'
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 gem 'json', '1.7.7'

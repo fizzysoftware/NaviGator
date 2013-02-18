@@ -73,15 +73,21 @@
 
 		      <div class="custom_coloroption">
 		      	<div class="inline_block">
-		      	<%= f.input :bg_color, input_html: { class: 'bar_color' , value: '' }, label: 'Bar background color', label: 'Bar Color', disabled: true %>
+		      		<p>Bar Color</p>
+		      		<div class="bar_color" id="bar_clr"></div>
+		      	<%#= f.input :bg_color, input_html: { class: 'bar_color' , value: '' }, label: 'Bar background color', label: 'Bar Color', disabled: true %>
 		      	</div>
 
 		      	<div class="inline_block">
-		      	<%= f.input :link_text_color, input_html: { class: 'bar_color text_color' , value: '' }, label: 'Text Color', disabled: true %>
+		      		<p>Text Color</p>
+		      		<div class="bar_color text_color" id="text_clr"></div>
+		      	<%#= f.input :link_text_color, input_html: { class: 'bar_color text_color' , value: '' }, label: 'Text Color', disabled: true %>
 		      	</div>
 
 		      <div class="inline_block">
-		      	<%= f.input :link_bg_color, input_html: { class: 'bar_color link_color', value: '' }, label: 'Link background color', label: 'Link Color' %>
+		      	<p>Link Color</p>
+		      		<div class="bar_color link_color" id="link_clr"></div>
+		      	<%#= f.input :link_bg_color, input_html: { class: 'bar_color link_color', value: '' }, label: 'Link background color', label: 'Link Color' %>
 		      </div>
 		      </div><!-- custom_coloroption -->
 
@@ -96,11 +102,10 @@
 <% end %>
 </div>
 
-<div id="colorSelector">C<div style="background-color: #0000ff"></div></div>
 
 <script type="text/javascript">
 
-$('#colorSelector').ColorPicker({
+$('#link_clr, #text_clr, #bar_clr').ColorPicker({
 	color: '#0000ff',
 	onShow: function (colpkr) {
 		$(colpkr).fadeIn(500);

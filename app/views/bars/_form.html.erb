@@ -41,7 +41,7 @@
 		  <div class="tab-content">
 		    <div class="tab-pane active" id="tab1">
 		      <div class="fontstyle_container">
-		      	<p>Font Style
+		      	<!-- <p>Font Style
 		      			<select>
 				          <option>Serif</option>
 				          <option>Arial</option>
@@ -49,7 +49,7 @@
 				          <option>Helvetica</option>
 				        </select>
 
-		      	</p>
+		      	</p> -->
 		      		<p class="default_theme">Default Theme</p>
 
 		      		<%= link_to "Red", "#", :class => "defaultred" %>
@@ -61,14 +61,14 @@
 		    </div>
 		    <div class="tab-pane" id="tab2">
 		      <div class="fontstyle_container">
-		      	<p>Font Style
+		      	<!-- <p>Font Style
 		      			<select>
 				          <option>Serif</option>
 				          <option>Arial</option>
 				          <option>Calibri</option>
 				          <option>Helvetica</option>
 				        </select>
-		      	</p>
+		      	</p> -->
 		      </div><!-- fontstyle_container -->
 
 		      <div class="custom_coloroption">
@@ -116,7 +116,7 @@ $('#link_clr, #text_clr, #bar_clr').ColorPicker({
 		return false;
 	},
 	onChange: function (hsb, hex, rgb) {
-		$('#colorSelector div').css('backgroundColor', '#' + hex);
+		$('#link_clr').css('backgroundColor', '#' + hex);
 	}
 });
 

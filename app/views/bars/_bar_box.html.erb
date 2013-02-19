@@ -3,11 +3,11 @@
 <%= link_to bar_box.name, edit_user_bar_path( @user, bar_box) %>
 </div>
 <div class="btn-group" data-toggle="buttons-radio">
-                <button type="button" class="btn btn-primary on">On</button>
-                <button type="button" class="btn btn-primary off">Off</button>
+                <button type="button" class="btn on">On</button>
+                <button type="button" class="btn off">Off</button>
  </div>
 
-<%= link_to "Embed", embed_code_user_bar_path( @user, bar_box ), :class => "embed", remote: true %>
+<%= link_to "Show Embed", embed_code_user_bar_path( @user, bar_box ), :class => "embed", remote: true %>
 
-<%= link_to "Delete", "#", :class => "embed delete" %>
+<%= link_to "Delete", "javascript:void()", :class => "embed delete" %>
 </div>

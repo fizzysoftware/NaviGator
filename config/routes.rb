@@ -1,5 +1,9 @@
 Fizzybar::Application.routes.draw do
 
+  # get "home/welcome"
+  get "/about", to: 'home#about_us', as: :about_us
+  get "/policy", to: 'home#policy', as: :policy
+
   devise_for :users, controllers: { omniauth_callbacks: "sessions" }
 
   # custom login logout url setup
@@ -15,8 +19,6 @@ Fizzybar::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :users, only: [:show,:edit,:update] do
-    get 'welcome', on: :collection
-
     resources :bars, except: :destroy do
       get 'embed_code', on: :member
       # get 'get_fizzybar', on: :collection
@@ -34,7 +36,7 @@ Fizzybar::Application.routes.draw do
 
   get '/fizzybar', to: 'bars#fizzybar'
   get '/bar/hit', to: 'bars#hit', as: :hit_bars
-  root to: 'users#welcome'
+  root to: 'home#welcome'
 
 
   # The priority is based upon order of creation:

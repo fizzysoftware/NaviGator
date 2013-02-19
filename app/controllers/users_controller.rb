@@ -27,9 +27,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def welcome
-  end
-
   #  ===================
   #  = Private Methods =
   #  ===================

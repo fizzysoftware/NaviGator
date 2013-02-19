@@ -1,4 +1,5 @@
 <div class="managebar_list">
+
 <div class= "link_edit">
 <%= link_to bar_box.name, edit_user_bar_path( @user, bar_box) %>
 </div>
@@ -10,4 +11,5 @@
 <%= link_to "Show Embed", embed_code_user_bar_path( @user, bar_box ), :class => "embed", remote: true %>
 
 <%= link_to "Delete", "javascript:void()", :class => "embed delete" %>
+
 </div>

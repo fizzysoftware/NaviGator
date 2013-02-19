@@ -84,9 +84,9 @@ $(function () {
     });
 });
 
-function attachColorPicker (_element) {
+function attachColorPicker ( _element, _color) {
   $( '#' + _element ).ColorPicker({
-    color: '#0000ff',
+    color: _color,
     onShow: function (colpkr) {
       $(colpkr).fadeIn(500);
       return false;

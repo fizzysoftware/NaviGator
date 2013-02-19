@@ -1,4 +1,4 @@
-function showJBar() {
+function showJBar( _url ) {
 	    $.jBar({
 	        type: 'fixed', // fixed/static
 	        delay: '1000', // Entrance delay (milliseconds)
@@ -9,7 +9,7 @@ function showJBar() {
 	        buttonColorHover: '#222', // Button Color Hover
 	        calltoAction: ' A simple and lightweight notification banner.', // Call to action text
 	        buttonText: 'Try It Out!', // Button Text
-	        buttonLink: '#' // Hyperlink from button
+	        buttonLink: _url // Hyperlink from button
 	    });
 	}
 

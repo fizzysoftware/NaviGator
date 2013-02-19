@@ -83,3 +83,29 @@ $(function () {
         $(this).addClass("enable");
     });
 });
+
+function attachColorPicker ( _element, _color) {
+  $( '#' + _element ).ColorPicker({
+    color: _color,
+    onShow: function (colpkr) {
+      $(colpkr).fadeIn(500);
+      return false;
+    },
+    onHide: function (colpkr) {
+      $(colpkr).fadeOut(500);
+      return false;
+    },
+    onChange: function (hsb, hex, rgb) {
+      $( '#' + _element ).css('backgroundColor', '#' + hex);
+      if( _element == 'bar-color') {
+        $( '.' + _element ).css('backgroundColor', '#' + hex);
+        $('#bar_bg_color').val( '#' + hex );
+      }
+      else if( _element == 'text-color' ) {
+        $( '.' + _element ).css('color', '#' + hex);
+        $('#bar_text_color').val( '#' + hex );
+      }
+
+    }
+  });
+}

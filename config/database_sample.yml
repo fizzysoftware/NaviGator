@@ -29,13 +29,11 @@ test:
   host: localhost
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: fizzybar_production
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  username: root
-  password:
-  host: localhost
-
-
+  database: d7mhcrh0e98feu
+  username: wmxgwdmrnqekpa
+  password: AD-8ky5klNEoU_xyCLYcyRdrZg
+  host: ec2-107-22-170-64.compute-1.amazonaws.com
+  port: 5432

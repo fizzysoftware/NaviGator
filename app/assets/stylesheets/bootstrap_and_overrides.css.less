@@ -57,7 +57,9 @@ body {
 .enable{
 	background: #03369B;
 }
-
+.alert{
+	margin-bottom: 0!important;
+}
 
 h1{
 	font-size: 30px;
@@ -332,11 +334,11 @@ h1{
 			width: 100%;
 			.bar_color{
 				background: #063b4b url("/assets/icon_colorpicker.png") no-repeat 0 0;
-				width: 59px;
+				width: 74px;
 				border-radius: 0;
 				border: none;
 				cursor: pointer;
-				height: 15px;
+				height: 25px;
 				}
 				.text_color{
 					background: #e1ffff url("/assets/icon_colorpicker.png") no-repeat 0 0;
@@ -346,7 +348,7 @@ h1{
 				}
 				.inline_block{
 					display: inline-block;
-					margin: 0 15px 0 11px;
+					margin: 0 12px 15px 11px;
 					label{
 						font-size: 12px;
 						font-weight: 700;
@@ -499,11 +501,19 @@ h1{
 	}
 	.header_container_width{
 		width: 980px;
+		position: relative;
 		.profile_textcolor{
 			color: #000!important;
 			&:hover{
 				color: #309EEB!important;
 			}
+		}
+	}
+	.brand{
+		position: absolute;
+		margin-top: -6px;
+		&:hover{
+			background: transparent!important;
 		}
 	}
 }/* header_background_color */
@@ -896,6 +906,10 @@ h1{
 			.ease;
 			&:hover{
 				box-shadow: 0 0 1px #000;
+			}
+			img{
+				width: 290px;
+				height: 216px;	
 			}
 		}/* homeimg_wrapper */
 		.homeimg_content{

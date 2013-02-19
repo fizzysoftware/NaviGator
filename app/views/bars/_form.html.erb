@@ -6,8 +6,8 @@
 	 <%= f.input :name, input_html: { class: 'title_input_width' }, :placeholder => "My first Navigator Bar", label: false %>
 	 <p>Preview</p>
 	 <div class="preview_container">
-	 	<div class="nav_preview" style="background: <%= bar_bg_color( @bar ) %>;">
-	 		<p class="message"  style="color: <%= bar_text_color( @bar ) %>;"> <%= message_for_bar( @bar ) %> </p>
+	 	<div class="nav_preview bar-color" style="background: <%= bar_bg_color( @bar ) %>;">
+	 		<p class="message text-color"  style="color: <%= bar_text_color( @bar ) %>;"> <%= message_for_bar( @bar ) %> </p>
 	 		<%= link_to_for_bar( @bar ) %>
 	 	</div>
 	</div>
@@ -74,19 +74,19 @@
 		      <div class="custom_coloroption">
 		      	<div class="inline_block">
 		      		<p>Bar Color</p>
-		      		<div class="bar_color" id="bar_clr"></div>
+		      		<div class="bar_color" id="bar-color"></div>
 		      	<%#= f.input :bg_color, input_html: { class: 'bar_color' , value: '' }, label: 'Bar background color', label: 'Bar Color', disabled: true %>
 		      	</div>
 
 		      	<div class="inline_block">
 		      		<p>Text Color</p>
-		      		<div class="bar_color text_color" id="text_clr"></div>
+		      		<div class="bar_color text_color" id="text-color"></div>
 		      	<%#= f.input :link_text_color, input_html: { class: 'bar_color text_color' , value: '' }, label: 'Text Color', disabled: true %>
 		      	</div>
 
 		      <div class="inline_block">
 		      	<p>Link Color</p>
-		      		<div class="bar_color link_color" id="link_clr"></div>
+		      		<div class="bar_color link_color" id="link-color"></div>
 		      	<%#= f.input :link_bg_color, input_html: { class: 'bar_color link_color', value: '' }, label: 'Link background color', label: 'Link Color' %>
 		      </div>
 		      </div><!-- custom_coloroption -->
@@ -104,21 +104,8 @@
 
 
 <script type="text/javascript">
-
-$('#link_clr, #text_clr, #bar_clr').ColorPicker({
-	color: '#0000ff',
-	onShow: function (colpkr) {
-		$(colpkr).fadeIn(500);
-		return false;
-	},
-	onHide: function (colpkr) {
-		$(colpkr).fadeOut(500);
-		return false;
-	},
-	onChange: function (hsb, hex, rgb) {
-		$('#link_clr').css('backgroundColor', '#' + hex);
-	}
-});
-
+	attachColorPicker( 'link-color' );
+	attachColorPicker( 'text-color' );
+	attachColorPicker( 'bar-color' );
 </script>
 

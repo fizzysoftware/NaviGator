@@ -11,14 +11,14 @@
 
   <div class="tab-content">
     <!-- manage -->
-    
+
     <div class="tab-pane active" id="tab1">
       <%= link_to 'Create New Bar', new_user_bar_path( @user ) , class: 'create_new_bar' %>
-      
+
          <%= render partial: 'bar_box', collection: @bars %>
-       
-     
-      
+
+
+
     </div>
     <!-- status -->
     <div class="tab-pane" id="tab2">
@@ -26,9 +26,9 @@
     </div>
   </div>
 </div>
-</div> 
+</div>
 
-         
+
 
 
   <%# Light-box for Embedding Code %>
@@ -39,7 +39,7 @@
       <h3 id="myModalLabel">EMBED YOUR CODE</h3>
 
       <p>Place this code anywhere in your <body> tag. You only need to do this once!</p>
-      <%=link_to "Deploy Your Fizzy Bar toolbar Anywhere!", "#" %>
+      <%=link_to "Deploy Your NaviGator bar Anywhere!", "#" %>
     </div>
     <div class="modal-body">
     </div>

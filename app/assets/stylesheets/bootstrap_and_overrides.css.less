@@ -54,7 +54,9 @@ body {
 @brdrsolid: 1px solid #ccc;
 @pad: 15px;
 
-
+.brdr_btmnone{
+	border-bottom: none!important;
+}
 
 .enable{
 	background: #bbb;
@@ -103,23 +105,7 @@ h1{
 	transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
 }
-/*.textalign_right{
-	text-align: right;
-	a{
-		background: #216C88;
-		border-radius: 0;
-		width: 165px;
-		line-height: 26px;
-		height: 26px;
-		font-size: 16px;
-		text-align: center;
-		font-weight: @fnt_weight;
-		.ease;
-		&:hover{
-			background: #277A99;
-		}
-	}
-}*/
+
 .newbar_btn_alignright{
 	padding-left: 180px;
 	.barname_height{
@@ -190,8 +176,19 @@ h1{
 		width: 300px;
 		border-radius: 0;
 		height: 30px;
+		border-top: none;
+		border-right: none;
+		border-left: none;
+		box-shadow: none;
+		border-bottom: 2px solid #CCC;
+		font-size: 25px;
+		color: #888;
 		&:focus{
-			border: 1px solid #ccc;
+			border-top: none;
+			border-right: none;
+			border-left: none;
+			box-shadow: none;
+			border-bottom: 2px solid #CCC;
 		}
 	}
 	.preview_container{
@@ -469,31 +466,31 @@ h1{
 		
 	}
 	a.login_facebook{
-		background: url("/assets/Login-with-facebook.png") no-repeat -22px -13px;
+		background: url("/assets/Login-with-facebook.png") no-repeat 8px 10px;
 		width: 345px;
 		display: block;
 		height: 60px;
 		text-indent: -9999px;
 		margin-bottom: 20px;
 		&:hover{
-			background: url("/assets/Login-with-facebook.png") no-repeat -22px -123px;
+			background: url("/assets/Login-with-facebook.png") no-repeat 8px -75px;
 		}
 		&:active{
-			background: url("/assets/Login-with-facebook.png") no-repeat -22px -243px;
+			background: url("/assets/Login-with-facebook.png") no-repeat 8px 10px;
 		}
 	}
 	a.register_facebook{
-		background: url("/assets/Login-with-facebook.png") no-repeat -22px -403px;
+		background: url("/assets/Login-with-facebook.png") no-repeat 8px -173px;
 		width: 345px;
 		display: block;
 		height: 60px;
 		text-indent: -9999px;
 		margin-bottom: 20px;
 		&:hover{
-			background: url("/assets/Login-with-facebook.png") no-repeat -22px -513px;
+			background: url("/assets/Login-with-facebook.png") no-repeat 8px -258px;
 		}
 		&:active{
-			background: url("/assets/Login-with-facebook.png") no-repeat -22px -634px;
+			background: url("/assets/Login-with-facebook.png") no-repeat 8px -173px;
 		}
 	}
 	.or_image{
@@ -509,10 +506,11 @@ h1{
 	border-width: 0 0 3px 0!important;
 	a{
 		color: #fff!important;
-		text-shadow: none!important;
+		text-shadow: 3px 3px 2px black!important;
 		&:hover{
 			background: #fff!important;
 			color: #000!important;
+			text-shadow: none!important;
 		}
 	}
 	.header_container_width{
@@ -661,7 +659,7 @@ h1{
 			line-height: 40px;
 			.radius;
 			.link_edit a{
-				width: 605px;
+				width: 575px;
 				color: #000;
 				padding-left: 10px;
 				display: block;
@@ -948,12 +946,7 @@ h1{
 				font-size: 14px;
 			}
 		}
-		h1.text_center{
-			text-align: @text_align_center;
-			margin-bottom: 20px;
-			font-weight: 700;
-			font-family: @font_family;
-		}
+		
 		a.btm_signup{
 			margin: 0 auto;
 			width: 100px;
@@ -986,15 +979,15 @@ h1{
 		background: @background;
 		text-align: center;
 		border: 1px solid #ccc;
+		margin: 0 auto;
+		width: 497px;
 		h3{
 			font-size: 20px;
 		}
 		}
 		.poppup_close_background{
 			border-top: none;
-			background: #fff;
-			border-radius: 0;
-			border: 1px solid #ccc;
+			background: #fafafa;
 			text-align: center;
 			button{
 				width: 100px;
@@ -1115,38 +1108,14 @@ footer{
 			background: url("/assets/slider_background.png")no-repeat 0 -60px;
 			.image_right{
 				width: 465px;
-				height: 415px;
 				float: left;
+				height: 280px;
 				background: url("/assets/pointer-image.png") no-repeat 0 65px;
-				.top_signin{
-					a{
-					display: block;
-					width: 111px;
-					text-align: center;
-					height: 40px;
-					line-height: 40px;
-					color: white;
-					font-size: 23px;
-					text-shadow: 0 0 1px black;
-					margin: 338px 0 0 332px;
-					.radius;
-					border-bottom: 2px solid #163844;
-					font-weight: 700;
-					font-family: @font_family;
-					background: #216C88 url("/assets/bg_pattern.png");
-					.ease;
-					&:hover{
-						background: #277A99;
-						box-shadow: @box_shadow;
-						text-decoration: none;
-					}
-				}
-				}
+				
 			}
 			.image_content_left{
 				width: 475px;
 				float: right;
-				height: 415px;
 				h1{
 					font-family: @font_family;
 					font-size: 28px;
@@ -1192,12 +1161,17 @@ footer{
 							}
 						}
 					}
-					.top_signup a{
-						display: block;
+				}/* useit_container */
+			}/*image_content_left*/
+			.image_btn{
+				clear: both;
+				text-align: center;
+			 		a{
+						display: inline-block;
 						width: 111px;
 						text-align: center;
 						height: 40px;
-						line-height: 6px;
+						line-height: 40px;
 						color: white;
 						font-size: 23px;
 						text-shadow: 0 0 1px black;
@@ -1214,8 +1188,7 @@ footer{
 							text-decoration: none;
 							}
 					}
-				}/* useit_container */
-			}/*image_content_left*/
+				}
 		}
 	}/* image_cotainer */
 }/* image_outer */

@@ -2,9 +2,6 @@
 	<div class="image_cotainer">
 		<div class="cloud_image">
 			<div class="image_right">
-				<div class="top_signin">
-					<%= link_to "Login", new_user_session_path %>
-				</div>
 			</div>
 			<div class="image_content_left">
 				<h1>Direct Your Visitors and promote your website’s most important content.</h1>
@@ -21,10 +18,11 @@
 						</ul>
 
 					</div>
-					<div class="top_signup">
-						<%= link_to "Sign Up", new_user_registration_path %>
-					</div>
 				</div>
+			</div>
+			<div class="image_btn">
+				<%= link_to "Login", new_user_session_path %>
+				<%= link_to "Sign Up", new_user_registration_path %>
 			</div>
 			</div><!-- cloud_image -->
 	</div><!-- image_cotainer -->

@@ -75,29 +75,29 @@
 		      	<div class="inline_block">
 		      		<p>Bar Color</p>
 
-		      		<div class="bar_color" id="bar-color" style="background-color: <%= bar_bg_color( @bar ) %>; background-image: url("/assets/icon_colorpicker.png") no-repeat 0 0;"></div>
-		      	
+		      		<div class="bar_color" id="bar-color" style="background-color: <%= bar_bg_color( @bar ) %>;"></div>
+
 		      	</div>
 
 		      	<div class="inline_block">
 		      		<p>Text Color</p>
-		      		<div class="bar_color text_color" id="text-color" style="background-color: <%= bar_text_color( @bar ) %>; background-image: url("/assets/icon_colorpicker.png") no-repeat 0 0;"></div>
-		      	
+		      		<div class="bar_color text_color" id="text-color" style="background-color: <%= bar_text_color( @bar ) %>;"></div>
+
 		      	</div>
 
-		      
-		      </div><!-- custom_coloroption -->
+
+		      </div>
 		      <div class="custom_coloroption">
 		      	<div class="inline_block">
 		      	 <p>Link Color</p>
-		      		<div class="bar_color link_color" id="link-color"></div>
-		      	
+		      		<div class="bar_color link_color" id="link-color" style="background-color: <%= bar_link_text_color( @bar ) %>;"></div>
+
 		      </div>
 
 		      <div class="inline_block">
 		      	 <p>Background Color</p>
-		      		<div class="bar_color link_color" id="link-color"></div>
-		      	
+		      		<div class="bar_color link_color" id="link-bg-color" style="background-color: <%= bar_link_bg_color( @bar ) %>;"></div>
+
 		      </div>
 		      </div>
 
@@ -116,5 +116,7 @@
 <script type="text/javascript">
 	attachColorPicker( 'bar-color', '<%= bar_bg_color( @bar ) %>');
 	attachColorPicker( 'text-color', '<%= bar_text_color( @bar ) %>' );
+	attachColorPicker( 'link-color', '<%= bar_link_text_color( @bar ) %>' );
+	attachColorPicker( 'link-bg-color', '<%= bar_link_bg_color( @bar ) %>' );
 </script>
 

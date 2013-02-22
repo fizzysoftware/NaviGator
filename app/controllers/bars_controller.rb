@@ -25,7 +25,7 @@ class BarsController < ApplicationController
     @bar = @user.bars.new( params[:bar] )
 
     if @bar.save
-     redirect_to  edit_user_bar_path( @user, @bar ), notice: 'Bar was successfully created.'
+     redirect_to  user_bars_path( @user ), notice: 'Bar was successfully created.'
    else
      render action: "new"
    end
@@ -35,11 +35,16 @@ class BarsController < ApplicationController
   def update
 
     if @bar.update_attributes( params[:bar] )
-     redirect_to edit_user_bar_path( @user, @bar), notice: 'Bar was successfully updated.'
+     redirect_to user_bars_path( @user), notice: 'Bar was successfully updated.'
    else
      render action: "edit"
    end
  end
+
+ def destroy
+  @bar.destroy
+  redirect_to user_bars_path( @user)
+end
 
   # return fizzybar. The HTML code for requesting application
   def fizzybar
@@ -61,6 +66,11 @@ class BarsController < ApplicationController
     @bar = current_user.bars.find( params[:id] )
   end
 
+  def visibility
+    @bar.update_attributes( params[:bar] )
+    render nothing: true
+  end
+
   #  ===================
   #  = Private methods =
   #  ===================
@@ -69,11 +79,13 @@ class BarsController < ApplicationController
   def populate_resources
     if params[:uid].present?
       @user = User.find( params[:uid] )
+      @bar = @user.bars.actives.find_by_id( params[:id] )
+      render nothing: true if @bar.nil?
     else
       @user = User.find( params[:user_id] )
       ensure_current_user( @user )
+      @bar  = @user.bars.find( params[:id]) if params[:id].present?
     end
-    @bar  = @user.bars.find( params[:id]) if params[:id].present?
   end
 
 end

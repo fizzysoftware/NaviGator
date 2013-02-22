@@ -19,8 +19,12 @@ Fizzybar::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :users, only: [:show,:edit,:update] do
-    resources :bars, except: :destroy do
-      get 'embed_code', on: :member
+    resources :bars do
+      member do
+        get 'embed_code'
+        put 'visibility'
+      end
+
       # get 'get_fizzybar', on: :collection
       # get 'hit', on: :collection
     end

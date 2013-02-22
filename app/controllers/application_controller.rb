@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def reroute_signed_in_user
-    redirect_to user_bars_path( current_user ) if ( current_user && request.url == root_url )
+    redirect_to user_bars_path( current_user ) and return if ( current_user && request.url == root_url )
   end
 
 end

@@ -1,15 +1,21 @@
 <div class="managebar_list">
 
-<div class= "link_edit">
-<%= link_to bar_box.name, edit_user_bar_path( @user, bar_box) %>
+  <div class= "link_edit">
+    <%= link_to bar_box.name, edit_user_bar_path( @user, bar_box) %>
+  </div>
+  <div class="btn-group" data-toggle="buttons-radio">
+    <%= link_to "on", visibility_user_bar_path( @user, bar_box, bar: {active: 1} ), class: 'btn on', remote: true, method: :put %>
+    <%= link_to "off", visibility_user_bar_path( @user, bar_box, bar: {active: 0} ), class: 'btn off', remote: true, method: :put %>
+  </div>
+
+  <%= link_to "Show Embed", embed_code_user_bar_path( @user, bar_box ), :class => "btn embed", remote: true %>
+
+  <%= link_to "Delete", user_bar_path( @user, bar_box ), :class => "embed delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+
 </div>
-<div class="btn-group" data-toggle="buttons-radio">
-                <button type="button" class="btn on">On</button>
-                <button type="button" class="btn off">Off</button>
- </div>
 
-<%= link_to "Show Embed", embed_code_user_bar_path( @user, bar_box ), :class => "btn embed", remote: true %>
 
-<%= link_to "Delete", "javascript:void()", :class => "embed delete" %>
-
-</div>
+<script type="text/javascript">
+  _button = '<%= bar_box.active? ? "on" : "off" %>'
+  $( '.' + _button ).addClass("enable");
+</script>

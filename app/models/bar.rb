@@ -1,5 +1,6 @@
 class Bar < ActiveRecord::Base
   include ActAsCountable
+  acts_as_paranoid
 
   attr_accessible :active, :link, :link_url, :message, :name, :text_color, :bg_color, :link_text_color, :link_bg_color
 
@@ -11,6 +12,8 @@ class Bar < ActiveRecord::Base
 
   before_create :activate_bar
   after_initialize
+
+  scope :actives, where( active: 1 )
 
   def hits_since( _days )
     visitors.since( _days ).sum(:hits)

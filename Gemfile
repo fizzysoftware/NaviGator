@@ -20,7 +20,7 @@ gem 'json', '1.7.7'
 gem 'will_paginate'
 gem 'daemons'
 gem 'delayed_job_active_record'
-gem "delayed_job_web"
+gem 'delayed_job_web'
 # gem 'paperclip'
 # gem 'rmagick'
 gem 'libv8', '~> 3.11.8'
@@ -40,6 +40,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'pg'
 gem 'thin'
+gem 'acts_as_paranoid', '~>0.4.0'
 
 
 

@@ -41,6 +41,11 @@ class BarsController < ApplicationController
    end
  end
 
+ def destroy
+  @bar.destroy
+  redirect_to user_bars_path( @user)
+end
+
   # return fizzybar. The HTML code for requesting application
   def fizzybar
     session[:visited] = true if session[:visited].blank?

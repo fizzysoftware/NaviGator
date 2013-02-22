@@ -1,5 +1,6 @@
 class Bar < ActiveRecord::Base
   include ActAsCountable
+  acts_as_paranoid
 
   attr_accessible :active, :link, :link_url, :message, :name, :text_color, :bg_color, :link_text_color, :link_bg_color
 

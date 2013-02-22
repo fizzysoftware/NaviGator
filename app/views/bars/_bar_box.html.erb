@@ -10,7 +10,7 @@
 
   <%= link_to "Show Embed", embed_code_user_bar_path( @user, bar_box ), :class => "btn embed", remote: true %>
 
-  <%= link_to "Delete", "javascript:void()", :class => "embed delete" %>
+  <%= link_to "Delete", user_bar_path( @user, bar_box ), :class => "embed delete", method: :delete, data: { confirm: 'Are you sure?' } %>
 
 </div>
 

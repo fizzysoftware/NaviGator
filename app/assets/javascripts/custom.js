@@ -105,7 +105,14 @@ function attachColorPicker ( _element, _color) {
         $( '.' + _element ).css('color', '#' + hex);
         $('#bar_text_color').val( '#' + hex );
       }
-
+      else if( _element == 'link-color' ) {
+        $( '.message_link' ).css('color', '#' + hex);
+        $('#bar_link_text_color').val( '#' + hex );
+      }
+      else if( _element == 'link-bg-color' ) {
+        $( '.message_link' ).css('backgroundColor', '#' + hex);
+        $('#bar_link_bg_color').val( '#' + hex );
+      }
     }
   });
 }

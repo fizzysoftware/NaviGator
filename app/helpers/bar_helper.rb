@@ -17,7 +17,10 @@ module BarHelper
   end
 
   def link_to_for_bar( _bar )
-    link_to link_text_for_bar( @bar ), link_url_for_bar( _bar ), :class => "message_link", target: target_value_for_bar( _bar)
+    link_to link_text_for_bar( @bar ), link_url_for_bar( _bar ),
+      class: 'message_link',
+      target: target_value_for_bar( _bar),
+      style: "color: #{ bar_link_text_color( _bar ) }; background: #{ bar_link_bg_color( _bar ) }"
   end
 
   def bar_bg_color( _bar )

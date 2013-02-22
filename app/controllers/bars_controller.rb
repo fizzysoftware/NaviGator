@@ -61,6 +61,11 @@ class BarsController < ApplicationController
     @bar = current_user.bars.find( params[:id] )
   end
 
+  def visibility
+    @bar.update_attributes( params[:bar] )
+    render nothing: true
+  end
+
   #  ===================
   #  = Private methods =
   #  ===================
@@ -69,11 +74,13 @@ class BarsController < ApplicationController
   def populate_resources
     if params[:uid].present?
       @user = User.find( params[:uid] )
+      @bar = @user.bars.actives.find_by_id( params[:id] )
+      render nothing: true if @bar.nil?
     else
       @user = User.find( params[:user_id] )
       ensure_current_user( @user )
+      @bar  = @user.bars.find( params[:id]) if params[:id].present?
     end
-    @bar  = @user.bars.find( params[:id]) if params[:id].present?
   end
 
 end

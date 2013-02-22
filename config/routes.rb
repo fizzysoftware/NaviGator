@@ -20,7 +20,11 @@ Fizzybar::Application.routes.draw do
 
   resources :users, only: [:show,:edit,:update] do
     resources :bars, except: :destroy do
-      get 'embed_code', on: :member
+      member do
+        get 'embed_code'
+        put 'visibility'
+      end
+
       # get 'get_fizzybar', on: :collection
       # get 'hit', on: :collection
     end

@@ -12,6 +12,8 @@ class Bar < ActiveRecord::Base
   before_create :activate_bar
   after_initialize
 
+  scope :actives, where( active: 1 )
+
   def hits_since( _days )
     visitors.since( _days ).sum(:hits)
   end

@@ -39,4 +39,19 @@ module BarHelper
     _bar.link_text_color.present? ? _bar.link_text_color : '#fff'
   end
 
+  def link_to_for_visibility( _bar, _state )
+    _value = ( _state == 'on' ? 1 : 0 )
+    link_to _state,
+            visibility_user_bar_path( @user, _bar, bar: { active: _value } ),
+            class: 'btn',
+            remote: true,
+            method: :put,
+            onclick: 'visibilityChanged( this)',
+            disabled: should_disabled?( _bar, _state )
+  end
+
+  def should_disabled?( _bar, _state )
+    ( _state == 'on' && _bar.active?) || ( _state == 'off' && !_bar.active? )
+  end
+
 end

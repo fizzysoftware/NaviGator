@@ -1,7 +1,9 @@
 <script type="text/javascript">
   (function() {
-    var fb = document.createElement('script'); fb.type = 'text/javascript'; fb.async = true;
-    fb.src = "<%= fizzybar_url %>.js?id=<%= embedding.id %>&uid=<%= @user.id %>"
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fb, s);
+      var naviGator = document.createElement('script');
+      naviGator.type = 'text/javascript'; naviGator.async = true;
+      naviGator.src = "<%= fizzybar_url %>.js?id=<%= embedding.id %>&uid=<%= @user.id %>"
+      var scrpt = document.getElementsByTagName('script')[0];
+      scrpt.parentNode.insertBefore(naviGator, scrpt);
   })()
 </script>

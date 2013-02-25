@@ -77,12 +77,11 @@ $(function () {
 
 });
 
-$(function () {
-    $(".on, .off").click(function () {
-        $(".enable").removeClass("enable");
-        $(this).addClass("enable");
-    });
-});
+function visibilityChanged( _link) {
+  $(_link).siblings().first().removeAttr('disabled')
+  $(_link).attr('disabled', true);
+}
+
 
 function attachColorPicker ( _element, _color) {
   $( '#' + _element ).ColorPicker({

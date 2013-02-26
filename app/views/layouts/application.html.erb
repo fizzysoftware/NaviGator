@@ -16,24 +16,26 @@
 
 	</head>
 	<body>
+
 		<%= render partial: 'shared/top_nav_bar' %>
-		<% flash.each do |name, message|%>
+
+		<% flash_with_valid_messages.each do |name, message|%>
 			<div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
 				<button type="button" class="close" data-dismiss="alert">×</button>
 				<%= message %>
 			</div>
 			<% end %>
-		<%= backgroung_image_for_home %>
-		<div class="container container_width">
-			
 
+		<%= backgroung_image_for_home %>
+
+		<div class="container container_width">
 			<div class="row login_min_height">
 				<div class="login_widht"><%= yield %></div>
-
 			</div>
 		</div>
 
 		<%= render partial: 'shared/footer' %>
 		<%= render 'layouts/javascripts' %>
+
 	</body>
 	</html>

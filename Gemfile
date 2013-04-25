@@ -38,11 +38,13 @@ gem 'devise-encryptable'
 gem 'chronic'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'pg'
 gem 'thin'
 gem 'acts_as_paranoid', '~>0.4.0'
 
 
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
   gem 'pry'

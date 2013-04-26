@@ -1,39 +1,70 @@
-NaviGator
+
+# NaviGator
 
 ## Development Setup
 
-### Clone the repo
+### Clone the repository and make a copy to start the new application
 ```
-git clone git@bitbucket.org:fizzysoftware/fizzybar.git
+git clone https://github.com/fizzysoftware/NaviGator.git
 ```
 
 ### Install dependencies (ensure bundler is installed)
 ```
-cd fizzybar
+cd NaviGator
 bundle install
 ```
 
 CREATE database config (sample config is in config/database.sample.yml)
 ```
 cp config/database_sample.yml config/database.yml
-# make the appropirate changes if necessary
+# make the appropirate changes 
+
 ```
+
 Setup DB
 ```
 rake db:create
+rake db:migrate
+rake db:seed
 ```
 
-rake db:migrate
-```
 
 Start the Server
 ```
+rails s
+```
 
-# Administration
 
-You can access the admin console by visiting http://localhost:3000/admin
-with the below credentials:
+For Background Jobs(Sending mail etc)
+```
+rake jobs:work
+```
 
-* user: admin@example.com
-* pass: password
+Demo
+----
+
+There is a demo available at [http://navi.deskgator.com/](http://navi.deskgator.com/)
+
+
+Deploying
+----------
+
+  * Change the `config/deploy.rb` accordingly.
+  * Setup server and deploy
+
+```bash
+cap production deploy:setup
+cap production deploy:cold
+```
+
+Copyright
+---------
+
+Copyright (c) 2012-2013 [Fizzy Software](http://www.fizzysoftware.com). See LICENSE for details.
+
+
+Disclaimer
+---------
+
+This was a hackathon project which we do not maintain actively. Feel free to fork and improve :)
 

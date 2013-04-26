@@ -5,18 +5,18 @@ require 'capistrano/ext/multistage'     # deploy on all the servers..
 require "rvm/capistrano"                # if you are using rvm on your server..
 require './config/boot'  
 #require 'thinking_sphinx/deploy/capistrano'         
-require 'delayed/recipes'               # load this for delayed job..
+#require 'delayed/recipes'               # load this for delayed job..
 
 before "deploy:assets:precompile","deploy:config_symlink"
-before "deploy:update_code",    "delayed_job:stop"  # stop the previous deployed job workers...
+#before "deploy:update_code",    "delayed_job:stop"  # stop the previous deployed job workers...
 after "deploy:update", "deploy:cleanup" #clean up temp files etc.
 after "deploy:update_code","deploy:migrate"
-after "deploy:update_code", "thinking_sphinx:rebuild"
-after "deploy:start",   "delayed_job:start" #start the delayed job 
-after "deploy:restart", "delayed_job:restart" # restart it..
+#after "deploy:update_code", "thinking_sphinx:rebuild"
+#after "deploy:start",   "delayed_job:start" #start the delayed job 
+#after "deploy:restart", "delayed_job:restart" # restart it..
 
 set(:application) { "navigator" }
-set :delayed_job_args, "-n 2"            # number of delayed job workers 
+#set :delayed_job_args, "-n 2"            # number of delayed job workers 
 set :rvm_ruby_string, '1.9.3'             # ruby version you are using...
 set :rvm_type, :user
 set :whenever_environment, defer { stage }  # whenever gem for cron jobs...          

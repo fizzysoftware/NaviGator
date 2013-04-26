@@ -4,7 +4,7 @@ require "bundler/capistrano"            # install all the new missing plugins...
 require 'capistrano/ext/multistage'     # deploy on all the servers..
 require "rvm/capistrano"                # if you are using rvm on your server..
 require './config/boot'  
-require 'thinking_sphinx/deploy/capistrano'         
+#require 'thinking_sphinx/deploy/capistrano'         
 require 'delayed/recipes'               # load this for delayed job..
 
 before "deploy:assets:precompile","deploy:config_symlink"

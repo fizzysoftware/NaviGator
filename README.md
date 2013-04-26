@@ -1,5 +1,8 @@
-
 # NaviGator
+
+
+NaviGator is cool product, unobtrusive yet highly visible web navbar that sits at the top of your website and is a great way to engage users and get them to take to your blog, new product or anywhere you want.
+
 
 ## Development Setup
 

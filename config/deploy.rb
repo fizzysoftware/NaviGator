@@ -11,7 +11,7 @@ before "deploy:assets:precompile","deploy:config_symlink"
 before "deploy:update_code",    "delayed_job:stop"  # stop the previous deployed job workers...
 after "deploy:update", "deploy:cleanup" #clean up temp files etc.
 after "deploy:update_code","deploy:migrate"
-after "deploy:update_code", "thinking_sphinx:rebuild"
+#after "deploy:update_code", "thinking_sphinx:rebuild"
 after "deploy:start",   "delayed_job:start" #start the delayed job 
 after "deploy:restart", "delayed_job:restart" # restart it..
 
